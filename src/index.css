@@ -50,8 +50,8 @@ body {
 /* Floating Topbar (Header) */
 .floating-topbar {
   position: relative; top: auto; left: auto;
-  width: 100%; max-width: 1600px; margin: 0 auto;
-  padding: 30px 4% 0 4%;
+  width: 100%; max-width: 1800px; margin: 0 auto;
+  padding: 30px 2% 0 2%;
   display: flex; align-items: center; justify-content: flex-start;
   z-index: 1000;
 }
@@ -148,7 +148,11 @@ body {
 
 @media (max-width: 900px) {
   .floating-topbar { padding: 25px 4% 0 4%; }
-  .spatial-hero-wrapper { flex-direction: column; align-items: center; margin-top: 15px; }
+  .explore-header-container { padding: 0 4%; }
+  .row-header { padding: 0 4%; }
+  .match-row { padding: 10px 4% 30px 4%; }
+  .detailed-results-container { padding: 0 4% 4rem 4%; }
+  .spatial-hero-wrapper { flex-direction: column; align-items: center; margin-top: 15px; padding: 0 4%; }
   .spatial-hero-container { 
     height: auto; min-height: 0; padding-bottom: 0; aspect-ratio: auto; flex-direction: column; align-items: center; 
     background-size: 100% auto; background-position: top; background-repeat: no-repeat; background-color: #0b0b0b; 
@@ -167,14 +171,14 @@ body {
 }
 
 /* Main Content */
-.main-content { position: relative; z-index: 5; margin-top: 40px; width: 100%; max-width: 1600px; margin: 40px auto 0 auto; }
+.main-content { position: relative; z-index: 5; margin-top: 40px; width: 100%; max-width: 1800px; margin: 40px auto 0 auto; }
 @media (max-width: 900px) {
   .main-content { margin-top: 15px; }
 }
 
 /* NEW: Explore Header Container */
 .explore-header-container {
-  display: flex; justify-content: space-between; align-items: flex-end; padding: 0 4%; margin-bottom: 6rem; flex-wrap: wrap; gap: 1rem;
+  display: flex; justify-content: space-between; align-items: flex-end; padding: 0 2%; margin-bottom: 6rem; flex-wrap: wrap; gap: 1rem;
 }
 .explore-header-text h2 { font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
 .explore-header-text p { font-size: 0.95rem; color: var(--text-secondary); }
@@ -240,13 +244,13 @@ body {
 
 /* Match Row */
 .match-row-container { margin-bottom: 3rem; }
-.row-header { display: flex; justify-content: space-between; align-items: center; padding: 0 4%; margin-bottom: 0.8rem; }
+.row-header { display: flex; justify-content: space-between; align-items: center; padding: 0 2%; margin-bottom: 0.8rem; }
 .row-title { font-size: 1.3rem; font-weight: 700; color: #fff; }
 .row-nav-arrows { display: flex; gap: 0.5rem; }
 .slider-arrow-top { background: rgba(40,40,45,0.6); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s; }
 .slider-arrow-top:hover { background: rgba(255,255,255,0.2); }
 .row-wrapper { position: relative; }
-.match-row { display: flex; gap: 24px; overflow-x: scroll; overflow-y: visible; scroll-behavior: smooth; padding: 10px 4% 30px 4%; }
+.match-row { display: flex; gap: 24px; overflow-x: scroll; overflow-y: visible; scroll-behavior: smooth; padding: 10px 2% 30px 2%; }
 .match-row::-webkit-scrollbar { display: none; }
 
 /* Match Card Structure */
@@ -277,7 +281,7 @@ body {
 .match-card-placeholder { background: #222; width: 100%; aspect-ratio: 16/9; border-radius: 8px; }
 
 /* NEW: Detailed Match Card List View */
-.detailed-results-container { padding: 0 4% 4rem 4%; }
+.detailed-results-container { padding: 0 2% 4rem 2%; }
 .detailed-list { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .detailed-match-card {
   display: flex; flex-direction: row; align-items: center; gap: 1.5rem; background: rgba(30,30,35,0.6); border-radius: 12px;
