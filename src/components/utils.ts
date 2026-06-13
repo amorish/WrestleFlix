@@ -26,6 +26,7 @@ export function generateThumbnail(match: Match): string {
   }
 
   const normalizedMatchName = match.match.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
+  const matchNameNoParens = match.match.toLowerCase().replace(/\([^)]*\)/g, '').replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
   const normalizedEventName = match.event ? match.event.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
   const normalizedDate = match.date ? match.date.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
   const normalizedRating = match.rating ? match.rating.toString().toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
@@ -52,10 +53,10 @@ export function generateThumbnail(match: Match): string {
     if (hasWrongNumber) continue;
 
     // Fuzzy token match for typos
-    const matchWords = normalizedMatchName.split(' ').filter(w => w.length > 2 && w !== 'the' && w !== 'and' && w !== 'vs');
+    const matchWords = matchNameNoParens.split(' ').filter(w => w.length > 2 && w !== 'the' && w !== 'and' && w !== 'vs');
     let score = 0;
     
-    if (filename.includes(normalizedMatchName)) {
+    if (filename.includes(matchNameNoParens) || filename.includes(normalizedMatchName)) {
       score += 100;
     }
 
