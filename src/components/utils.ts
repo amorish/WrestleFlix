@@ -29,7 +29,7 @@ export function generateThumbnail(match: Match): string {
   const normalizedEventName = match.event ? match.event.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
   const normalizedDate = match.date ? match.date.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
   
-  const validNumbers = `${normalizedMatchName} ${normalizedEventName} ${normalizedDate}`.match(/\b\d+\b/g) || [];
+  const validNumbers: string[] = `${normalizedMatchName} ${normalizedEventName} ${normalizedDate}`.match(/\b\d+\b/g) || [];
   
   let bestMatchUrl = '';
   let highestScore = 0;
@@ -39,7 +39,7 @@ export function generateThumbnail(match: Match): string {
     const filename = decodedPath.split('/').pop()?.toLowerCase().replace(/[_\-]/g, ' ').replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() || '';
     
     // Check for mismatched numbers (e.g. Dominion 6.11 vs 6.9)
-    const filenameNumbers = filename.match(/\b\d+\b/g) || [];
+    const filenameNumbers: string[] = filename.match(/\b\d+\b/g) || [];
     let hasWrongNumber = false;
     for (const num of filenameNumbers) {
       if (!validNumbers.includes(num)) {
