@@ -91,13 +91,39 @@ function App() {
     
     const rows = [];
     
-    // Add a mixed section at the top containing top matches from any promotion
-    if (remainingMatches.length > 0) {
+    // Group matches by category
+    const categories = [
+      'Moments',
+      'Iconic Entrances & Themes',
+      'Comedy & Botches',
+      'Mic Masters',
+      'Dream Matches',
+      'Legendary Rivalries',
+      'Hidden Gems',
+      'Unsanctioned & Hardcore',
+      'The Art of Storytelling',
+      'Behind the Curtain'
+    ];
+
+    const mixedMatches = remainingMatches.filter(m => !m.category && m.event !== 'History of Wrestling' && m.event !== 'FULL EVENT');
+    
+    if (mixedMatches.length > 0) {
       rows.push({
         title: 'Mixed',
-        matches: remainingMatches.slice(0, 15)
+        matches: mixedMatches.slice(0, 15)
       });
     }
+
+    // Add dynamic categories
+    categories.forEach(category => {
+      const categoryMatches = matches.filter(m => m.category === category);
+      if (categoryMatches.length > 0) {
+        rows.push({
+          title: category,
+          matches: categoryMatches
+        });
+      }
+    });
 
     rows.push({
       title: 'History of Wrestling',
@@ -110,7 +136,7 @@ function App() {
     });
     
     return rows.filter(r => r.matches.length > 0);
-  }, [remainingMatches, searchQuery, selectedPromotion]);
+  }, [remainingMatches, matches, searchQuery, selectedPromotion]);
 
 
 

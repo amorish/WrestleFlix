@@ -11,4 +11,5 @@ export interface Match {
   endTimestamp?: string;
   thumbnailId?: string;
   description?: string;
+  category?: string;
 }
