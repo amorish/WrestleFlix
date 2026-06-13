@@ -307,11 +307,13 @@ body {
 /* Modal */
 .modal-backdrop {
   position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #000000;
-  z-index: 2000; display: flex; justify-content: center; align-items: center; padding: 2rem;
+  z-index: 2000; display: flex; justify-content: center; align-items: flex-start; padding: 2rem;
+  overflow-y: auto;
 }
 .modal-content {
   background: var(--bg-color); border-radius: 8px; width: 100%; max-width: 1000px;
   position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  margin: auto;
 }
 .close-btn {
   position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.5); color: white;
