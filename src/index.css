@@ -120,7 +120,7 @@ body {
   display: flex; align-items: center; justify-content: center; min-width: 80px; height: 48px;
 }
 .dock-item img {
-  height: 24px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  height: 24px; width: auto; object-fit: contain; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 .dock-item:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
 .dock-item.active { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); }
