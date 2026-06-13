@@ -32,7 +32,7 @@ export function generateThumbnail(match: Match): string {
 
   for (const [path, url] of Object.entries(localThumbnails)) {
     const decodedPath = decodeURIComponent(path);
-    const filename = decodedPath.split('/').pop()?.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() || '';
+    const filename = decodedPath.split('/').pop()?.toLowerCase().replace(/[_\-]/g, ' ').replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() || '';
     
     // Direct substring match is best
     if (filename.includes(normalizedMatchName)) {
