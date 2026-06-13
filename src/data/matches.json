@@ -3643,5 +3643,51 @@
     "videoId": "xac896a",
     "videoSource": "dailymotion",
     "description": "The stage was set for a truly unique and personal clash at Noche de Los Grandes Week 1, as El Grande Americano faced off against \"The Original\" El Grande Americano. This highly anticipated AAA/WWE crossover bout was more than just a match; it was a battle for identity and legacy, with only one man able to claim the rightful mantle of El Grande Americano."
+  },
+  {
+    "id": "333",
+    "date": "September 19, 2025",
+    "match": "MJF vs. Místico",
+    "promotion": "CMLL",
+    "event": "92nd Anniversary Show",
+    "rating": "0",
+    "videoId": "x9qxoe2",
+    "videoSource": "dailymotion",
+    "timestamp": "21:15",
+    "endTimestamp": "47:04",
+    "description": "The bitter rivalry between MJF and Místico culminated in a massive Title vs. Mask match at the historic CMLL 92nd Anniversary Show. With the CMLL World Light Heavyweight Championship and Místico's legendary mask on the line, the stakes couldn't have been higher."
+  },
+  {
+    "id": "334",
+    "date": "October 21, 2023",
+    "match": "\"Speedball\" Mike Bailey vs. Will Ospreay",
+    "promotion": "Impact",
+    "event": "Bound for Glory",
+    "rating": "0",
+    "videoId": "MBcpXlTKmWI",
+    "videoSource": "youtube",
+    "description": "At Impact's biggest event of the year, Bound for Glory, two of the world's most innovative high-flyers clashed as \"Speedball\" Mike Bailey took on Will Ospreay. This highly anticipated dream match delivered a breathtaking showcase of aerial mastery and hard-hitting action."
+  },
+  {
+    "id": "335",
+    "date": "April 27, 2025",
+    "match": "Saya Kamitani vs. Tam Nakano",
+    "promotion": "Stardom",
+    "event": "All Star Grand Queendom",
+    "rating": "0",
+    "videoId": "cSMqoVtT94g",
+    "videoSource": "youtube",
+    "description": "A monumental joshi puroresu clash at Stardom's All Star Grand Queendom saw Saya Kamitani battle the charismatic Tam Nakano. Their deeply personal rivalry exploded in the ring, resulting in a dramatic and emotionally charged encounter."
+  },
+  {
+    "id": "336",
+    "date": "June 21, 2025",
+    "match": "Sareee vs. Syuri",
+    "promotion": "Stardom",
+    "event": "Stardom The Conversion 2025",
+    "rating": "0",
+    "videoId": "x9lt22w",
+    "videoSource": "dailymotion",
+    "description": "Two of the hardest-hitting competitors in joshi wrestling, Sareee and Syuri, faced off at Stardom The Conversion 2025. This bruising encounter was a true test of physical resilience, featuring intense striking and technical warfare."
   }
 ]

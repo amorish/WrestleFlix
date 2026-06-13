@@ -88,22 +88,26 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
 
   if (currentVideoId) {
     const startSeconds = match.timestamp ? getSeconds(match.timestamp) : null;
+    const endSeconds = match.endTimestamp ? getSeconds(match.endTimestamp) : null;
     
     if (match.videoSource === 'dailymotion') {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
-      videoUrl = `https://www.dailymotion.com/embed/video/${currentVideoId}?autoplay=1&api=postMessage${startParam}`;
+      const endParam = endSeconds ? `&end=${endSeconds}` : '';
+      videoUrl = `https://www.dailymotion.com/embed/video/${currentVideoId}?autoplay=1&api=postMessage${startParam}${endParam}`;
     } else if (match.videoSource === 'bilibili') {
       const startParam = startSeconds ? `&t=${startSeconds}` : '';
       videoUrl = `https://player.bilibili.com/player.html?bvid=${currentVideoId}&autoplay=1${startParam}`;
     } else if (match.videoSource === 'archive') {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
-      videoUrl = `https://archive.org/embed/${currentVideoId}?autoplay=1${startParam}`;
+      const endParam = endSeconds ? `&end=${endSeconds}` : '';
+      videoUrl = `https://archive.org/embed/${currentVideoId}?autoplay=1${startParam}${endParam}`;
     } else if (match.videoSource !== 'vk') {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
+      const endParam = endSeconds ? `&end=${endSeconds}` : '';
       if (currentVideoId.startsWith('PL')) {
         videoUrl = `https://www.youtube.com/embed/videoseries?list=${currentVideoId}&autoplay=1`;
       } else {
-        videoUrl = `https://www.youtube.com/embed/${currentVideoId}?autoplay=1${startParam}`;
+        videoUrl = `https://www.youtube.com/embed/${currentVideoId}?autoplay=1${startParam}${endParam}`;
       }
     }
   }

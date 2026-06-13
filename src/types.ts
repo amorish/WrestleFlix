@@ -8,6 +8,7 @@ export interface Match {
   videoId?: string | string[];
   videoSource?: 'youtube' | 'dailymotion' | 'vk' | 'bilibili' | 'archive';
   timestamp?: string;
+  endTimestamp?: string;
   thumbnailId?: string;
   description?: string;
 }
