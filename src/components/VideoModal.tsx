@@ -136,26 +136,42 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
           )}
         </div>
         {isMultiPart && (
-          <div className="multipart-controls" style={{ padding: '15px 2rem 0', display: 'flex', gap: '10px', background: '#000', overflowX: 'auto' }}>
-            {videoIds.map((id, index) => (
-              <button 
-                key={id}
-                onClick={() => setCurrentPart(index)}
-                style={{ 
-                  padding: '8px 16px', 
-                  fontSize: '14px', 
-                  borderRadius: '4px', 
-                  cursor: 'pointer',
-                  background: currentPart === index ? '#E50914' : '#333',
-                  color: '#fff',
-                  border: 'none',
-                  whiteSpace: 'nowrap',
-                  fontWeight: currentPart === index ? 'bold' : 'normal'
-                }}
-              >
-                Part {index + 1}
-              </button>
-            ))}
+          <div className="multipart-controls" style={{ padding: '15px 2rem 0', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', background: '#000' }}>
+            <button 
+              className="btn btn-secondary"
+              disabled={currentPart === 0}
+              onClick={() => setCurrentPart(prev => Math.max(0, prev - 1))}
+              style={{ 
+                opacity: currentPart === 0 ? 0.5 : 1, 
+                cursor: currentPart === 0 ? 'not-allowed' : 'pointer',
+                background: '#333',
+                color: '#fff',
+                border: 'none',
+                padding: '8px 16px',
+                borderRadius: '4px'
+              }}
+            >
+              Previous
+            </button>
+            <span style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 'bold' }}>
+              {currentPart + 1} / {videoIds.length}
+            </span>
+            <button 
+              className="btn btn-secondary"
+              disabled={currentPart === videoIds.length - 1}
+              onClick={() => setCurrentPart(prev => Math.min(videoIds.length - 1, prev + 1))}
+              style={{ 
+                opacity: currentPart === videoIds.length - 1 ? 0.5 : 1, 
+                cursor: currentPart === videoIds.length - 1 ? 'not-allowed' : 'pointer',
+                background: '#333',
+                color: '#fff',
+                border: 'none',
+                padding: '8px 16px',
+                borderRadius: '4px'
+              }}
+            >
+              Next
+            </button>
           </div>
         )}
         <div className="modal-info">
