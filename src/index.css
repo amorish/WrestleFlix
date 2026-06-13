@@ -61,7 +61,7 @@ body {
 /* Spatial Hero Container */
 .spatial-hero-wrapper {
   margin-top: 100px; padding: 0 2%; display: flex; justify-content: center;
-  perspective: 1000px;
+  perspective: 1000px; position: relative;
 }
 .spatial-hero-container {
   position: relative; width: 100%; max-width: 1400px; aspect-ratio: 16/9;
@@ -137,10 +137,11 @@ body {
 .btn-spatial-secondary:hover { background: rgba(70, 70, 75, 0.8); }
 
 @media (max-width: 900px) {
+  .spatial-hero-wrapper { flex-direction: column; align-items: center; }
   .spatial-hero-content { flex-direction: column; padding: 2rem; width: 100%; }
   .hero-spatial-poster { display: none; }
-  .spatial-hero-container { height: auto; padding-bottom: 15px; aspect-ratio: auto; flex-direction: column; align-items: center; }
-  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 90%; overflow-x: auto; justify-content: flex-start; margin-bottom: 10px; margin-top: 0; }
+  .spatial-hero-container { height: auto; padding-bottom: 0; aspect-ratio: auto; flex-direction: column; align-items: center; }
+  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 90%; overflow-x: auto; justify-content: flex-start; margin-bottom: 10px; margin-top: 15px; }
   .spatial-dock-container::-webkit-scrollbar { display: none; }
 }
 
@@ -374,7 +375,7 @@ body {
   .hero-spatial-actions { width: 100%; display: flex; flex-direction: column; }
   .btn-spatial-primary { width: 100%; justify-content: center; padding: 0.8rem 1rem; }
   
-  .spatial-dock-container { width: 90%; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: 16px; margin-bottom: 15px; }
+  .spatial-dock-container { width: 100%; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: 16px; margin-bottom: 15px; margin-top: 15px; }
   .dock-item { min-width: 70px; height: 40px; font-size: 1rem; padding: 0.4rem 0.8rem; }
   .dock-item img { height: 20px; }
   

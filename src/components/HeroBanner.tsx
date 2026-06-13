@@ -56,17 +56,18 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           </div>
         </div>
 
-        <div className="spatial-dock-container">
-          {dockPromotions.map(promo => (
-            <div 
-              key={promo.id}
-              className={`dock-item ${selectedPromotion === promo.id ? 'active' : ''}`}
-              onClick={() => onPromotionChange(promo.id)}
-            >
-              {promo.logo ? <img src={promo.logo} alt={promo.label} /> : promo.label}
-            </div>
-          ))}
-        </div>
+      </div>
+      
+      <div className="spatial-dock-container">
+        {dockPromotions.map(promo => (
+          <div 
+            key={promo.id}
+            className={`dock-item ${selectedPromotion === promo.id ? 'active' : ''}`}
+            onClick={() => onPromotionChange(promo.id)}
+          >
+            {promo.logo ? <img src={promo.logo} alt={promo.label} /> : promo.label}
+          </div>
+        ))}
       </div>
     </div>
   );
