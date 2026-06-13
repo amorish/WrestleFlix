@@ -1,6 +1,6 @@
 import type { Match } from '../types';
 import { generateThumbnail, getPromotionLogo } from './utils';
-import { Play, Star, Calendar } from 'lucide-react';
+import { Play, Star, Calendar, ListVideo } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 interface DetailedMatchCardProps {
@@ -14,23 +14,30 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
     rootMargin: '200px 0px',
   });
 
+  const isPlaylist = Array.isArray(match.videoId) || (typeof match.videoId === 'string' && match.videoId.startsWith('PL'));
+  const videoCount = Array.isArray(match.videoId) ? match.videoId.length : null;
+
   return (
     <div ref={ref} className="detailed-match-card">
       {inView ? (
         <>
-          <div className="detailed-thumbnail" onClick={() => onPlay(match)}>
-            <img src={generateThumbnail(match)} alt={match.match} />
-            <div className="play-overlay">
-              <Play fill="white" size={40} />
-            </div>
-            {match.videoId && typeof match.videoId === 'string' && match.videoId.startsWith('PL') && (
-              <div className="playlist-badge" style={{ bottom: '35px' }}>Playlist</div>
-            )}
-            {match.rating !== '0' && (
-              <div className="rating-badge-absolute">
-                <Star fill="#f5c518" color="#f5c518" size={14} /> {match.rating}
+          <div className={isPlaylist ? "playlist-stack-container" : ""}>
+            <div className="detailed-thumbnail" onClick={() => onPlay(match)}>
+              <img src={generateThumbnail(match)} alt={match.match} />
+              <div className="play-overlay">
+                <Play fill="white" size={40} />
               </div>
-            )}
+              {isPlaylist && (
+                <div className="playlist-badge" style={match.rating !== '0' ? { bottom: '35px' } : {}}>
+                  <ListVideo size={14} /> {videoCount ? `${videoCount} videos` : 'Playlist'}
+                </div>
+              )}
+              {match.rating !== '0' && (
+                <div className="rating-badge-absolute">
+                  <Star fill="#f5c518" color="#f5c518" size={14} /> {match.rating}
+                </div>
+              )}
+            </div>
           </div>
           
           <div className="detailed-info">
