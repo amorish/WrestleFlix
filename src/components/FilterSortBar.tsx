@@ -1,4 +1,4 @@
-import { Search, ArrowDownAZ } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { CustomDropdown } from './CustomDropdown';
 
 interface FilterSortBarProps {
