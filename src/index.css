@@ -137,10 +137,20 @@ body {
 .btn-spatial-secondary:hover { background: rgba(70, 70, 75, 0.8); }
 
 @media (max-width: 900px) {
-  .spatial-hero-wrapper { flex-direction: column; align-items: center; }
-  .spatial-hero-content { flex-direction: column; padding: 2rem; width: 100%; }
+  .spatial-hero-wrapper { flex-direction: column; align-items: center; margin-top: 80px; }
+  .spatial-hero-container { 
+    height: auto; padding-bottom: 0; aspect-ratio: auto; flex-direction: column; align-items: center; 
+    background-size: 100% auto; background-position: top; background-repeat: no-repeat; background-color: #0b0b0b; 
+  }
+  .hero-overlay-spatial {
+    background: linear-gradient(to bottom, transparent 0%, transparent 40vw, #0b0b0b 56.25vw, #0b0b0b 100%);
+  }
+  .spatial-hero-content { 
+    flex-direction: column; padding: 50vw 1.5rem 2rem 1.5rem; width: 100%; 
+    text-align: center; align-items: center;
+  }
+  .hero-spatial-meta { justify-content: center; }
   .hero-spatial-poster { display: none; }
-  .spatial-hero-container { height: auto; padding-bottom: 0; aspect-ratio: auto; flex-direction: column; align-items: center; }
   .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 90%; overflow-x: auto; justify-content: center; margin-bottom: 10px; margin-top: 15px; }
   .spatial-dock-container::-webkit-scrollbar { display: none; }
 }
@@ -367,13 +377,17 @@ body {
   .logo-image { height: 38px; }
 
   /* Hero Banner */
-  .spatial-hero-wrapper { margin-top: 80px; padding: 0 4%; }
-  .spatial-hero-content { padding: 0.5rem 1rem 1rem 1rem; }
-  .hero-spatial-title { font-size: 1.4rem; line-height: 1.2; -webkit-line-clamp: 2; margin-bottom: 0.4rem; }
+  .spatial-hero-wrapper { padding: 0 4%; }
+  .spatial-hero-content { padding: 50vw 1rem 1rem 1rem; }
+  .hero-spatial-title { font-size: 1.5rem; line-height: 1.2; margin-bottom: 0.6rem; text-align: center; }
   .hero-spatial-desc { display: none; }
-  .hero-spatial-meta { font-size: 0.75rem; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.8rem; }
-  .hero-spatial-actions { width: 100%; display: flex; flex-direction: column; }
-  .btn-spatial-primary { width: 100%; justify-content: center; padding: 0.8rem 1rem; }
+  .hero-spatial-meta { font-size: 0.8rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+  .hero-spatial-actions { width: 100%; display: flex; flex-direction: column; align-items: center; }
+  .btn-spatial-primary { 
+    width: 100%; justify-content: center; padding: 0.9rem 1rem; 
+    background: transparent; color: white; border: 1px solid #333; 
+  }
+  .btn-spatial-primary svg { fill: white; color: white; }
   
   .spatial-dock-container { width: 100%; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: 16px; margin-bottom: 15px; margin-top: 15px; }
   .dock-item { min-width: 70px; height: 40px; font-size: 1rem; padding: 0.4rem 0.8rem; }
