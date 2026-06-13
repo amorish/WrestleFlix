@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import matchesData from './data/matches.json';
 import type { Match } from './types';
 import { HeroBanner } from './components/HeroBanner';
@@ -6,6 +6,7 @@ import { MatchRow } from './components/MatchRow';
 import { VideoModal } from './components/VideoModal';
 import { FilterSortBar } from './components/FilterSortBar';
 import { DetailedMatchCard } from './components/DetailedMatchCard';
+import { SkeletonLoader } from './components/SkeletonLoader';
 import logoUrl from './assets/layout/WrestleFlix-cropped.svg';
 
 function App() {
@@ -13,6 +14,15 @@ function App() {
   const [selectedPromotion, setSelectedPromotion] = useState<string>('All');
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'highest_rated'>('newest');
   const [searchQuery, setSearchQuery] = useState('');
+  const [isAppLoading, setIsAppLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate content loading (e.g. fetching matches, caching images)
+    const timer = setTimeout(() => {
+      setIsAppLoading(false);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   const matches: Match[] = matchesData as Match[];
   
@@ -63,6 +73,15 @@ function App() {
   const heroMatch = useMemo(() => {
     return filteredAndSortedMatches.length > 0 ? filteredAndSortedMatches[0] : matches[0];
   }, [filteredAndSortedMatches, matches]);
+
+  if (isAppLoading) {
+    return (
+      <div className="app-container">
+        <div className="spatial-background"></div>
+        <SkeletonLoader />
+      </div>
+    );
+  }
 
   return (
     <div className="app-container">

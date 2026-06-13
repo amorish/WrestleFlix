@@ -72,6 +72,13 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
           
           <CustomStarRating rating={match.rating} />
           
+          {match.description && (
+            <div className="match-context">
+              <h3>The Story</h3>
+              <p>{match.description}</p>
+            </div>
+          )}
+          
           <div className="video-buttons-container">
             <a 
               href={match.videoId && match.videoSource !== 'dailymotion' ? `https://www.youtube.com/watch?v=${match.videoId}` : `https://www.youtube.com/results?search_query=${searchQuery}`} 

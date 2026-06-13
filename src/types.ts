@@ -7,5 +7,6 @@ export interface Match {
   rating: string;
   videoId?: string;
   videoSource?: 'youtube' | 'dailymotion';
+  description?: string;
 }
 

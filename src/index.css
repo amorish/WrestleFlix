@@ -319,6 +319,27 @@ body {
 .modal-info { padding: 2rem; background: #000; }
 .modal-info h2 { font-size: 3rem; font-weight: 900; margin-bottom: 0.2rem; }
 .modal-info p { color: #888; font-size: 1.4rem; margin-bottom: 1.5rem; font-weight: 500; }
+.match-context {
+  margin-bottom: 1.5rem;
+  background: rgba(255,255,255,0.03);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #E50914;
+}
+.match-context h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.match-context p {
+  font-size: 0.95rem;
+  color: #bbb;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
 .custom-star-rating { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
 .stars-container { display: flex; gap: 0.5rem; }
 .star-box {
@@ -398,6 +419,43 @@ body {
   
   /* Match Row cards */
   .match-card-wrapper { flex: 0 0 85vw; }
+}
+
+/* Skeleton Loader */
+.skeleton-container {
+  padding-bottom: 2rem;
+}
+.shimmer {
+  background: #2a2a2d;
+  background-image: linear-gradient(to right, #2a2a2d 0%, #3a3a3d 20%, #2a2a2d 40%, #2a2a2d 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 100%; 
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards; 
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+}
+@keyframes placeholderShimmer {
+  0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+.skeleton-topbar { padding: 1rem 4%; margin-bottom: 2rem; }
+.skeleton-logo { width: 150px; height: 30px; border-radius: 4px; }
+.skeleton-hero { margin: 0 4% 2rem 4%; height: 50vh; border-radius: 30px; }
+.skeleton-filters { display: flex; gap: 1rem; padding: 0 4%; margin-bottom: 1.5rem; }
+.skeleton-search { width: 200px; height: 40px; border-radius: 20px; }
+.skeleton-sort { width: 120px; height: 40px; border-radius: 20px; }
+.skeleton-dock-bar { display: flex; gap: 1rem; padding: 0 4%; margin-bottom: 2rem; }
+.skeleton-pill { width: 80px; height: 35px; border-radius: 8px; }
+.skeleton-row-title { width: 200px; height: 25px; margin: 0 4% 1rem 4%; border-radius: 4px; }
+.skeleton-row { display: flex; gap: 1.5rem; padding: 0 4%; margin-bottom: 2rem; overflow: hidden; }
+.skeleton-card { width: 300px; height: 170px; border-radius: 12px; flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .skeleton-hero { height: 30vh; }
+  .skeleton-card { width: 240px; height: 135px; }
+}
   
   /* Detailed card */
   .detailed-info { padding: 1rem; }
