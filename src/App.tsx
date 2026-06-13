@@ -14,6 +14,7 @@ function App() {
   const [selectedPromotion, setSelectedPromotion] = useState<string>('All');
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'highest_rated'>('newest');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedDecade, setSelectedDecade] = useState('All Years');
   const [isAppLoading, setIsAppLoading] = useState(true);
 
   useEffect(() => {
@@ -36,6 +37,17 @@ function App() {
     if (selectedPromotion !== 'All') {
       result = result.filter(m => m.promotion === selectedPromotion);
     }
+    if (selectedDecade !== 'All Years') {
+      result = result.filter(m => {
+        const year = new Date(m.date).getFullYear();
+        if (selectedDecade === '1980s') return year >= 1980 && year < 1990;
+        if (selectedDecade === '1990s') return year >= 1990 && year < 2000;
+        if (selectedDecade === '2000s') return year >= 2000 && year < 2010;
+        if (selectedDecade === '2010s') return year >= 2010 && year < 2020;
+        if (selectedDecade === '2020s') return year >= 2020 && year < 2030;
+        return true;
+      });
+    }
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       result = result.filter(m => 
@@ -51,7 +63,7 @@ function App() {
       return 0;
     });
     return result;
-  }, [matches, selectedPromotion, sortOrder, searchQuery]);
+  }, [matches, selectedPromotion, selectedDecade, sortOrder, searchQuery]);
 
   const heroMatch = useMemo(() => {
     return filteredAndSortedMatches.length > 0 ? filteredAndSortedMatches[0] : matches[0];
@@ -130,6 +142,8 @@ function App() {
               onSortChange={setSortOrder}
               searchQuery={searchQuery}
               onSearchChange={setSearchQuery}
+              selectedDecade={selectedDecade}
+              onDecadeChange={setSelectedDecade}
             />
           </div>
         )}
@@ -149,6 +163,8 @@ function App() {
                 onSortChange={setSortOrder}
                 searchQuery={searchQuery}
                 onSearchChange={setSearchQuery}
+                selectedDecade={selectedDecade}
+                onDecadeChange={setSelectedDecade}
               />
             </div>
             {rowsByPromotion.map(row => (
