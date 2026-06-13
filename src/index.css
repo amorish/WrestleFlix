@@ -139,7 +139,7 @@ body {
 @media (max-width: 900px) {
   .spatial-hero-content { flex-direction: column; padding: 2rem; }
   .hero-spatial-poster { display: none; }
-  .spatial-hero-container { height: auto; padding-bottom: 80px; }
+  .spatial-hero-container { height: auto; padding-bottom: 80px; aspect-ratio: auto; }
   .spatial-dock-container { width: 90%; overflow-x: auto; justify-content: flex-start; }
 }
 
