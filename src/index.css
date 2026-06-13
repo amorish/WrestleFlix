@@ -122,6 +122,9 @@ body {
 .dock-item img {
   max-width: 85px; max-height: 28px; width: auto; height: auto; object-fit: contain; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
+.dock-item img[src*="ecw"] {
+  max-height: 20px;
+}
 .dock-item:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
 .dock-item.active { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); }
 
@@ -418,6 +421,7 @@ body {
   .spatial-dock-container { width: 100%; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: 16px; margin-bottom: 15px; margin-top: 15px; flex-direction: row; }
   .dock-item { width: auto; min-width: 80px; height: 40px; font-size: 1rem; padding: 0.4rem 0.8rem; }
   .dock-item img { max-width: 60px; max-height: 20px; height: auto; width: auto; }
+  .dock-item img[src*="ecw"] { max-height: 14px; }
   
   /* Match Row cards */
   .match-card-wrapper { flex: 0 0 85vw; }
