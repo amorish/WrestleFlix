@@ -1,8 +1,9 @@
+import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { CustomDropdown } from './CustomDropdown';
 
 interface FilterSortBarProps {
-  promotions: string[];
+  promotions: { id: string; label: string; }[];
   selectedPromotion: string;
   onPromotionChange: (promo: string) => void;
   sortOrder: 'newest' | 'oldest' | 'highest_rated';
@@ -14,6 +15,9 @@ interface FilterSortBarProps {
 }
 
 export const FilterSortBar: React.FC<FilterSortBarProps> = ({
+  promotions,
+  selectedPromotion,
+  onPromotionChange,
   sortOrder,
   onSortChange,
   searchQuery,
@@ -21,6 +25,14 @@ export const FilterSortBar: React.FC<FilterSortBarProps> = ({
   selectedDecade,
   onDecadeChange
 }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const sortOptions = [
     { value: 'newest', label: 'Newest' },
     { value: 'oldest', label: 'Oldest' },
@@ -42,7 +54,7 @@ export const FilterSortBar: React.FC<FilterSortBarProps> = ({
         <Search size={18} className="search-icon" />
         <input 
           type="text" 
-          placeholder="Search Match" 
+          placeholder={isMobile ? "Search" : "Search Match"} 
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
         />
