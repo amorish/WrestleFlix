@@ -53,26 +53,30 @@ function App() {
     return result;
   }, [matches, selectedPromotion, sortOrder, searchQuery]);
 
+  const heroMatch = useMemo(() => {
+    return filteredAndSortedMatches.length > 0 ? filteredAndSortedMatches[0] : matches[0];
+  }, [filteredAndSortedMatches, matches]);
+
+  const remainingMatches = useMemo(() => {
+    return filteredAndSortedMatches.filter(m => m.id !== heroMatch.id);
+  }, [filteredAndSortedMatches, heroMatch]);
+
   const rowsByPromotion = useMemo(() => {
     if (searchQuery || selectedPromotion !== 'All') return null;
     
     const topPromos = ['WWE', 'AEW', 'NJPW', 'WCW'];
     const rows = topPromos.map(promo => ({
       title: promo,
-      matches: filteredAndSortedMatches.filter(m => m.promotion.includes(promo)).slice(0, 15)
+      matches: remainingMatches.filter(m => m.promotion.includes(promo)).slice(0, 15)
     }));
     
     rows.push({
       title: 'Other Promotions',
-      matches: filteredAndSortedMatches.filter(m => !topPromos.some(p => m.promotion.includes(p))).slice(0, 15)
+      matches: remainingMatches.filter(m => !topPromos.some(p => m.promotion.includes(p))).slice(0, 15)
     });
     
     return rows.filter(r => r.matches.length > 0);
-  }, [filteredAndSortedMatches, searchQuery, selectedPromotion]);
-
-  const heroMatch = useMemo(() => {
-    return filteredAndSortedMatches.length > 0 ? filteredAndSortedMatches[0] : matches[0];
-  }, [filteredAndSortedMatches, matches]);
+  }, [remainingMatches, searchQuery, selectedPromotion]);
 
   if (isAppLoading) {
     return (
@@ -144,7 +148,7 @@ function App() {
         ) : (
           <div className="detailed-results-container">
             <div className="detailed-list">
-              {filteredAndSortedMatches.map(match => (
+              {remainingMatches.map(match => (
                 <DetailedMatchCard key={match.id} match={match} onPlay={setSelectedMatch} />
               ))}
             </div>
