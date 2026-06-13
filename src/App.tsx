@@ -6,7 +6,7 @@ import { MatchRow } from './components/MatchRow';
 import { VideoModal } from './components/VideoModal';
 import { FilterSortBar } from './components/FilterSortBar';
 import { DetailedMatchCard } from './components/DetailedMatchCard';
-import logoUrl from './assets/WrestleFlix.svg';
+import logoUrl from './assets/layout/WrestleFlix-cropped.svg';
 
 function App() {
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
@@ -66,19 +66,21 @@ function App() {
 
   return (
     <div className="app-container">
-      <nav className="navbar glass-effect">
+      <div className="spatial-background"></div>
+      
+      <nav className="floating-topbar">
         <div className="logo-container">
           <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" />
         </div>
-        <div className="nav-pills">
-          <button className={`nav-pill ${selectedPromotion === 'All' ? 'active' : ''}`} onClick={() => setSelectedPromotion('All')}>All</button>
-          <button className={`nav-pill ${selectedPromotion === 'WWE' ? 'active' : ''}`} onClick={() => setSelectedPromotion('WWE')}>WWE</button>
-          <button className={`nav-pill ${selectedPromotion === 'AEW' ? 'active' : ''}`} onClick={() => setSelectedPromotion('AEW')}>AEW</button>
-          <button className={`nav-pill ${selectedPromotion === 'NJPW' ? 'active' : ''}`} onClick={() => setSelectedPromotion('NJPW')}>NJPW</button>
-        </div>
       </nav>
 
-      <HeroBanner match={heroMatch} onPlay={setSelectedMatch} />
+      <HeroBanner 
+        match={heroMatch} 
+        onPlay={setSelectedMatch} 
+        promotions={promotions}
+        selectedPromotion={selectedPromotion}
+        onPromotionChange={setSelectedPromotion}
+      />
 
       <div className="main-content">
         {!rowsByPromotion && (

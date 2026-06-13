@@ -1,6 +1,6 @@
 import type { Match } from '../types';
 import { generateThumbnail, getPromotionLogo } from './utils';
-import { Play, Star, Calendar, Shield } from 'lucide-react';
+import { Play, Star, Calendar } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 interface DetailedMatchCardProps {
@@ -35,7 +35,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
             </div>
             
             <div className="detailed-meta">
-              <span className="meta-item"><Shield size={16}/> {match.promotion}</span>
+              <span className="meta-item">{match.promotion}</span>
               <span className="meta-item"><Calendar size={16}/> {match.date}</span>
             </div>
             
