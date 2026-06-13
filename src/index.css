@@ -60,11 +60,12 @@ body {
 
 /* Spatial Hero Container */
 .spatial-hero-wrapper {
-  margin-top: 100px; padding: 0 2%; display: flex; justify-content: center;
+  margin-top: 100px; padding: 0 4%; display: flex; justify-content: center;
   perspective: 1000px; position: relative;
+  flex-direction: row; align-items: stretch; gap: 2rem;
 }
 .spatial-hero-container {
-  position: relative; width: 100%; max-width: 1400px; aspect-ratio: 16/9;
+  flex: 1; position: relative; width: 100%; max-width: 1400px; aspect-ratio: 16/9;
   background-size: cover; background-position: center; border-radius: 30px;
   overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.8);
   display: flex; align-items: center;
@@ -105,11 +106,12 @@ body {
 
 /* Dock (Promotions) */
 .spatial-dock-container {
-  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-  display: flex; gap: 1rem; padding: 0.8rem 1.5rem;
+  position: static; transform: none;
+  display: flex; flex-direction: column; gap: 1.2rem; padding: 1.5rem 1rem;
   background: rgba(20, 20, 25, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
   border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
   z-index: 10;
+  align-items: center; justify-content: center;
 }
 .dock-item {
   color: white; font-weight: 700; font-size: 1.1rem; padding: 0.5rem 1.2rem;
@@ -151,7 +153,7 @@ body {
   }
   .hero-spatial-meta { justify-content: center; }
   .hero-spatial-poster { display: none; }
-  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 90%; overflow-x: auto; justify-content: center; margin-bottom: 10px; margin-top: 15px; }
+  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 90%; overflow-x: auto; justify-content: center; margin-bottom: 10px; margin-top: 15px; flex-direction: row; }
   .spatial-dock-container::-webkit-scrollbar { display: none; }
 }
 
@@ -413,7 +415,7 @@ body {
   }
   .btn-spatial-primary svg { fill: white; color: white; }
   
-  .spatial-dock-container { width: 100%; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: 16px; margin-bottom: 15px; margin-top: 15px; }
+  .spatial-dock-container { width: 100%; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: 16px; margin-bottom: 15px; margin-top: 15px; flex-direction: row; }
   .dock-item { min-width: 70px; height: 40px; font-size: 1rem; padding: 0.4rem 0.8rem; }
   .dock-item img { height: 20px; }
   
