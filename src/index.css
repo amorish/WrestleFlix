@@ -51,7 +51,7 @@ body {
 .floating-topbar {
   position: relative; top: auto; left: auto;
   width: 100%; max-width: 1800px; margin: 0 auto;
-  padding: 30px 2% 0 2%;
+  padding: 30px 4% 0 4%;
   display: flex; align-items: center; justify-content: flex-start;
   z-index: 1000;
 }
@@ -62,10 +62,10 @@ body {
 
 /* Spatial Hero Container */
 .spatial-hero-wrapper {
-  margin: 20px auto 0 auto; padding: 0 2%; display: flex; justify-content: space-between;
+  margin: 20px auto 0 auto; padding: 0 4%; display: flex; justify-content: space-between;
   width: 100%; max-width: 1800px;
   perspective: 1000px; position: relative;
-  flex-direction: row; align-items: stretch; gap: 1.5rem;
+  flex-direction: row; align-items: stretch; gap: 3rem;
 }
 .spatial-hero-container {
   flex: 1; position: relative; width: 100%; height: 600px; min-height: 600px;
@@ -178,7 +178,7 @@ body {
 
 /* NEW: Explore Header Container */
 .explore-header-container {
-  display: flex; justify-content: space-between; align-items: flex-end; padding: 0 2%; margin-bottom: 6rem; flex-wrap: wrap; gap: 1rem;
+  display: flex; justify-content: space-between; align-items: flex-end; padding: 0 4%; margin-bottom: 6rem; flex-wrap: wrap; gap: 1rem;
 }
 .explore-header-text h2 { font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
 .explore-header-text p { font-size: 0.95rem; color: var(--text-secondary); }
@@ -244,13 +244,13 @@ body {
 
 /* Match Row */
 .match-row-container { margin-bottom: 3rem; }
-.row-header { display: flex; justify-content: space-between; align-items: center; padding: 0 2%; margin-bottom: 0.8rem; }
+.row-header { display: flex; justify-content: space-between; align-items: center; padding: 0 4%; margin-bottom: 0.8rem; }
 .row-title { font-size: 1.3rem; font-weight: 700; color: #fff; }
 .row-nav-arrows { display: flex; gap: 0.5rem; }
 .slider-arrow-top { background: rgba(40,40,45,0.6); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s; }
 .slider-arrow-top:hover { background: rgba(255,255,255,0.2); }
 .row-wrapper { position: relative; }
-.match-row { display: flex; gap: 24px; overflow-x: scroll; overflow-y: visible; scroll-behavior: smooth; padding: 10px 2% 30px 2%; }
+.match-row { display: flex; gap: 24px; overflow-x: scroll; overflow-y: visible; scroll-behavior: smooth; padding: 10px 4% 30px 4%; }
 .match-row::-webkit-scrollbar { display: none; }
 
 /* Match Card Structure */
@@ -281,7 +281,7 @@ body {
 .match-card-placeholder { background: #222; width: 100%; aspect-ratio: 16/9; border-radius: 8px; }
 
 /* NEW: Detailed Match Card List View */
-.detailed-results-container { padding: 0 2% 4rem 2%; }
+.detailed-results-container { padding: 0 4% 4rem 4%; }
 .detailed-list { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .detailed-match-card {
   display: flex; flex-direction: row; align-items: center; gap: 1.5rem; background: rgba(30,30,35,0.6); border-radius: 12px;
