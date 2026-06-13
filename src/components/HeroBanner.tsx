@@ -4,6 +4,9 @@ import { Play } from 'lucide-react';
 import wweLogo from '../assets/promotions/wwe.svg';
 import aewLogo from '../assets/promotions/aew.svg';
 import njpwLogo from '../assets/promotions/njpw.svg';
+import wcwLogo from '../assets/promotions/Wcw.svg';
+import tnaLogo from '../assets/promotions/TNA.svg';
+import rohLogo from '../assets/promotions/ROH.svg';
 
 interface HeroBannerProps {
   match: Match | null;
@@ -27,6 +30,9 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
     { id: 'WWE', label: 'WWE', logo: wweLogo },
     { id: 'AEW', label: 'AEW', logo: aewLogo },
     { id: 'NJPW', label: 'NJPW', logo: njpwLogo },
+    { id: 'WCW', label: 'WCW', logo: wcwLogo },
+    { id: 'TNA', label: 'TNA', logo: tnaLogo },
+    { id: 'ROH', label: 'ROH', logo: rohLogo },
   ];
 
   return (
