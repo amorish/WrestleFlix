@@ -152,7 +152,7 @@ function App() {
         )}
       </div>
 
-      <VideoModal match={selectedMatch} onClose={() => setSelectedMatch(null)} />
+      {selectedMatch && <VideoModal match={selectedMatch} onClose={() => setSelectedMatch(null)} />}
     </div>
   );
 }
