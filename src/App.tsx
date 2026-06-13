@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import matchesData from './data/matches.json';
 import type { Match } from './types';
 import { HeroBanner } from './components/HeroBanner';
