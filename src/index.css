@@ -49,7 +49,9 @@ body {
 
 /* Floating Topbar (Header) */
 .floating-topbar {
-  position: absolute; top: 30px; left: 4%;
+  position: relative; top: auto; left: auto;
+  width: 100%; max-width: 1600px; margin: 0 auto;
+  padding: 30px 4% 0 4%;
   display: flex; align-items: center; justify-content: flex-start;
   z-index: 1000;
 }
@@ -60,12 +62,13 @@ body {
 
 /* Spatial Hero Container */
 .spatial-hero-wrapper {
-  margin-top: 80px; padding: 0 4%; display: flex; justify-content: center;
+  margin: 20px auto 0 auto; padding: 0 4%; display: flex; justify-content: space-between;
+  width: 100%; max-width: 1600px;
   perspective: 1000px; position: relative;
   flex-direction: row; align-items: stretch; gap: 2rem;
 }
 .spatial-hero-container {
-  flex: 1; position: relative; width: 100%; max-width: 1400px; aspect-ratio: 21/9; max-height: 500px;
+  flex: 1; position: relative; width: 100%; min-height: 600px;
   background-size: cover; background-position: center; border-radius: 30px;
   overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.8);
   display: flex; align-items: center;
@@ -143,7 +146,7 @@ body {
 .btn-spatial-secondary:hover { background: rgba(70, 70, 75, 0.8); }
 
 @media (max-width: 900px) {
-  .spatial-hero-wrapper { flex-direction: column; align-items: center; margin-top: 80px; }
+  .spatial-hero-wrapper { flex-direction: column; align-items: center; margin-top: 20px; }
   .spatial-hero-container { 
     height: auto; padding-bottom: 0; aspect-ratio: auto; flex-direction: column; align-items: center; 
     background-size: 100% auto; background-position: top; background-repeat: no-repeat; background-color: #0b0b0b; 
