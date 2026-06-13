@@ -26,6 +26,10 @@ export function generateThumbnail(match: Match): string {
   }
 
   const normalizedMatchName = match.match.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
+  const normalizedEventName = match.event ? match.event.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
+  const normalizedDate = match.date ? match.date.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
+  
+  const validNumbers = `${normalizedMatchName} ${normalizedEventName} ${normalizedDate}`.match(/\b\d+\b/g) || [];
   
   let bestMatchUrl = '';
   let highestScore = 0;
@@ -34,26 +38,44 @@ export function generateThumbnail(match: Match): string {
     const decodedPath = decodeURIComponent(path);
     const filename = decodedPath.split('/').pop()?.toLowerCase().replace(/[_\-]/g, ' ').replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() || '';
     
-    // Direct substring match is best
-    if (filename.includes(normalizedMatchName)) {
-      return url;
+    // Check for mismatched numbers (e.g. Dominion 6.11 vs 6.9)
+    const filenameNumbers = filename.match(/\b\d+\b/g) || [];
+    let hasWrongNumber = false;
+    for (const num of filenameNumbers) {
+      if (!validNumbers.includes(num)) {
+        hasWrongNumber = true;
+        break;
+      }
     }
+    
+    if (hasWrongNumber) continue;
 
     // Fuzzy token match for typos
     const matchWords = normalizedMatchName.split(' ').filter(w => w.length > 2 && w !== 'the' && w !== 'and' && w !== 'vs');
     let score = 0;
+    
+    if (filename.includes(normalizedMatchName)) {
+      score += 100;
+    }
+
     for (const word of matchWords) {
       if (filename.includes(word)) {
-        score++;
+        score += 10;
       }
     }
     
-    // Require at least 70% of the important words to match to prevent false positives
-    // e.g. "Adam Cole vs Johnny Gargano" -> 4 words. If "johmy" is misspelled, 3/4 = 75% match.
-    // e.g. "FTR vs Young Bucks" matching "Kenny Omega vs Young Bucks" -> 5/10 = 50% match (fails).
-    const matchPercentage = score / Math.max(1, matchWords.length);
-    
-    if (matchPercentage >= 0.7 && score > highestScore) {
+    const matchPercentage = (score >= 100 ? 1 : (score / 10) / Math.max(1, matchWords.length));
+    if (matchPercentage < 0.7) continue;
+
+    // Factor in event words to pick the best specific event image
+    const eventWords = normalizedEventName.split(' ').filter(w => w.length > 2 && w !== 'the' && w !== 'and' && w !== 'vs' && w !== 'in');
+    for (const word of eventWords) {
+      if (filename.includes(word)) {
+        score += 5;
+      }
+    }
+
+    if (score > highestScore) {
       highestScore = score;
       bestMatchUrl = url;
     }
