@@ -50,7 +50,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             <h1 className="hero-spatial-title">{match.match}</h1>
             
             <div className="hero-spatial-meta">
-              <span className="imdb-badge">{match.rating}</span>
+              {match.rating !== '0' && <span className="imdb-badge">{match.rating}</span>}
               <span>{match.date}</span>
               <span>{match.promotion}</span>
             </div>

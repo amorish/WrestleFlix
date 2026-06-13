@@ -86,11 +86,14 @@ export function generateThumbnail(match: Match): string {
     return bestMatchUrl;
   }
 
-  if (match.videoId) {
+  if (match.videoId || match.thumbnailId) {
     if (match.videoSource === 'dailymotion') {
       return `https://www.dailymotion.com/thumbnail/video/${match.videoId}`;
     }
-    return `https://img.youtube.com/vi/${match.videoId}/mqdefault.jpg`;
+    const targetId = match.thumbnailId || (Array.isArray(match.videoId) ? match.videoId[0] : match.videoId);
+    if (targetId && !targetId.startsWith('PL')) {
+      return `https://img.youtube.com/vi/${targetId}/mqdefault.jpg`;
+    }
   }
   // Fallback to random placeholder image if no video ID
   const hash = match.id.charCodeAt(0) + (match.match.charCodeAt(0) || 0);

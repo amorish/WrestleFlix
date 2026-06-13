@@ -23,9 +23,14 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
             <div className="play-overlay">
               <Play fill="white" size={40} />
             </div>
-            <div className="rating-badge-absolute">
-              <Star fill="#f5c518" color="#f5c518" size={14} /> {match.rating}
-            </div>
+            {match.videoId && typeof match.videoId === 'string' && match.videoId.startsWith('PL') && (
+              <div className="playlist-badge" style={{ bottom: '35px' }}>Playlist</div>
+            )}
+            {match.rating !== '0' && (
+              <div className="rating-badge-absolute">
+                <Star fill="#f5c518" color="#f5c518" size={14} /> {match.rating}
+              </div>
+            )}
           </div>
           
           <div className="detailed-info">

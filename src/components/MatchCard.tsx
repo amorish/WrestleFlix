@@ -21,6 +21,9 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
           <div className="match-card-image-wrapper">
             <img src={generateThumbnail(match)} alt={match.match} className="match-card-bg" />
             <img src={getPromotionLogo(match.promotion)} alt={match.promotion} className="promo-logo" />
+            {match.videoId && typeof match.videoId === 'string' && match.videoId.startsWith('PL') && (
+              <div className="playlist-badge">Playlist</div>
+            )}
             <div className="match-card-hover-overlay">
               <Play className="play-icon-large" size={48} />
             </div>
@@ -28,7 +31,7 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
           <div className="match-card-info">
             <div className="match-card-title-row">
               <h4>{match.match}</h4>
-              <div className="rating-stars">{match.rating}</div>
+              {match.rating !== '0' && <div className="rating-stars">{match.rating}</div>}
             </div>
             <p className="match-card-meta">{match.date} • {match.event}</p>
           </div>

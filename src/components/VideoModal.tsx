@@ -160,7 +160,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
           <h2>{match.match}</h2>
           <p>{match.event} • {match.date} • {match.promotion}</p>
           
-          <CustomStarRating rating={match.rating} />
+          {match.rating !== '0' && <CustomStarRating rating={match.rating} />}
           
           {match.description && (
             <div className="match-context">
@@ -170,20 +170,24 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
           )}
           
           <div className="video-buttons-container">
-            <a 
-              href={currentVideoId && match.videoSource !== 'dailymotion' ? `https://www.youtube.com/watch?v=${currentVideoId}` : `https://www.youtube.com/results?search_query=${searchQuery}`} 
-              target="_blank" 
-              rel="noreferrer" 
-            >
-              <img src={youtubeBtn} alt="Watch on YouTube" className="video-btn-img" />
-            </a>
-            <a 
-              href={currentVideoId && match.videoSource === 'dailymotion' ? `https://www.dailymotion.com/video/${currentVideoId}` : `https://www.dailymotion.com/search/${searchQuery}`} 
-              target="_blank" 
-              rel="noreferrer" 
-            >
-              <img src={dailymotionBtn} alt="Watch on DailyMotion" className="video-btn-img" />
-            </a>
+            {match.videoSource !== 'dailymotion' && (
+              <a 
+                href={currentVideoId ? (currentVideoId.startsWith('PL') ? `https://www.youtube.com/playlist?list=${currentVideoId}` : `https://www.youtube.com/watch?v=${currentVideoId}`) : `https://www.youtube.com/results?search_query=${searchQuery}`} 
+                target="_blank" 
+                rel="noreferrer" 
+              >
+                <img src={youtubeBtn} alt="Watch on YouTube" className="video-btn-img" />
+              </a>
+            )}
+            {(match.videoSource === 'dailymotion' || !match.videoSource) && (
+              <a 
+                href={currentVideoId && match.videoSource === 'dailymotion' ? `https://www.dailymotion.com/video/${currentVideoId}` : `https://www.dailymotion.com/search/${searchQuery}`} 
+                target="_blank" 
+                rel="noreferrer" 
+              >
+                <img src={dailymotionBtn} alt="Watch on DailyMotion" className="video-btn-img" />
+              </a>
+            )}
           </div>
         </div>
       </div>
