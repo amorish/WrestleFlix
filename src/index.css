@@ -50,8 +50,8 @@ body {
 /* Floating Topbar (Header) */
 .floating-topbar {
   position: relative; top: auto; left: auto;
-  width: 100%; max-width: 1800px; margin: 0 auto;
-  padding: 30px 2% 0 2%;
+  width: 100%; max-width: 1600px; margin: 0 auto;
+  padding: 30px 4% 0 4%;
   display: flex; align-items: center; justify-content: flex-start;
   z-index: 1000;
 }
@@ -162,19 +162,19 @@ body {
   }
   .hero-spatial-meta { justify-content: center; }
   .hero-spatial-poster { display: none; }
-  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 100%; height: auto; overflow-x: auto; justify-content: flex-start; margin-bottom: 10px; margin-top: 15px; flex-direction: row; }
+  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 100%; height: auto; overflow-x: auto; justify-content: flex-start; margin-bottom: 10px; margin-top: 15px; flex-direction: row; -webkit-mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent); mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent); }
   .spatial-dock-container::-webkit-scrollbar { display: none; }
 }
 
 /* Main Content */
-.main-content { position: relative; z-index: 5; margin-top: 40px; width: 100%; max-width: 1800px; margin: 40px auto 0 auto; }
+.main-content { position: relative; z-index: 5; margin-top: 40px; width: 100%; max-width: 1600px; margin: 40px auto 0 auto; }
 @media (max-width: 900px) {
   .main-content { margin-top: 15px; }
 }
 
 /* NEW: Explore Header Container */
 .explore-header-container {
-  display: flex; justify-content: space-between; align-items: flex-end; padding: 0 2%; margin-bottom: 6rem; flex-wrap: wrap; gap: 1rem;
+  display: flex; justify-content: space-between; align-items: flex-end; padding: 0 4%; margin-bottom: 6rem; flex-wrap: wrap; gap: 1rem;
 }
 .explore-header-text h2 { font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
 .explore-header-text p { font-size: 0.95rem; color: var(--text-secondary); }
@@ -240,13 +240,13 @@ body {
 
 /* Match Row */
 .match-row-container { margin-bottom: 3rem; }
-.row-header { display: flex; justify-content: space-between; align-items: center; padding: 0 2%; margin-bottom: 0.8rem; }
+.row-header { display: flex; justify-content: space-between; align-items: center; padding: 0 4%; margin-bottom: 0.8rem; }
 .row-title { font-size: 1.3rem; font-weight: 700; color: #fff; }
 .row-nav-arrows { display: flex; gap: 0.5rem; }
 .slider-arrow-top { background: rgba(40,40,45,0.6); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s; }
 .slider-arrow-top:hover { background: rgba(255,255,255,0.2); }
 .row-wrapper { position: relative; }
-.match-row { display: flex; gap: 24px; overflow-x: scroll; overflow-y: visible; scroll-behavior: smooth; padding: 10px 2% 30px 2%; }
+.match-row { display: flex; gap: 24px; overflow-x: scroll; overflow-y: visible; scroll-behavior: smooth; padding: 10px 4% 30px 4%; }
 .match-row::-webkit-scrollbar { display: none; }
 
 /* Match Card Structure */
@@ -277,7 +277,7 @@ body {
 .match-card-placeholder { background: #222; width: 100%; aspect-ratio: 16/9; border-radius: 8px; }
 
 /* NEW: Detailed Match Card List View */
-.detailed-results-container { padding: 0 2% 4rem 2%; }
+.detailed-results-container { padding: 0 4% 4rem 4%; }
 .detailed-list { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .detailed-match-card {
   display: flex; flex-direction: row; align-items: center; gap: 1.5rem; background: rgba(30,30,35,0.6); border-radius: 12px;
@@ -411,7 +411,7 @@ body {
   .detailed-thumbnail { width: 100%; }
   
   /* Header & Filter */
-  .explore-header-container { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+  .explore-header-container { flex-direction: column; align-items: flex-start; gap: 0.8rem; margin-bottom: 2rem; }
   .inline-filter-sort { width: 100%; flex-wrap: nowrap; gap: 0.5rem; }
   .compact-search { flex: 1; padding: 0.9rem 1.2rem; gap: 0.8rem; background: rgba(35,35,40,0.8); }
   .compact-search input { width: 100%; }
