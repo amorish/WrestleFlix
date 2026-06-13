@@ -7,7 +7,7 @@ import { VideoModal } from './components/VideoModal';
 import { FilterSortBar } from './components/FilterSortBar';
 import { DetailedMatchCard } from './components/DetailedMatchCard';
 import { SkeletonLoader } from './components/SkeletonLoader';
-import logoUrl from './assets/layout/WrestleFlix-cropped.svg';
+import logoUrl from './assets/layout/wrestleflix_logo.webp';
 
 function App() {
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
