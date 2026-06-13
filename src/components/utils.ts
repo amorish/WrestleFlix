@@ -28,8 +28,9 @@ export function generateThumbnail(match: Match): string {
   const normalizedMatchName = match.match.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
   const normalizedEventName = match.event ? match.event.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
   const normalizedDate = match.date ? match.date.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
+  const normalizedRating = match.rating ? match.rating.toString().toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
   
-  const validNumbers: string[] = `${normalizedMatchName} ${normalizedEventName} ${normalizedDate}`.match(/\b\d+\b/g) || [];
+  const validNumbers: string[] = `${normalizedMatchName} ${normalizedEventName} ${normalizedDate} ${normalizedRating}`.match(/\b\d+\b/g) || [];
   
   let bestMatchUrl = '';
   let highestScore = 0;
