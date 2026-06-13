@@ -98,7 +98,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       videoUrl = `https://archive.org/embed/${currentVideoId}?autoplay=1${startParam}`;
     } else if (match.videoSource !== 'vk') {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
-      videoUrl = `https://www.youtube.com/embed/${currentVideoId}?autoplay=1${startParam}`;
+      if (currentVideoId.startsWith('PL')) {
+        videoUrl = `https://www.youtube.com/embed/videoseries?list=${currentVideoId}&autoplay=1`;
+      } else {
+        videoUrl = `https://www.youtube.com/embed/${currentVideoId}?autoplay=1${startParam}`;
+      }
     }
   }
 

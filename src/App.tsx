@@ -9,6 +9,25 @@ import { DetailedMatchCard } from './components/DetailedMatchCard';
 import { SkeletonLoader } from './components/SkeletonLoader';
 import logoUrl from './assets/layout/wrestleflix_logo.webp';
 
+const historyOfWrestling: Match[] = [
+  { id: 'hist-1', match: 'AEW 2019-2025: A Crash Course in Rivalries, Violence & Lore', event: 'Documentary', promotion: 'AEW', date: '2025', rating: '0', videoId: 'F_fHUyoCmeM', videoSource: 'youtube' },
+  { id: 'hist-2', match: 'The COMPLETE History of WWE (4+ Hours)', event: 'Documentary', promotion: 'WWE', date: '2024', rating: '0', videoId: 'DxvetzhrFKQ', videoSource: 'youtube' },
+  { id: 'hist-3', match: 'The Complete History Of TNA Wrestling', event: 'Documentary', promotion: 'TNA', date: '2023', rating: '0', videoId: 'sIF-utqM9Y0', videoSource: 'youtube' },
+  { id: 'hist-4', match: 'History of NJPW', event: 'Documentary', promotion: 'NJPW', date: '2023', rating: '0', videoId: 'PLgqDyJZN9OYlC7dbsNRrLqTuw_f7OE3fc', videoSource: 'youtube' },
+  { id: 'hist-5', match: 'The Rise And Fall Of Ring Of Honor', event: 'Documentary', promotion: 'ROH', date: '2022', rating: '0', videoId: 'xUxrbJDWoCw', videoSource: 'youtube' },
+  { id: 'hist-6', match: 'The Entire History of Triple AAA | Documentary', event: 'Documentary', promotion: 'AAA', date: '2022', rating: '0', videoId: 'Olu2ZJlB4EY', videoSource: 'youtube' },
+  { id: 'hist-7', match: 'The Rise And Fall Of All Japan Pro Wrestling', event: 'Documentary', promotion: 'AJPW', date: '2021', rating: '0', videoId: 'I68GwY8DO4I', videoSource: 'youtube' },
+  { id: 'hist-8', match: 'The Complete History Of ECW', event: 'Documentary', promotion: 'ECW', date: '2021', rating: '0', videoId: 'q0vmLUV6aI4', videoSource: 'youtube' },
+  { id: 'hist-9', match: 'FULL DOCUMENTARY: The Rise & Fall of WCW', event: 'Documentary', promotion: 'WCW', date: '2020', rating: '0', videoId: 'JXmJXS5DElM', videoSource: 'youtube' },
+  { id: 'hist-10', match: 'Complete History Of Wrestling Moves (Wrestling Documentary)', event: 'Documentary', promotion: 'Various', date: '2020', rating: '0', videoId: 'I8pwiKdIJjM', videoSource: 'youtube' },
+];
+
+const fullEvents: Match[] = [
+  { id: 'fe-1', match: 'WWE TRIPLE AAA - Full Shows in Order', event: 'Full Event', promotion: 'AAA/WWE', date: 'Various', rating: '0', videoId: 'PLlj3Hc_QGrSdOnoJnKeMOR7Rg2UK1HY0v', videoSource: 'youtube' },
+  { id: 'fe-2', match: 'Full-Length Events from the WWE Vault', event: 'Full Event', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'PLfalIYDZtGGDBmKl0slVTSSHEbbi1iTRu', videoSource: 'youtube' },
+  { id: 'fe-3', match: 'NXT Full Events', event: 'Full Event', promotion: 'NXT', date: 'Various', rating: '0', videoId: 'PLEpTCGDuJrIlSuw9dmXVmpqQX80CjN4aP', videoSource: 'youtube' },
+];
+
 function App() {
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
   const [selectedPromotion, setSelectedPromotion] = useState<string>('All');
@@ -34,7 +53,10 @@ function App() {
 
   const filteredAndSortedMatches = useMemo(() => {
     let result = [...matches];
-    if (selectedPromotion !== 'All') {
+    if (selectedPromotion === 'Others') {
+      const topPromos = ['WWE', 'AEW', 'NJPW', 'WCW', 'TNA', 'ROH', 'AAA', 'ECW'];
+      result = result.filter(m => !topPromos.some(p => m.promotion.includes(p)));
+    } else if (selectedPromotion !== 'All') {
       result = result.filter(m => m.promotion === selectedPromotion);
     }
     if (selectedDecade !== 'All Years') {
@@ -86,15 +108,14 @@ function App() {
       });
     }
 
-    const topPromos = ['WWE', 'AEW', 'NJPW', 'WCW'];
-    rows.push(...topPromos.map(promo => ({
-      title: promo,
-      matches: remainingMatches.filter(m => m.promotion.includes(promo)).slice(0, 15)
-    })));
-    
     rows.push({
-      title: 'Other Promotions',
-      matches: remainingMatches.filter(m => !topPromos.some(p => m.promotion.includes(p))).slice(0, 15)
+      title: 'History of Wrestling',
+      matches: historyOfWrestling
+    });
+
+    rows.push({
+      title: 'FULL EVENT',
+      matches: fullEvents
     });
     
     return rows.filter(r => r.matches.length > 0);

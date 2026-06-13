@@ -149,7 +149,7 @@ body {
     background-size: 100% auto; background-position: top; background-repeat: no-repeat; background-color: #0b0b0b; 
   }
   .hero-overlay-spatial {
-    background: linear-gradient(to bottom, transparent 0%, transparent 40vw, #0b0b0b 56.25vw, #0b0b0b 100%);
+    background: linear-gradient(to bottom, transparent 0%, transparent 25vw, #0b0b0b 51vw, #0b0b0b 100%);
   }
   .spatial-hero-content { 
     flex-direction: column; padding: 50vw 1.5rem 2rem 1.5rem; width: 100%; 

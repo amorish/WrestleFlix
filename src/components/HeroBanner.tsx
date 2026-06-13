@@ -37,6 +37,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
     { id: 'ROH', label: 'ROH', logo: rohLogo },
     { id: 'AAA', label: 'AAA', logo: aaaLogo },
     { id: 'ECW', label: 'ECW', logo: ecwLogo },
+    { id: 'Others', label: 'Others', logo: null },
   ];
 
   return (
