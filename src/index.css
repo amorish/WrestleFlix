@@ -156,7 +156,7 @@ body {
   }
   .hero-spatial-meta { justify-content: center; }
   .hero-spatial-poster { display: none; }
-  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 90%; overflow-x: auto; justify-content: center; margin-bottom: 10px; margin-top: 15px; flex-direction: row; }
+  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 90%; overflow-x: auto; justify-content: flex-start; margin-bottom: 10px; margin-top: 15px; flex-direction: row; }
   .spatial-dock-container::-webkit-scrollbar { display: none; }
 }
 
