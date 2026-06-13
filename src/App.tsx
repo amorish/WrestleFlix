@@ -6,7 +6,7 @@ import { MatchRow } from './components/MatchRow';
 import { VideoModal } from './components/VideoModal';
 import { FilterSortBar } from './components/FilterSortBar';
 import { DetailedMatchCard } from './components/DetailedMatchCard';
-import { SkeletonLoader } from './components/SkeletonLoader';
+
 import logoUrl from './assets/layout/wrestleflix_logo.webp';
 
 const historyOfWrestling: Match[] = [
@@ -34,15 +34,6 @@ function App() {
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'highest_rated'>('newest');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDecade, setSelectedDecade] = useState('All Years');
-  const [isAppLoading, setIsAppLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate content loading (e.g. fetching matches, caching images)
-    const timer = setTimeout(() => {
-      setIsAppLoading(false);
-    }, 1200);
-    return () => clearTimeout(timer);
-  }, []);
 
   const matches: Match[] = matchesData as Match[];
   
@@ -121,14 +112,7 @@ function App() {
     return rows.filter(r => r.matches.length > 0);
   }, [remainingMatches, searchQuery, selectedPromotion]);
 
-  if (isAppLoading) {
-    return (
-      <div className="app-container">
-        <div className="spatial-background"></div>
-        <SkeletonLoader />
-      </div>
-    );
-  }
+
 
   return (
     <div className="app-container">
