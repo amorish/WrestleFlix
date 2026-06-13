@@ -47,7 +47,7 @@ function App() {
     result.sort((a, b) => {
       if (sortOrder === 'newest') return new Date(b.date).getTime() - new Date(a.date).getTime();
       if (sortOrder === 'oldest') return new Date(a.date).getTime() - new Date(b.date).getTime();
-      if (sortOrder === 'highest_rated') return b.rating.length - a.rating.length;
+      if (sortOrder === 'highest_rated') return parseFloat(b.rating) - parseFloat(a.rating);
       return 0;
     });
     return result;
