@@ -3,7 +3,7 @@ import { Search } from 'lucide-react';
 import { CustomDropdown } from './CustomDropdown';
 
 interface FilterSortBarProps {
-  promotions: { id: string; label: string; }[];
+  promotions: string[];
   selectedPromotion: string;
   onPromotionChange: (promo: string) => void;
   sortOrder: 'newest' | 'oldest' | 'highest_rated';
@@ -15,9 +15,6 @@ interface FilterSortBarProps {
 }
 
 export const FilterSortBar: React.FC<FilterSortBarProps> = ({
-  promotions,
-  selectedPromotion,
-  onPromotionChange,
   sortOrder,
   onSortChange,
   searchQuery,
