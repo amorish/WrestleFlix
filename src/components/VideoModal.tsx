@@ -115,9 +115,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
-        <button className="close-btn" onClick={onClose}>
-          <X size={30} />
-        </button>
+        <div className="modal-header" style={{ display: 'flex', justifyContent: 'flex-end', padding: '10px 15px', background: '#000' }}>
+          <button className="close-btn" onClick={onClose}>
+            <X size={30} />
+          </button>
+        </div>
         <div className="video-container">
           {match.videoSource === 'vk' ? (
             <div className="vk-fallback-container">
