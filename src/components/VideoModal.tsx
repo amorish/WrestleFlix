@@ -40,6 +40,8 @@ const CustomStarRating = ({ rating }: { rating: string }) => {
 };
 
 export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
@@ -165,7 +167,19 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
           {match.description && (
             <div className="match-context">
               <h3>The Story</h3>
-              <p>{match.description}</p>
+              <p>
+                {isDescriptionExpanded || match.description.length <= 180 
+                  ? match.description 
+                  : `${match.description.slice(0, 180)}...`}
+              </p>
+              {match.description.length > 180 && (
+                <button 
+                  className="see-more-btn" 
+                  onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                >
+                  {isDescriptionExpanded ? 'See Less' : 'See More'}
+                </button>
+              )}
             </div>
           )}
           

@@ -545,3 +545,18 @@ body {
   z-index: 5;
   border: 1px solid rgba(255,255,255,0.2);
 }
+.see-more-btn {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s;
+}
+.see-more-btn:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
