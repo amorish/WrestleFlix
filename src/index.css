@@ -54,7 +54,7 @@ body {
   z-index: 1000;
 }
 .logo-container { display: flex; align-items: center; gap: 0.8rem; cursor: pointer; }
-.logo-image { height: 45px; width: auto; }
+.logo-image { height: 45px; width: auto; transform: scale(3); transform-origin: left center; }
 .topbar-actions { display: flex; align-items: center; gap: 1rem; }
 .profile-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.2); }
 
@@ -404,7 +404,7 @@ body {
 @media (max-width: 480px) {
   /* Floating Topbar */
   .floating-topbar { top: 20px; left: 5%; }
-  .logo-image { height: 38px; }
+  .logo-image { height: 38px; transform: scale(3.5); transform-origin: left center; }
 
   /* Hero Banner */
   .spatial-hero-wrapper { padding: 0 4%; }
