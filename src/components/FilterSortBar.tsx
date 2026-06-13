@@ -39,7 +39,7 @@ export const FilterSortBar: React.FC<FilterSortBarProps> = ({
   return (
     <div className="inline-filter-sort">
       <div className="compact-search">
-        <Search size={16} className="search-icon" />
+        <Search size={18} className="search-icon" />
         <input 
           type="text" 
           placeholder="Search Match" 
