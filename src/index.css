@@ -151,7 +151,7 @@ body {
 
 @media (max-width: 900px) {
   .floating-topbar { padding: 15px 4% 0 4%; }
-  .spatial-hero-wrapper { flex-direction: column; align-items: center; margin-top: 15px; }
+  .spatial-hero-wrapper { flex-direction: column; align-items: center; margin-top: 5px; }
   .spatial-hero-container { 
     height: auto; min-height: 0; padding-bottom: 0; aspect-ratio: auto; flex-direction: column; align-items: center; 
     background-size: 100% auto; background-position: top; background-repeat: no-repeat; background-color: #0b0b0b; 
@@ -161,7 +161,7 @@ body {
   }
   .spatial-hero-content { 
     flex-direction: column; padding: 50vw 1.5rem 2rem 1.5rem; width: 100%; 
-    text-align: center; align-items: center;
+    text-align: center; align-items: center; min-height: 0; height: auto; justify-content: flex-start;
   }
   .hero-spatial-meta { justify-content: center; }
   .hero-spatial-poster { display: none; }
@@ -171,6 +171,9 @@ body {
 
 /* Main Content */
 .main-content { position: relative; z-index: 5; margin-top: 40px; width: 100%; max-width: 1600px; margin: 40px auto 0 auto; }
+@media (max-width: 900px) {
+  .main-content { margin-top: 15px; }
+}
 
 /* NEW: Explore Header Container */
 .explore-header-container {
@@ -409,12 +412,8 @@ body {
   .detailed-match-card { flex-direction: column; }
   .detailed-thumbnail { width: 100%; }
   
-  /* Hero Banner */
-  .spatial-hero-wrapper { margin-top: 80px; }
-  .hero-spatial-title { font-size: 1.8rem; }
-  
   /* Header & Filter */
-  .explore-header-container { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .explore-header-container { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
   .inline-filter-sort { width: 100%; flex-wrap: nowrap; gap: 0.5rem; }
   .compact-search { flex: 1; padding: 0.8rem 1rem; }
   .compact-search input { width: 100%; }
