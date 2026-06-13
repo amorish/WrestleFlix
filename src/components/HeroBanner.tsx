@@ -7,6 +7,8 @@ import njpwLogo from '../assets/promotions/njpw.svg';
 import wcwLogo from '../assets/promotions/Wcw.svg';
 import tnaLogo from '../assets/promotions/TNA.svg';
 import rohLogo from '../assets/promotions/ROH.svg';
+import aaaLogo from '../assets/promotions/aaa.svg';
+import ecwLogo from '../assets/promotions/ecw.svg';
 
 interface HeroBannerProps {
   match: Match | null;
@@ -33,6 +35,8 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
     { id: 'WCW', label: 'WCW', logo: wcwLogo },
     { id: 'TNA', label: 'TNA', logo: tnaLogo },
     { id: 'ROH', label: 'ROH', logo: rohLogo },
+    { id: 'AAA', label: 'AAA', logo: aaaLogo },
+    { id: 'ECW', label: 'ECW', logo: ecwLogo },
   ];
 
   return (
