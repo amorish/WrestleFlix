@@ -351,8 +351,12 @@ body {
   .custom-dropdown-trigger { width: 100%; justify-content: space-between; }
   
   /* Video Modal */
-  .modal-info h2 { font-size: 2.2rem; }
+  .modal-info h2 { font-size: 2rem; }
   .modal-info p { font-size: 1.1rem; }
+  .star-box { width: 42px; height: 42px; }
+  .star-svg { width: 26px; height: 26px; }
+  .rating-number { font-size: 1.8rem; }
+  .video-btn-img { height: 60px; }
 }
 
 @media (max-width: 480px) {
@@ -377,8 +381,13 @@ body {
   /* Modal */
   .modal-backdrop { padding: 1rem; }
   .modal-info { padding: 1.2rem; }
-  .modal-info h2 { font-size: 1.8rem; }
-  .custom-star-rating { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-  .video-buttons-container { flex-wrap: wrap; }
-  .video-btn-img { height: 60px; }
+  .modal-info h2 { font-size: 1.5rem; }
+  .modal-info p { font-size: 0.95rem; margin-bottom: 1rem; }
+  .custom-star-rating { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .stars-container { gap: 0.3rem; }
+  .star-box { width: 34px; height: 34px; border-radius: 6px; }
+  .star-svg { width: 20px; height: 20px; }
+  .rating-number { font-size: 1.5rem; margin-left: 0.2rem; }
+  .video-buttons-container { flex-wrap: wrap; gap: 0.8rem; }
+  .video-btn-img { height: 45px; }
 }
