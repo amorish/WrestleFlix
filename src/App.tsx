@@ -64,11 +64,21 @@ function App() {
   const rowsByPromotion = useMemo(() => {
     if (searchQuery || selectedPromotion !== 'All') return null;
     
+    const rows = [];
+    
+    // Add a mixed section at the top containing top matches from any promotion
+    if (remainingMatches.length > 0) {
+      rows.push({
+        title: 'Mixed',
+        matches: remainingMatches.slice(0, 15)
+      });
+    }
+
     const topPromos = ['WWE', 'AEW', 'NJPW', 'WCW'];
-    const rows = topPromos.map(promo => ({
+    rows.push(...topPromos.map(promo => ({
       title: promo,
       matches: remainingMatches.filter(m => m.promotion.includes(promo)).slice(0, 15)
-    }));
+    })));
     
     rows.push({
       title: 'Other Promotions',
