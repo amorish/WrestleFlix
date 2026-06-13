@@ -146,9 +146,10 @@ body {
 .btn-spatial-secondary:hover { background: rgba(70, 70, 75, 0.8); }
 
 @media (max-width: 900px) {
-  .spatial-hero-wrapper { flex-direction: column; align-items: center; margin-top: 20px; }
+  .floating-topbar { padding: 15px 4% 0 4%; }
+  .spatial-hero-wrapper { flex-direction: column; align-items: center; margin-top: 15px; }
   .spatial-hero-container { 
-    height: auto; padding-bottom: 0; aspect-ratio: auto; flex-direction: column; align-items: center; 
+    height: auto; min-height: 0; padding-bottom: 0; aspect-ratio: auto; flex-direction: column; align-items: center; 
     background-size: 100% auto; background-position: top; background-repeat: no-repeat; background-color: #0b0b0b; 
   }
   .hero-overlay-spatial {
@@ -160,7 +161,7 @@ body {
   }
   .hero-spatial-meta { justify-content: center; }
   .hero-spatial-poster { display: none; }
-  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 90%; overflow-x: auto; justify-content: flex-start; margin-bottom: 10px; margin-top: 15px; flex-direction: row; }
+  .spatial-dock-container { position: relative; bottom: auto; left: auto; transform: none; width: 100%; overflow-x: auto; justify-content: flex-start; margin-bottom: 10px; margin-top: 15px; flex-direction: row; }
   .spatial-dock-container::-webkit-scrollbar { display: none; }
 }
 
