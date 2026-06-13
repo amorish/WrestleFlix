@@ -137,7 +137,6 @@ function App() {
           <div className="explore-header-container">
             <div className="explore-header-text">
               <h2>Explore matches curated for you</h2>
-              <p>Discover historical classics, hidden gems, and unforgettable experiences.</p>
             </div>
             <FilterSortBar 
               promotions={promotions}
@@ -158,7 +157,6 @@ function App() {
             <div className="explore-header-container" style={{ paddingBottom: '1rem' }}>
               <div className="explore-header-text">
                 <h2>Explore matches curated for you</h2>
-                <p>Discover historical classics, hidden gems, and unforgettable experiences.</p>
               </div>
               <FilterSortBar 
                 promotions={promotions}
