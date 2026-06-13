@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# WrestleFlix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+WrestleFlix is a React based web application that serves as a curated catalog for professional wrestling matches. It provides users with a modern interface to browse historical classics, highly rated encounters, and unforgettable experiences across major wrestling promotions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Curated Match Catalog: Browse a comprehensive database of wrestling matches sorted by promotions, dates, and ratings.
+* Dynamic Video Integration: Directly watch full matches via integrated YouTube and Dailymotion video players within a custom modal.
+* Responsive Design: A premium user interface featuring fluid animations, custom star ratings, and modern typography optimized for both desktop and mobile viewing.
+* Filtering and Sorting: Quickly find specific matches using the dedicated search bar, promotion filters, and rating based sorting options.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Framework: React with TypeScript
+* Build Tool: Vite
+* Styling: Vanilla CSS with custom layouts
+* Icons: Lucide React
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The codebase is organized into modular components to ensure maintainability and strict separation of concerns.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* src/components
+  * DetailedMatchCard.tsx: Renders individual match information in a detailed list view, including the custom star rating system.
+  * FilterSortBar.tsx: Provides UI controls for searching, filtering by promotion, and sorting matches.
+  * HeroBanner.tsx: Displays the featured match at the top of the application with a spatial layout.
+  * MatchRow.tsx: Organizes matches into horizontal scrolling categories.
+  * VideoModal.tsx: A dedicated modal component handling embedded video playback and external viewing links.
+* src/data: Contains the static JSON data source powering the application.
+* src/assets: Houses all static assets, layout images, and promotion logos.
+* src/types.ts: Defines shared TypeScript interfaces for match data structures.
+* src/utils.ts: Utility functions for generating thumbnails and formatting data.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Local Development
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+To run this project locally, ensure you have Node.js installed.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Install the dependencies using npm:
+   npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Start the development server:
+   npm run dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The application will be accessible at the local URL provided in your terminal output.
+
+## Deployment
+
+This application is configured for deployment on Vercel. You can deploy updates directly by connecting the repository to Vercel or by using the Vercel CLI:
+
+npx vercel --prod
