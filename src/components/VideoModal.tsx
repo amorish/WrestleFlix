@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import type { Match } from '../types';
 import { X } from 'lucide-react';
 import youtubeBtn from '../assets/layout/watch it on youtube.webp';
@@ -39,6 +40,13 @@ const CustomStarRating = ({ rating }: { rating: string }) => {
 };
 
 export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
   if (!match) return null;
 
   const searchQuery = encodeURIComponent(`${match.match} ${match.promotion} ${match.date} full match`);
