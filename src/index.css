@@ -421,6 +421,27 @@ body {
   
   /* Match Row cards */
   .match-card-wrapper { flex: 0 0 85vw; }
+
+  /* Detailed card */
+  .detailed-info { padding: 1rem; }
+  .detailed-title { font-size: 1.2rem; }
+  .detailed-meta { flex-direction: column; gap: 0.5rem; }
+  .detailed-actions { width: 100%; }
+  .detailed-actions .btn { width: 100%; justify-content: center; }
+  
+  /* Modal */
+  .modal-backdrop { padding: 0.5rem; }
+  .modal-info { padding: 1rem; }
+  .modal-info h2 { font-size: 1.4rem; }
+  .modal-info p { font-size: 0.95rem; margin-bottom: 1rem; }
+  .custom-star-rating { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .stars-container { gap: 0.3rem; }
+  .star-box { width: 28px; height: 28px; border-radius: 5px; }
+  .star-svg { width: 16px; height: 16px; }
+  .rating-number { font-size: 1.2rem; margin-left: 0.2rem; }
+  .video-buttons-container { flex-wrap: wrap; gap: 0.5rem; }
+  .video-btn-img { height: 45px; }
+  .video-btn-img[src*="dailymotion"] { height: 50px; }
 }
 
 /* Skeleton Loader */
@@ -459,24 +480,3 @@ body {
   .skeleton-card { width: 240px; height: 135px; }
 }
   
-  /* Detailed card */
-  .detailed-info { padding: 1rem; }
-  .detailed-title { font-size: 1.2rem; }
-  .detailed-meta { flex-direction: column; gap: 0.5rem; }
-  .detailed-actions { width: 100%; }
-  .detailed-actions .btn { width: 100%; justify-content: center; }
-  
-  /* Modal */
-  .modal-backdrop { padding: 0.5rem; }
-  .modal-info { padding: 1rem; }
-  .modal-info h2 { font-size: 1.4rem; }
-  .modal-info p { font-size: 0.95rem; margin-bottom: 1rem; }
-  .custom-star-rating { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; }
-  .stars-container { gap: 0.3rem; }
-  .star-box { width: 28px; height: 28px; border-radius: 5px; }
-  .star-svg { width: 16px; height: 16px; }
-  .rating-number { font-size: 1.2rem; margin-left: 0.2rem; }
-  .video-buttons-container { flex-wrap: wrap; gap: 0.5rem; }
-  .video-btn-img { height: 45px; }
-  .video-btn-img[src*="dailymotion"] { height: 50px; }
-}
