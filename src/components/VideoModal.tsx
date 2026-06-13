@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { Match } from '../types';
 import { X, Play } from 'lucide-react';
 import youtubeBtn from '../assets/layout/watch it on youtube.webp';
@@ -49,14 +49,41 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
 
   if (!match) return null;
 
+  const isMultiPart = Array.isArray(match.videoId);
+  const videoIds = isMultiPart ? (match.videoId as string[]) : (match.videoId ? [match.videoId as string] : []);
+  const [currentPart, setCurrentPart] = useState(0);
+
+  useEffect(() => {
+    setCurrentPart(0);
+  }, [match.videoId]);
+
+  useEffect(() => {
+    if (!isMultiPart) return;
+
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin !== 'https://www.dailymotion.com') return;
+      try {
+        const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+        if (data && data.event === 'video_end') {
+          setCurrentPart(prev => (prev < videoIds.length - 1 ? prev + 1 : prev));
+        }
+      } catch (e) {}
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, [isMultiPart, videoIds.length]);
+
   const searchQuery = encodeURIComponent(`${match.match} ${match.promotion} ${match.date} full match`);
   
   let videoUrl = `https://www.youtube.com/embed?listType=search&list=${searchQuery}&autoplay=1`;
-  if (match.videoId) {
+  const currentVideoId = videoIds.length > 0 ? videoIds[currentPart] : null;
+
+  if (currentVideoId) {
     if (match.videoSource === 'dailymotion') {
-      videoUrl = `https://www.dailymotion.com/embed/video/${match.videoId}?autoplay=1`;
+      videoUrl = `https://www.dailymotion.com/embed/video/${currentVideoId}?autoplay=1&api=postMessage`;
     } else if (match.videoSource !== 'vk') {
-      videoUrl = `https://www.youtube.com/embed/${match.videoId}?autoplay=1`;
+      videoUrl = `https://www.youtube.com/embed/${currentVideoId}?autoplay=1`;
     }
   }
 
@@ -71,7 +98,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
             <div className="vk-fallback-container">
               <h3>This match is hosted on VK</h3>
               <p>Due to VK platform restrictions, this video cannot be embedded directly.</p>
-              <a href={`https://vk.com/${match.videoId}`} target="_blank" rel="noreferrer" className="btn btn-accent vk-btn">
+              <a href={`https://vk.com/${currentVideoId}`} target="_blank" rel="noreferrer" className="btn btn-accent vk-btn">
                 <Play fill="currentColor" size={16}/> Open Full Event on VK
               </a>
               {match.timestamp && (
@@ -87,6 +114,29 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
             ></iframe>
           )}
         </div>
+        {isMultiPart && (
+          <div className="multipart-controls" style={{ padding: '15px 2rem 0', display: 'flex', gap: '10px', background: '#000', overflowX: 'auto' }}>
+            {videoIds.map((id, index) => (
+              <button 
+                key={id}
+                onClick={() => setCurrentPart(index)}
+                style={{ 
+                  padding: '8px 16px', 
+                  fontSize: '14px', 
+                  borderRadius: '4px', 
+                  cursor: 'pointer',
+                  background: currentPart === index ? '#E50914' : '#333',
+                  color: '#fff',
+                  border: 'none',
+                  whiteSpace: 'nowrap',
+                  fontWeight: currentPart === index ? 'bold' : 'normal'
+                }}
+              >
+                Part {index + 1}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="modal-info">
           <h2>{match.match}</h2>
           <p>{match.event} • {match.date} • {match.promotion}</p>
@@ -102,14 +152,14 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
           
           <div className="video-buttons-container">
             <a 
-              href={match.videoId && match.videoSource !== 'dailymotion' ? `https://www.youtube.com/watch?v=${match.videoId}` : `https://www.youtube.com/results?search_query=${searchQuery}`} 
+              href={currentVideoId && match.videoSource !== 'dailymotion' ? `https://www.youtube.com/watch?v=${currentVideoId}` : `https://www.youtube.com/results?search_query=${searchQuery}`} 
               target="_blank" 
               rel="noreferrer" 
             >
               <img src={youtubeBtn} alt="Watch on YouTube" className="video-btn-img" />
             </a>
             <a 
-              href={match.videoId && match.videoSource === 'dailymotion' ? `https://www.dailymotion.com/video/${match.videoId}` : `https://www.dailymotion.com/search/${searchQuery}`} 
+              href={currentVideoId && match.videoSource === 'dailymotion' ? `https://www.dailymotion.com/video/${currentVideoId}` : `https://www.dailymotion.com/search/${searchQuery}`} 
               target="_blank" 
               rel="noreferrer" 
             >

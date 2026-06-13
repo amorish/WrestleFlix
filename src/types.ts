@@ -5,7 +5,7 @@ export interface Match {
   promotion: string;
   event: string;
   rating: string;
-  videoId?: string;
+  videoId?: string | string[];
   videoSource?: 'youtube' | 'dailymotion' | 'vk';
   timestamp?: string;
   description?: string;
