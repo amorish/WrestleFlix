@@ -9,4 +9,5 @@ export interface Match {
   videoSource?: 'youtube' | 'dailymotion' | 'vk' | 'bilibili' | 'archive';
   timestamp?: string;
   thumbnailId?: string;
+  description?: string;
 }
