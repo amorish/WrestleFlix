@@ -59,16 +59,16 @@ function App() {
     const topPromos = ['WWE', 'AEW', 'NJPW', 'WCW'];
     const rows = topPromos.map(promo => ({
       title: promo,
-      matches: matches.filter(m => m.promotion.includes(promo)).slice(0, 15)
+      matches: filteredAndSortedMatches.filter(m => m.promotion.includes(promo)).slice(0, 15)
     }));
     
     rows.push({
       title: 'Other Promotions',
-      matches: matches.filter(m => !topPromos.some(p => m.promotion.includes(p))).slice(0, 15)
+      matches: filteredAndSortedMatches.filter(m => !topPromos.some(p => m.promotion.includes(p))).slice(0, 15)
     });
     
     return rows.filter(r => r.matches.length > 0);
-  }, [matches, searchQuery, selectedPromotion]);
+  }, [filteredAndSortedMatches, searchQuery, selectedPromotion]);
 
   const heroMatch = useMemo(() => {
     return filteredAndSortedMatches.length > 0 ? filteredAndSortedMatches[0] : matches[0];
