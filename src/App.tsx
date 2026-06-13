@@ -88,7 +88,7 @@ function App() {
       <div className="spatial-background"></div>
       
       <nav className="floating-topbar">
-        <div className="logo-container">
+        <div className="logo-container" onClick={() => window.location.reload()}>
           <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" />
         </div>
       </nav>
