@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import type { Match } from '../types';
-import { X } from 'lucide-react';
+import { X, Play } from 'lucide-react';
 import youtubeBtn from '../assets/layout/watch it on youtube.webp';
 import dailymotionBtn from '../assets/layout/watch it on dailymotion.webp';
 
@@ -55,7 +55,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
   if (match.videoId) {
     if (match.videoSource === 'dailymotion') {
       videoUrl = `https://www.dailymotion.com/embed/video/${match.videoId}?autoplay=1`;
-    } else {
+    } else if (match.videoSource !== 'vk') {
       videoUrl = `https://www.youtube.com/embed/${match.videoId}?autoplay=1`;
     }
   }
@@ -67,12 +67,25 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
           <X size={30} />
         </button>
         <div className="video-container">
-          <iframe
-            src={videoUrl}
-            title="Video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          {match.videoSource === 'vk' ? (
+            <div className="vk-fallback-container">
+              <h3>This match is hosted on VK</h3>
+              <p>Due to VK platform restrictions, this video cannot be embedded directly.</p>
+              <a href={`https://vk.com/${match.videoId}`} target="_blank" rel="noreferrer" className="btn btn-accent vk-btn">
+                <Play fill="currentColor" size={16}/> Open Full Event on VK
+              </a>
+              {match.timestamp && (
+                <p className="vk-timestamp">The actual match begins at <strong>{match.timestamp}</strong></p>
+              )}
+            </div>
+          ) : (
+            <iframe
+              src={videoUrl}
+              title="Video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          )}
         </div>
         <div className="modal-info">
           <h2>{match.match}</h2>

@@ -6,7 +6,7 @@ export interface Match {
   event: string;
   rating: string;
   videoId?: string;
-  videoSource?: 'youtube' | 'dailymotion';
+  videoSource?: 'youtube' | 'dailymotion' | 'vk';
+  timestamp?: string;
   description?: string;
 }
-

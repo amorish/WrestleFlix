@@ -486,3 +486,43 @@ body {
   .skeleton-card { width: 240px; height: 135px; }
 }
   
+.vk-fallback-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #141414;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.vk-fallback-container h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.vk-fallback-container p {
+  color: #aaa;
+  margin-bottom: 20px;
+}
+.vk-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  padding: 12px 24px;
+  background: #0077FF;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.vk-btn:hover {
+  background: #0060cc;
+  transform: scale(1.05);
+}
+.vk-timestamp {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
