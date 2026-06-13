@@ -153,7 +153,7 @@ body {
     background-size: 100% auto; background-position: top; background-repeat: no-repeat; background-color: #0b0b0b; 
   }
   .hero-overlay-spatial {
-    background: linear-gradient(to bottom, transparent 0%, transparent 25vw, #0b0b0b 51vw, #0b0b0b 100%);
+    background: linear-gradient(to bottom, transparent 0%, transparent 20vw, #0b0b0b 48vw, #0b0b0b 100%);
   }
   .spatial-hero-content { 
     flex-direction: column; padding: 50vw 1.5rem 2rem 1.5rem; width: 100%; 
@@ -427,10 +427,13 @@ body {
   .video-btn-img[src*="dailymotion"] { height: 56px; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   /* Floating Topbar */
-  .floating-topbar { top: 20px; left: 5%; }
   .logo-image { height: 38px; transform: scale(3.5); transform-origin: left center; }
+  
+  /* Explore Header Text Fix */
+  .explore-header-text h2 { font-size: 1.4rem; }
+  .explore-header-text p { font-size: 0.85rem; }
 
   /* Hero Banner */
   .spatial-hero-wrapper { padding: 0 4%; }
