@@ -371,8 +371,8 @@
     "promotion": "AJPW",
     "event": "Super Power Series Night 8",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "LfS2siawvVk",
+    "videoSource": "youtube"
   },
   {
     "id": "39",
@@ -451,8 +451,8 @@
     "promotion": "AJPW",
     "event": "Summer Action Series Night 1",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "IyeVZfo8VbQ",
+    "videoSource": "youtube"
   },
   {
     "id": "47",
@@ -530,8 +530,8 @@
     "promotion": "AJPW",
     "event": "New Year Giant Series Night 20",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "kaSGdQ1fciI",
+    "videoSource": "youtube"
   },
   {
     "id": "55",
@@ -610,8 +610,8 @@
     "promotion": "AAA",
     "event": "When Worlds Collide",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "603U_62GeSg",
+    "videoSource": "youtube"
   },
   {
     "id": "63",
@@ -650,8 +650,8 @@
     "promotion": "AJPW",
     "event": "New Year Giant Series Night 17",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "I0CMLSK6uR8",
+    "videoSource": "youtube"
   },
   {
     "id": "67",
@@ -690,8 +690,8 @@
     "promotion": "AJPW",
     "event": "Super Power Series Night 15",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "X2OLvGT5ROU",
+    "videoSource": "youtube"
   },
   {
     "id": "71",
@@ -710,8 +710,8 @@
     "promotion": "AJPW",
     "event": "Summer Action Series Night 1",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "38xWXVuJQwE",
+    "videoSource": "youtube"
   },
   {
     "id": "73",
@@ -770,8 +770,8 @@
     "promotion": "AJPW",
     "event": "Super Power Series Night 5",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "p5cqgoEvQNM",
+    "videoSource": "youtube"
   },
   {
     "id": "79",
@@ -799,8 +799,8 @@
     "promotion": "AJPW",
     "event": "Real World Tag League Night 16 (Final)",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "yO1f8Xcj4NQ",
+    "videoSource": "youtube"
   },
   {
     "id": "82",
@@ -859,8 +859,8 @@
     "promotion": "AJPW",
     "event": "Real World Tag League Night 15 (Final)",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "d2MTsi0GuaY",
+    "videoSource": "youtube"
   },
   {
     "id": "88",
@@ -899,8 +899,8 @@
     "promotion": "AJPW",
     "event": "October Giant Series Night 11",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "gTO6BfUcbjk",
+    "videoSource": "youtube"
   },
   {
     "id": "92",
@@ -1419,8 +1419,8 @@
     "promotion": "NJPW",
     "event": "Fighting Spirit Unleashed",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "HHhalJbG4Zs",
+    "videoSource": "youtube"
   },
   {
     "id": "144",
@@ -1849,8 +1849,8 @@
     "promotion": "AEW",
     "event": "Dynamite",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "vfNHoQuj2_g",
+    "videoSource": "youtube"
   },
   {
     "id": "187",
@@ -1929,8 +1929,8 @@
     "promotion": "AAA",
     "event": "H\u00e9roes Inmortales XIV",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "JhEHHyFgqKA",
+    "videoSource": "youtube"
   },
   {
     "id": "195",
@@ -2029,8 +2029,8 @@
     "promotion": "AEW",
     "event": "Double or Nothing",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "LAxR8MI7baM",
+    "videoSource": "youtube"
   },
   {
     "id": "205",
@@ -2157,8 +2157,8 @@
     "promotion": "ROH",
     "event": "Final Battle",
     "rating": "5.5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "hDPbwGH2xVk",
+    "videoSource": "youtube"
   },
   {
     "id": "218",
@@ -2277,8 +2277,8 @@
     "promotion": "NJPW",
     "event": "Dominion 6.4 in Osaka-jo Hall",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "dStM9bKw3Bs",
+    "videoSource": "youtube"
   },
   {
     "id": "230",
@@ -3004,7 +3004,9 @@
     "match": "Team Mexico ( \u00c1ngel de Oro , Atlantis Jr. , Difunto, M\u00e1scara Dorada , Ne\u00f3n , M\u00edstico , Templario , Tit\u00e1n , Volador Jr. and Zandokan Jr. ) vs. Team International ( Action Andretti , \"Speedball\" Mike Bailey , Donovan Dijak , Taiji Ishimori , The Beast Mortos , Michael Oku , Rocky Romero , Lio Rush , TJP and Robbie X )",
     "promotion": "CMLL",
     "event": "International Gran Prix",
-    "rating": "5"
+    "rating": "5",
+    "videoId": "pe_R6uDTcQE",
+    "videoSource": "youtube"
   },
   {
     "id": "303",
@@ -3062,8 +3064,8 @@
     "promotion": "AEW",
     "event": "Dynamite Blood and Guts",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "jOWVuSEoWwQ",
+    "videoSource": "youtube"
   },
   {
     "id": "309",
@@ -3102,8 +3104,8 @@
     "promotion": "AEW",
     "event": "Dynamite Winter Is Coming",
     "rating": "5.25",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "PRCxHkyeI-s",
+    "videoSource": "youtube"
   },
   {
     "id": "313",
@@ -3162,8 +3164,8 @@
     "promotion": "AEW",
     "event": "Dynamite",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "axu_I2do0gc",
+    "videoSource": "youtube"
   },
   {
     "id": "319",
@@ -3172,8 +3174,8 @@
     "promotion": "AEW",
     "event": "Dynamite",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "rOTRgaw4Rdo",
+    "videoSource": "youtube"
   },
   {
     "id": "320",
@@ -3222,8 +3224,8 @@
     "promotion": "CMLL",
     "event": "Super Viernes",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null
+    "videoId": "S1EPVYogT44",
+    "videoSource": "youtube"
   },
   {
     "id": "325",
