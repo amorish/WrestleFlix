@@ -110,7 +110,7 @@ body {
 /* Dock (Promotions) */
 .spatial-dock-container {
   position: static; transform: none;
-  display: flex; flex-direction: column; gap: 1.2rem; padding: 0 0.5rem;
+  display: flex; flex-direction: column; gap: 1.2rem; padding: 10px 0.5rem;
   z-index: 10;
   align-items: center; justify-content: flex-start;
   height: 600px; overflow-y: auto;
