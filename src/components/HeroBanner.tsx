@@ -1,5 +1,6 @@
 import type { Match } from '../types';
 import { generateThumbnail } from './utils';
+import { useThumbnailFallback } from '../hooks/useThumbnailFallback';
 import { Play } from 'lucide-react';
 import wweLogo from '../assets/promotions/wwe.svg';
 import aewLogo from '../assets/promotions/aew.svg';
@@ -26,7 +27,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
 }) => {
   if (!match) return <div className="spatial-hero-wrapper skeleton"></div>;
 
-  const bgImage = generateThumbnail(match);
+  const bgImage = useThumbnailFallback(generateThumbnail(match));
   const dockPromotions = [
     { id: 'All', label: 'All', logo: null },
     { id: 'WWE', label: 'WWE', logo: wweLogo },

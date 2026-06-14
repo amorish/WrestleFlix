@@ -1,5 +1,6 @@
 import type { Match } from '../types';
 import { generateThumbnail, getPromotionLogo } from './utils';
+import { useThumbnailFallback } from '../hooks/useThumbnailFallback';
 import { Play, Star, Calendar, ListVideo } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
@@ -13,6 +14,8 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
     triggerOnce: true,
     rootMargin: '200px 0px',
   });
+
+  const fallbackThumbnailUrl = useThumbnailFallback(generateThumbnail(match));
 
   const isPlaylist = Array.isArray(match.videoId) || (typeof match.videoId === 'string' && match.videoId.startsWith('PL'));
   const videoCount = Array.isArray(match.videoId) ? match.videoId.length : null;
@@ -29,29 +32,8 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
           <div className={isPlaylist ? "playlist-stack-container" : ""}>
             <div className="detailed-thumbnail" onClick={() => onPlay(match)}>
               <img 
-                src={generateThumbnail(match)} 
+                src={fallbackThumbnailUrl} 
                 alt={match.match} 
-                onLoad={(e) => {
-                  const target = e.currentTarget;
-                  // YouTube's grey placeholder image is exactly 120px wide
-                  if (target.naturalWidth <= 120 && target.src.includes('youtube.com')) {
-                    if (target.src.includes('maxresdefault.jpg')) {
-                      target.src = target.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
-                    } else if (!target.src.includes('placehold.co')) {
-                      target.src = 'https://placehold.co/640x360/000000/ffffff?text=Not+Available';
-                    }
-                  }
-                }}
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  if (target.src.includes('maxresdefault.jpg')) {
-                    target.src = target.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
-                  } else if (target.src.includes('hqdefault.jpg')) {
-                    target.src = target.src.replace('hqdefault.jpg', 'mqdefault.jpg');
-                  } else if (!target.src.includes('placehold.co')) {
-                    target.src = 'https://placehold.co/640x360/000000/ffffff?text=Not+Available';
-                  }
-                }}
               />
               <div className="play-overlay">
                 <Play fill="white" size={40} />
