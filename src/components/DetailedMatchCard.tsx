@@ -1,5 +1,5 @@
 import type { Match } from '../types';
-import { generateThumbnail } from './utils';
+import { generateThumbnail, getPromotionLogo } from './utils';
 import { Play, Star, Calendar, ListVideo } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
@@ -16,6 +16,11 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
 
   const isPlaylist = Array.isArray(match.videoId) || (typeof match.videoId === 'string' && match.videoId.startsWith('PL'));
   const videoCount = Array.isArray(match.videoId) ? match.videoId.length : null;
+  const mainPromotions = ['WWE', 'AEW', 'NJPW', 'ROH', 'TNA'];
+  const isOthers = !mainPromotions.includes(match.promotion);
+  const specialCategories = ['Unsanctioned & Hardcore', 'Hidden Gems', 'Legendary Rivalries', 'Dream Matches'];
+  const isSpecialCategory = match.category && specialCategories.includes(match.category);
+  const needsTag = isOthers || isSpecialCategory;
 
   return (
     <div ref={ref} className="detailed-match-card">
@@ -38,7 +43,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
               <div className="play-overlay">
                 <Play fill="white" size={40} />
               </div>
-              <div className="promo-tag">#{match.promotion}</div>
+              {needsTag && <div className="promo-tag">#{match.promotion}</div>}
               {isPlaylist && (
                 <div className="playlist-badge" style={match.rating !== '0' ? { bottom: '35px' } : {}}>
                   <ListVideo size={14} /> {videoCount ? `${videoCount} videos` : 'Playlist'}
@@ -55,6 +60,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
           <div className="detailed-info">
             <div className="detailed-header">
               <h3 className="detailed-title" onClick={() => onPlay(match)}>{match.match}</h3>
+              {!needsTag && <img src={getPromotionLogo(match.promotion)} alt={match.promotion} className="detailed-promo-logo" />}
             </div>
             
             <div className="detailed-meta">

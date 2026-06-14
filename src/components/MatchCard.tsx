@@ -1,5 +1,5 @@
 import type { Match } from '../types';
-import { generateThumbnail } from './utils';
+import { generateThumbnail, getPromotionLogo } from './utils';
 import { Play, ListVideo } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
@@ -16,6 +16,11 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
 
   const isPlaylist = Array.isArray(match.videoId) || (typeof match.videoId === 'string' && match.videoId.startsWith('PL'));
   const videoCount = Array.isArray(match.videoId) ? match.videoId.length : null;
+  const mainPromotions = ['WWE', 'AEW', 'NJPW', 'ROH', 'TNA'];
+  const isOthers = !mainPromotions.includes(match.promotion);
+  const specialCategories = ['Unsanctioned & Hardcore', 'Hidden Gems', 'Legendary Rivalries', 'Dream Matches'];
+  const isSpecialCategory = match.category && specialCategories.includes(match.category);
+  const needsTag = isOthers || isSpecialCategory;
 
   return (
     <div ref={ref} className="match-card-wrapper" onClick={() => onPlay(match)}>
@@ -36,7 +41,11 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
                   }
                 }}
               />
-              <div className="promo-tag">#{match.promotion}</div>
+              {needsTag ? (
+                <div className="promo-tag">#{match.promotion}</div>
+              ) : (
+                <img src={getPromotionLogo(match.promotion)} alt={match.promotion} className="promo-logo" />
+              )}
               {isPlaylist && (
                 <div className="playlist-badge">
                   <ListVideo size={14} /> {videoCount ? `${videoCount} videos` : 'Playlist'}
