@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import type { Match } from '../types';
 import { X, Play } from 'lucide-react';
-import { Tweet } from 'react-tweet';
 import youtubeBtn from '../assets/layout/watch it on youtube.webp';
 import dailymotionBtn from '../assets/layout/watch it on dailymotion.webp';
 
@@ -45,10 +44,23 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+    
+    // Load Twitter widget script if needed
+    if (match?.videoSource === 'twitter') {
+      const script = document.createElement('script');
+      script.src = 'https://platform.twitter.com/widgets.js';
+      script.async = true;
+      document.body.appendChild(script);
+      
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }
+
     return () => {
       document.body.style.overflow = '';
     };
-  }, []);
+  }, [match]);
 
   
 
@@ -143,7 +155,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
             </div>
           ) : match.videoSource === 'twitter' ? (
             <div className="twitter-embed-container" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'auto', background: '#000' }}>
-              <Tweet id={currentVideoId || ''} />
+              <blockquote className="twitter-tweet" data-theme="dark">
+                <a href={`https://twitter.com/x/status/${currentVideoId}`}></a>
+              </blockquote>
             </div>
           ) : (
             <iframe
