@@ -264,7 +264,7 @@ body {
 }
 .match-card-wrapper:hover .match-card-image-wrapper { box-shadow: 0 12px 24px rgba(0,0,0,0.8); }
 .match-card-bg { width: 100%; height: 100%; object-fit: cover; }
-.promo-logo { position: absolute; top: 12px; right: 12px; height: 24px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8)); }
+
 .match-card-hover-overlay {
   position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);
   display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;
@@ -619,4 +619,20 @@ body {
 .see-more-btn:hover {
   text-decoration: underline;
   opacity: 0.8;
+}
+
+
+.promo-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 16px;
+  background: radial-gradient(circle at top right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  z-index: 2;
+  border-bottom-left-radius: 12px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  letter-spacing: 0.5px;
 }

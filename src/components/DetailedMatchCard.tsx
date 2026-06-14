@@ -1,5 +1,5 @@
 import type { Match } from '../types';
-import { generateThumbnail, getPromotionLogo } from './utils';
+import { generateThumbnail } from './utils';
 import { Play, Star, Calendar, ListVideo } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
@@ -27,6 +27,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
               <div className="play-overlay">
                 <Play fill="white" size={40} />
               </div>
+              <div className="promo-tag">#{match.promotion}</div>
               {isPlaylist && (
                 <div className="playlist-badge" style={match.rating !== '0' ? { bottom: '35px' } : {}}>
                   <ListVideo size={14} /> {videoCount ? `${videoCount} videos` : 'Playlist'}
@@ -43,7 +44,6 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
           <div className="detailed-info">
             <div className="detailed-header">
               <h3 className="detailed-title" onClick={() => onPlay(match)}>{match.match}</h3>
-              <img src={getPromotionLogo(match.promotion)} alt={match.promotion} className="detailed-promo-logo" />
             </div>
             
             <div className="detailed-meta">
