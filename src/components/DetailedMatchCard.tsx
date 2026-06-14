@@ -20,7 +20,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
   const isOthers = !mainPromotions.includes(match.promotion);
   const specialCategories = ['Unsanctioned & Hardcore', 'Hidden Gems', 'Legendary Rivalries', 'Dream Matches'];
   const isSpecialCategory = match.category && specialCategories.includes(match.category);
-  const needsTag = isOthers || isSpecialCategory;
+  const needsTag = (isOthers || isSpecialCategory) && match.promotion.toLowerCase() !== 'various';
 
   return (
     <div ref={ref} className="detailed-match-card">
@@ -60,7 +60,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
           <div className="detailed-info">
             <div className="detailed-header">
               <h3 className="detailed-title" onClick={() => onPlay(match)}>{match.match}</h3>
-              {!needsTag && <img src={getPromotionLogo(match.promotion)} alt={match.promotion} className="detailed-promo-logo" />}
+              {!needsTag && getPromotionLogo(match.promotion) && <img src={getPromotionLogo(match.promotion) as string} alt={match.promotion} className="detailed-promo-logo" />}
             </div>
             
             <div className="detailed-meta">

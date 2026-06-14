@@ -1,6 +1,6 @@
 import type { Match } from '../types';
 
-export function getPromotionLogo(promotion: string): string {
+export function getPromotionLogo(promotion: string): string | null {
   const lower = promotion.toLowerCase();
   if (lower.includes('wwe') || lower.includes('wwf')) return 'https://logo.clearbit.com/wwe.com';
   if (lower.includes('aew')) return 'https://logo.clearbit.com/allelitewrestling.com';
@@ -14,7 +14,7 @@ export function getPromotionLogo(promotion: string): string {
   if (lower.includes('noah')) return 'https://logo.clearbit.com/noah.co.jp';
   if (lower.includes('ajpw')) return 'https://logo.clearbit.com/all-japan.co.jp';
   if (lower.includes('ecw')) return 'https://logo.clearbit.com/wwe.com';
-  return 'https://placehold.co/100x50/141414/ffffff?text=' + encodeURIComponent(promotion);
+  return null;
 }
 import grandeImg from '../assets/matches thumbnail/WWE/AAANoches_GrandeGrande_ENCORE_16x9.jpg';
 

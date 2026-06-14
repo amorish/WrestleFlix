@@ -20,7 +20,7 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
   const isOthers = !mainPromotions.includes(match.promotion);
   const specialCategories = ['Unsanctioned & Hardcore', 'Hidden Gems', 'Legendary Rivalries', 'Dream Matches'];
   const isSpecialCategory = match.category && specialCategories.includes(match.category);
-  const needsTag = isOthers || isSpecialCategory;
+  const needsTag = (isOthers || isSpecialCategory) && match.promotion.toLowerCase() !== 'various';
 
   return (
     <div ref={ref} className="match-card-wrapper" onClick={() => onPlay(match)}>
@@ -44,7 +44,7 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
               {needsTag ? (
                 <div className="promo-tag">#{match.promotion}</div>
               ) : (
-                <img src={getPromotionLogo(match.promotion)} alt={match.promotion} className="promo-logo" />
+                getPromotionLogo(match.promotion) && <img src={getPromotionLogo(match.promotion) as string} alt={match.promotion} className="promo-logo" />
               )}
               {isPlaylist && (
                 <div className="playlist-badge">
