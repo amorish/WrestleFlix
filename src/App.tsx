@@ -29,6 +29,13 @@ const fullEvents: Match[] = [
   { id: 'fe-4', match: 'TNA Full Events', event: 'Full Event', promotion: 'TNA', date: 'Various', rating: '0', videoId: 'PLcovtt7Bdo9NjP43R0_lJH1tq3pyJnPRw', videoSource: 'youtube', thumbnailId: 'nZc0N8PE_x0' },
 ];
 
+const factionStories: Match[] = [
+  { id: 'story-1', match: 'The Complete Story of The Bloodline', event: 'Story', promotion: 'WWE', date: '2023', rating: '0', videoId: 'GEpdhKHK4EI', videoSource: 'youtube', thumbnailId: 'GEpdhKHK4EI' },
+  { id: 'story-2', match: 'History of BULLET CLUB', event: 'Story', promotion: 'NJPW', date: '2024', rating: '0', videoId: 'UFb8Dxypi00', videoSource: 'youtube', thumbnailId: 'UFb8Dxypi00' },
+  { id: 'story-3', match: 'The nWo: A definitive history', event: 'Story', promotion: 'WCW', date: 'Various', rating: '0', videoId: 'baU1J1uJdvk', videoSource: 'youtube', thumbnailId: 'baU1J1uJdvk' },
+  { id: 'story-4', match: 'Complete history of The Shield', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'FKfBo1G83ao', videoSource: 'youtube', thumbnailId: 'FKfBo1G83ao' }
+];
+
 function App() {
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
   const [selectedPromotion, setSelectedPromotion] = useState<string>('All');
@@ -121,6 +128,11 @@ function App() {
     rows.push({
       title: 'History of Wrestling',
       matches: historyOfWrestling
+    });
+
+    rows.push({
+      title: 'Faction & Storyline Histories',
+      matches: factionStories
     });
 
     rows.push({
