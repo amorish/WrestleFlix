@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import { useUrlState } from './hooks/useUrlState';
 import matchesData from './data/matches.json';
 import type { Match } from './types';
 import { HeroBanner } from './components/HeroBanner';
@@ -45,13 +46,22 @@ const epicStories: Match[] = [
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
-  const [selectedPromotion, setSelectedPromotion] = useState<string>('All');
-  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'highest_rated'>('newest');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedDecade, setSelectedDecade] = useState('All Years');
+  const [selectedMatchId, setSelectedMatchId] = useUrlState<string | null>('match', null);
+  const [selectedPromotion, setSelectedPromotion] = useUrlState<string>('promo', 'All');
+  const [sortOrder, setSortOrder] = useUrlState<'newest' | 'oldest' | 'highest_rated'>('sort', 'newest');
+  const [searchQuery, setSearchQuery] = useUrlState<string>('q', '');
+  const [selectedDecade, setSelectedDecade] = useUrlState<string>('decade', 'All Years');
 
   const matches: Match[] = matchesData as Match[];
+  
+  const selectedMatch = useMemo(() => {
+    if (!selectedMatchId) return null;
+    return matches.find(m => m.id === selectedMatchId) || null;
+  }, [selectedMatchId, matches]);
+
+  const handleSelectMatch = (match: Match | null) => {
+    setSelectedMatchId(match ? match.id : null);
+  };
   
   const promotions = useMemo(() => {
     const promos = new Set(matches.map(m => m.promotion));
@@ -188,7 +198,7 @@ function App() {
 
       <HeroBanner 
         match={heroMatch} 
-        onPlay={setSelectedMatch} 
+        onPlay={handleSelectMatch} 
         promotions={promotions}
         selectedPromotion={selectedPromotion}
         onPromotionChange={setSelectedPromotion}
@@ -233,21 +243,21 @@ function App() {
               />
             </div>
             {rowsByPromotion.map(row => (
-              <MatchRow key={row.title} title={row.title} matches={row.matches} onPlay={setSelectedMatch} />
+              <MatchRow key={row.title} title={row.title} matches={row.matches} onPlay={handleSelectMatch} />
             ))}
           </>
         ) : (
           <div className="detailed-results-container">
             <div className="detailed-list">
               {remainingMatches.map(match => (
-                <DetailedMatchCard key={match.id} match={match} onPlay={setSelectedMatch} />
+                <DetailedMatchCard key={match.id} match={match} onPlay={handleSelectMatch} />
               ))}
             </div>
           </div>
         )}
       </div>
 
-      {selectedMatch && <VideoModal match={selectedMatch} onClose={() => setSelectedMatch(null)} />}
+      {selectedMatch && <VideoModal match={selectedMatch} onClose={() => handleSelectMatch(null)} />}
     </div>
   );
 }

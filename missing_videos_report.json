@@ -1,0 +1,597 @@
+{
+  "timestamp": "2026-06-14T13:28:03.640Z",
+  "total": 442,
+  "missingSource": [
+    {
+      "id": "12",
+      "match": "Akira Maeda and Nobuhiko Takada vs. Keiji Muto and Shiro Koshinaka",
+      "event": "Spring Flare Up Night 21",
+      "date": "March 20, 1987",
+      "videoId": "w639LH0mbpk",
+      "issue": "missing_source"
+    },
+    {
+      "id": "14",
+      "match": "Paul Ellering , The Road Warriors ( Hawk and Animal ) , and The Super Powers ( Dusty Rhodes and Nikita Koloff ) vs. The Four Horsemen ( Arn Anderson , Lex Luger , Ric Flair , Tully Blanchard , and J. J. Dillon )",
+      "event": "The Great American Bash",
+      "date": "July 4, 1987",
+      "videoId": "SMi1dm9SiNY",
+      "issue": "missing_source"
+    },
+    {
+      "id": "15",
+      "match": "Paul Ellering , The Road Warriors ( Hawk and Animal ) , and The Super Powers ( Dusty Rhodes and Nikita Koloff ) vs. The Four Horsemen ( Arn Anderson , Lex Luger , Ric Flair , The War Machine , and Tully Blanchard )",
+      "event": "The Great American Bash",
+      "date": "July 31, 1987",
+      "videoId": "gbS5DeqlXrk",
+      "issue": "missing_source"
+    },
+    {
+      "id": "30",
+      "match": "The Four Horsemen ( Barry Windham , Larry Zbyszko , Ric Flair , and Sid Vicious ) vs. Brian Pillman , Sting , and The Steiner Brothers ( Rick Steiner and Scott Steiner )",
+      "event": "WrestleWar",
+      "date": "February 24, 1991",
+      "videoId": "nAZ5pHDqk4s",
+      "issue": "missing_source"
+    },
+    {
+      "id": "36",
+      "match": "Dangerous Alliance ( Arn Anderson , Bobby Eaton , Larry Zbyszko , Rick Rude , and Steve Austin ) vs. Sting's Squadron ( Barry Windham , Dustin Rhodes , Nikita Koloff , Ricky Steamboat , and Sting )",
+      "event": "WrestleWar",
+      "date": "May 17, 1992",
+      "videoId": "OUBpRjHZ7ew",
+      "issue": "missing_source"
+    },
+    {
+      "id": "48",
+      "match": "Aja Kong , Kyoko Inoue , Takako Inoue , and Sakie Hasegawa vs. Cutie Suzuki , Dynamite Kansai , Mayumi Ozaki , and Hikari Fukuoka",
+      "event": "Thunder Queen Battle in Yokohama",
+      "date": "July 31, 1993",
+      "videoId": "s2ZAinGj82g",
+      "issue": "missing_source"
+    },
+    {
+      "id": "80",
+      "match": "Kaientai DX ( Dick Togo , Men's Teioh , Shiryu , Shoichi Funaki , and Taka Michinoku ) vs. Gran Hamada , Gran Naniwa , Masato Yakushiji, Super Delfin , and Tiger Mask IV",
+      "event": "3rd Anniversary - \"These Days\"",
+      "date": "October 10, 1996",
+      "videoId": "mjigyMUxNQI",
+      "issue": "missing_source"
+    },
+    {
+      "id": "211",
+      "match": "United Empire ( Will Ospreay , Kyle Fletcher and Mark Davis ) vs. Death Triangle ( Pac , Penta El Zero M and Rey Fenix )",
+      "event": "Dynamite",
+      "date": "August 24, 2022",
+      "videoId": "XdUM4jz_Lac",
+      "issue": "missing_source"
+    },
+    {
+      "id": "213",
+      "match": "FTR ( Cash Wheeler and Dax Harwood ) vs. Aussie Open ( Kyle Fletcher and Mark Davis )",
+      "event": "Royal Quest II Day 1",
+      "date": "October 2, 2022",
+      "videoId": "DbchRWgfo1M",
+      "issue": "missing_source"
+    },
+    {
+      "id": "286",
+      "match": "Kenny Omega , Willow Nightingale , Swerve Strickland and The Opps ( Samoa Joe , Powerhouse Hobbs and Katsuyori Shibata ) vs. Death Riders ( Jon Moxley , Claudio Castagnoli , Marina Shafir and Wheeler Yuta ) and The Young Bucks ( Matthew Jackson and Nicholas Jackson )",
+      "event": "Double or Nothing",
+      "date": "May 25, 2025",
+      "videoId": "MTms2_buw3A",
+      "issue": "missing_source"
+    },
+    {
+      "id": "300",
+      "match": "Will Ospreay , Hiroshi Tanahashi , Darby Allin and Golden Lovers ( Kenny Omega and Kota Ibushi ) vs. Death Riders ( Jon Moxley and Claudio Castagnoli ) , Gabe Kidd and The Young Bucks ( Matt Jackson and Nick Jackson )",
+      "event": "Forbidden Door",
+      "date": "August 24, 2025",
+      "videoId": "4iX3moHgUWM",
+      "issue": "missing_source"
+    },
+    {
+      "id": "307",
+      "match": "Brodido ( Bandido and Brody King ) vs. Don Callis Family ( Kazuchika Okada and Konosuke Takeshita )",
+      "event": "WrestleDream",
+      "date": "October 18, 2025",
+      "videoId": "oo6ls2qCt7o",
+      "issue": "missing_source"
+    },
+    {
+      "id": "331",
+      "match": "Bandido , Noisy Boy, Spider Fly and Zonik vs. Gringo Loco , Vengador, Iron Kid and Turbo",
+      "event": "Lo Mismo Pero Sin Cambios",
+      "date": "May 29, 2026",
+      "videoId": "9q4Zvy0IhvM",
+      "issue": "missing_source"
+    }
+  ],
+  "deadVideos": [
+    {
+      "id": "146",
+      "match": "Kazuchika Okada vs. Sanada",
+      "event": "New Japan Cup Final",
+      "date": "March 24, 2019",
+      "videoId": "dtDaOn54ixo",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 401"
+    },
+    {
+      "id": "262",
+      "match": "Will Ospreay vs. MJF",
+      "event": "All In",
+      "date": "August 25, 2024",
+      "videoId": "a67Pj5CG_P4",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 401"
+    },
+    {
+      "id": "351",
+      "match": "Grado's \"Like a Prayer\"",
+      "event": "ICW",
+      "date": "Nov 15, 2015",
+      "videoId": "X1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "381",
+      "match": "Eddie Kingston's \"Address Your Enemies\"",
+      "event": "Dynamite",
+      "date": "Jun 26, 2021",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "383",
+      "match": "Kurt Angle vs. Shawn Michaels",
+      "event": "WrestleMania 21",
+      "date": "Apr 3, 2005",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "384",
+      "match": "Bryan Danielson vs. Kenny Omega",
+      "event": "Dynamite Grand Slam",
+      "date": "Sep 22, 2021",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "385",
+      "match": "AJ Styles vs. Minoru Suzuki",
+      "event": "G1 Climax 24",
+      "date": "Aug 1, 2014",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "386",
+      "match": "The Rock vs. Hollywood Hulk Hogan",
+      "event": "WrestleMania X8",
+      "date": "Mar 17, 2002",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "387",
+      "match": "Samoa Joe vs. Kenta Kobashi",
+      "event": "Joe vs. Kobashi",
+      "date": "Oct 1, 2005",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "388",
+      "match": "Sting vs. Triple H",
+      "event": "WrestleMania 31",
+      "date": "Mar 29, 2015",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "389",
+      "match": "John Cena vs. AJ Styles",
+      "event": "Royal Rumble",
+      "date": "Jan 29, 2017",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "390",
+      "match": "Undertaker vs. Shawn Michaels",
+      "event": "WrestleMania 25",
+      "date": "Apr 5, 2009",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "391",
+      "match": "Brock Lesnar vs. Daniel Bryan",
+      "event": "Survivor Series",
+      "date": "Nov 18, 2018",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "392",
+      "match": "Shinsuke Nakamura vs. Sami Zayn",
+      "event": "NXT TakeOver: Dallas",
+      "date": "Apr 1, 2016",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "403",
+      "match": "WeeLC: El Torito vs. Hornswoggle",
+      "event": "Extreme Rules",
+      "date": "May 4, 2014",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "404",
+      "match": "Mike Awesome vs. Masato Tanaka",
+      "event": "ECW One Night Stand",
+      "date": "Jun 12, 2005",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "405",
+      "match": "WALTER vs. Ilja Dragunov I",
+      "event": "NXT UK",
+      "date": "Oct 29, 2020",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "406",
+      "match": "Cedric Alexander vs. Kota Ibushi",
+      "event": "CWC",
+      "date": "Aug 10, 2016",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "407",
+      "match": "Tyler Bate vs. Pete Dunne",
+      "event": "NXT TakeOver: Chicago",
+      "date": "May 20, 2017",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "408",
+      "match": "Katsuyori Shibata vs. Tomohiro Ishii",
+      "event": "G1 Climax 23",
+      "date": "Aug 4, 2013",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "409",
+      "match": "Rey Mysterio vs. Eddie Guerrero",
+      "event": "Halloween Havoc",
+      "date": "Oct 26, 1997",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "410",
+      "match": "Samoa Joe vs. CM Punk II",
+      "event": "Joe vs. Punk II",
+      "date": "Oct 16, 2004",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "411",
+      "match": "Kofi Kingston vs. Daniel Bryan",
+      "event": "WrestleMania 35",
+      "date": "Apr 7, 2019",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "412",
+      "match": "Gunther vs. Sheamus",
+      "event": "Clash at the Castle",
+      "date": "Sep 3, 2022",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "413",
+      "match": "TLC II",
+      "event": "WrestleMania X-Seven",
+      "date": "Apr 1, 2001",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "414",
+      "match": "Hangman Page vs. Swerve Strickland",
+      "event": "Full Gear",
+      "date": "Nov 18, 2023",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "415",
+      "match": "Cactus Jack vs. Triple H",
+      "event": "Royal Rumble",
+      "date": "Jan 23, 2000",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "416",
+      "match": "Pentagon Jr. vs. Vampiro",
+      "event": "Ultima Lucha",
+      "date": "Aug 5, 2015",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "417",
+      "match": "Samoa Joe vs. Necro Butcher",
+      "event": "Something To Prove",
+      "date": "Jun 11, 2005",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "418",
+      "match": "The Undertaker vs. Mankind",
+      "event": "King of the Ring",
+      "date": "Jun 28, 1998",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "419",
+      "match": "The Young Bucks vs. Lucha Brothers",
+      "event": "All Out",
+      "date": "Aug 31, 2019",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "420",
+      "match": "Mick Foley vs. Edge",
+      "event": "WrestleMania 22",
+      "date": "Apr 2, 2006",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "421",
+      "match": "Jon Moxley vs. Kenny Omega",
+      "event": "Full Gear",
+      "date": "Nov 9, 2019",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "422",
+      "match": "The Elite vs. Blackpool Combat Club",
+      "event": "Blood & Guts",
+      "date": "Jul 19, 2023",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "424",
+      "match": "Why Professional Wrestling is Fascinating",
+      "event": "Super Eyepatch Wolf",
+      "date": "Various",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "425",
+      "match": "Wrestling Isn't Wrestling",
+      "event": "Max Landis",
+      "date": "Various",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "426",
+      "match": "The Fascinating Story of the Golden Lovers",
+      "event": "Super Eyepatch Wolf",
+      "date": "Various",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "427",
+      "match": "Hangman Page's Millennial Anxiety",
+      "event": "Tranquilo Club",
+      "date": "Various",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "428",
+      "match": "The Tragedy of the Undertaker",
+      "event": "Super Eyepatch Wolf",
+      "date": "Various",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "429",
+      "match": "The Fall and Rise of Katsuyori Shibata",
+      "event": "Super Eyepatch Wolf",
+      "date": "Various",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "430",
+      "match": "The Brilliance of Toru Yano",
+      "event": "Showbuckle",
+      "date": "Various",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "431",
+      "match": "Roman Reigns: The Making of the Tribal Chief",
+      "event": "Tranquilo Club",
+      "date": "Various",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "432",
+      "match": "NJPW's In-Ring Psychology Explained",
+      "event": "Showbuckle",
+      "date": "Various",
+      "videoId": "Z1V1V0Z4r34",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": "433",
+      "match": "Vice's Dark Side of the Ring",
+      "event": "Documentary",
+      "date": "Various",
+      "videoId": "PL21",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 400"
+    },
+    {
+      "id": "434",
+      "match": "Being The Elite (The Origins)",
+      "event": "Vlog",
+      "date": "Various",
+      "videoId": "PL23",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 400"
+    },
+    {
+      "id": "439",
+      "match": "Sammy Guevara's Vlog Highlights",
+      "event": "Vlog",
+      "date": "Various",
+      "videoId": "PL25",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 400"
+    },
+    {
+      "id": "441",
+      "match": "CVV Interviews",
+      "event": "Interview",
+      "date": "Various",
+      "videoId": "PL27",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 400"
+    },
+    {
+      "id": "442",
+      "match": "Breaking Ground",
+      "event": "Reality",
+      "date": "Various",
+      "videoId": "PL29",
+      "videoSource": "youtube",
+      "issue": "dead_video",
+      "reason": "HTTP 400"
+    }
+  ],
+  "summary": {
+    "totalMissing": 13,
+    "totalDead": 48,
+    "totalProblematic": 61
+  }
+}

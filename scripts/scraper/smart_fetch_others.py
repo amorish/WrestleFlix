@@ -16,7 +16,7 @@ def search_youtube(query, used_video_ids):
     try:
         url = f"https://www.youtube.com/results?search_query={urllib.parse.quote(query)}"
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
-        response = urllib.request.urlopen(req)
+        response = urllib.request.urlopen(req, timeout=10)
         html = response.read().decode('utf-8', errors='ignore')
         
         blocks = html.split('"videoRenderer":{')
@@ -66,8 +66,8 @@ def main():
         if cat not in non_match_categories:
             continue
             
-        if match.get('videoId'):
-            # If the user wants to overwrite, we could remove this continue
+        vid = match.get('videoId')
+        if vid and vid != 'Z1V1V0Z4r34':
             continue
             
         name = match.get('match', '')
@@ -117,6 +117,7 @@ def main():
                 json.dump(matches, f, indent=2)
                 
         time.sleep(random.uniform(2.0, 4.0))
+        sys.stdout.flush()
 
     if updated_count > 0:
         with open(file_path, 'w', encoding='utf-8') as f:
