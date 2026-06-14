@@ -47,14 +47,22 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
     
     // Load Twitter widget script if needed
     if (match?.videoSource === 'twitter') {
-      const script = document.createElement('script');
-      script.src = 'https://platform.twitter.com/widgets.js';
-      script.async = true;
-      document.body.appendChild(script);
-      
-      return () => {
-        document.body.style.overflow = '';
-      };
+      if (!(window as any).twttr) {
+        const script = document.createElement('script');
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+        script.onload = () => {
+          if ((window as any).twttr && (window as any).twttr.widgets) {
+            (window as any).twttr.widgets.load();
+          }
+        };
+        document.body.appendChild(script);
+      } else if ((window as any).twttr && (window as any).twttr.widgets) {
+        // If already loaded from a previous modal open, manually trigger re-scan
+        setTimeout(() => {
+          (window as any).twttr.widgets.load();
+        }, 100);
+      }
     }
 
     return () => {
