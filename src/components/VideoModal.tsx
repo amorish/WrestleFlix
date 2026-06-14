@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import type { Match } from '../types';
 import { X, Play } from 'lucide-react';
+import { Tweet } from 'react-tweet';
 import youtubeBtn from '../assets/layout/watch it on youtube.webp';
 import dailymotionBtn from '../assets/layout/watch it on dailymotion.webp';
 
@@ -106,7 +107,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
       const endParam = endSeconds ? `&end=${endSeconds}` : '';
       videoUrl = `https://archive.org/embed/${currentVideoId}?autoplay=1${startParam}${endParam}`;
-    } else if (match.videoSource && !['vk', 'reddit', 'twitter', 'wwe'].includes(match.videoSource)) {
+    } else if (match.videoSource === 'wwe') {
+      videoUrl = `https://www.wwe.com/embed/${currentVideoId}`;
+    } else if (match.videoSource === 'reddit') {
+      videoUrl = `https://embed.reddit.com/r/SquaredCircle/comments/${currentVideoId}`;
+    } else if (match.videoSource && !['vk', 'twitter'].includes(match.videoSource)) {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
       const endParam = endSeconds ? `&end=${endSeconds}` : '';
       if (currentVideoId.startsWith('PL')) {
@@ -124,24 +129,23 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       </button>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <div className="video-container">
-          {match.videoSource && ['vk', 'reddit', 'twitter', 'wwe'].includes(match.videoSource) ? (
+          {match.videoSource === 'vk' ? (
             <div className="vk-fallback-container">
-              <h3>This video is hosted on {match.videoSource === 'vk' ? 'VK' : match.videoSource === 'wwe' ? 'WWE.com' : match.videoSource === 'twitter' ? 'X (Twitter)' : 'Reddit'}</h3>
+              <h3>This video is hosted on VK</h3>
               <p>Due to platform restrictions, this video cannot be embedded directly.</p>
               <a 
-                href={
-                  match.videoSource === 'vk' ? `https://vk.com/${currentVideoId}` :
-                  match.videoSource === 'reddit' ? `https://www.reddit.com/r/SquaredCircle/comments/${currentVideoId}` :
-                  match.videoSource === 'twitter' ? `https://x.com/i/status/${currentVideoId}` :
-                  `https://www.wwe.com/videos/${currentVideoId}`
-                } 
+                href={`https://vk.com/${currentVideoId}`} 
                 target="_blank" rel="noreferrer" className="btn btn-accent vk-btn"
               >
-                <Play fill="currentColor" size={16}/> Watch on {match.videoSource === 'vk' ? 'VK' : match.videoSource === 'wwe' ? 'WWE.com' : match.videoSource === 'twitter' ? 'X' : 'Reddit'}
+                <Play fill="currentColor" size={16}/> Watch on VK
               </a>
               {match.timestamp && (
                 <p className="vk-timestamp">The video begins at <strong>{match.timestamp}</strong></p>
               )}
+            </div>
+          ) : match.videoSource === 'twitter' ? (
+            <div className="twitter-embed-container" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'auto', background: '#000' }}>
+              <Tweet id={currentVideoId || ''} />
             </div>
           ) : (
             <iframe
