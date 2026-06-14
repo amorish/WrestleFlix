@@ -66,7 +66,7 @@ export const FilterSortBar: React.FC<FilterSortBarProps> = ({
       <CustomDropdown 
         options={sortOptions}
         value={sortOrder}
-        onChange={(v) => onSortChange(v as string)}
+        onChange={(v) => onSortChange(v as "newest" | "oldest" | "highest_rated")}
       />
     </div>
   );
