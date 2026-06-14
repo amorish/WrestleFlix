@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import type { Match } from '../types';
 import { X, Play } from 'lucide-react';
 import youtubeBtn from '../assets/layout/watch it on youtube.webp';
@@ -41,40 +41,44 @@ const CustomStarRating = ({ rating }: { rating: string }) => {
 
 export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const tweetContainerRef = useRef<HTMLDivElement>(null);
+
+  const isMultiPart = Array.isArray(match?.videoId);
+  const videoIds = isMultiPart ? (match?.videoId as string[]) : (match?.videoId ? [match.videoId as string] : []);
+  const [currentPart, setCurrentPart] = useState(0);
+  const currentVideoId = videoIds.length > 0 ? videoIds[currentPart] : null;
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     
-    // Load Twitter widget script if needed
-    if (match?.videoSource === 'twitter') {
+    if (match?.videoSource === 'twitter' && currentVideoId) {
+      const renderTweet = () => {
+        if (tweetContainerRef.current && (window as any).twttr?.widgets) {
+          tweetContainerRef.current.innerHTML = '';
+          (window as any).twttr.widgets.createTweet(
+            currentVideoId,
+            tweetContainerRef.current,
+            { theme: 'dark', align: 'center' }
+          );
+        }
+      };
+
       if (!(window as any).twttr) {
         const script = document.createElement('script');
         script.src = 'https://platform.twitter.com/widgets.js';
         script.async = true;
-        script.onload = () => {
-          if ((window as any).twttr && (window as any).twttr.widgets) {
-            (window as any).twttr.widgets.load();
-          }
-        };
+        script.onload = renderTweet;
         document.body.appendChild(script);
-      } else if ((window as any).twttr && (window as any).twttr.widgets) {
-        // If already loaded from a previous modal open, manually trigger re-scan
-        setTimeout(() => {
-          (window as any).twttr.widgets.load();
-        }, 100);
+      } else {
+        // Slight timeout to ensure the ref is attached if it was just mounted
+        setTimeout(renderTweet, 50);
       }
     }
 
     return () => {
       document.body.style.overflow = '';
     };
-  }, [match]);
-
-  
-
-  const isMultiPart = Array.isArray(match?.videoId);
-  const videoIds = isMultiPart ? (match?.videoId as string[]) : (match?.videoId ? [match.videoId as string] : []);
-  const [currentPart, setCurrentPart] = useState(0);
+  }, [match, currentVideoId]);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => setCurrentPart(0), 0);
@@ -105,7 +109,6 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
   const searchQuery = encodeURIComponent(`${match.match} ${match.promotion} ${match.date} full match`);
   
   let videoUrl = `https://www.youtube.com/embed?listType=search&list=${searchQuery}&autoplay=1`;
-  const currentVideoId = videoIds.length > 0 ? videoIds[currentPart] : null;
 
   const getSeconds = (timeStr: string) => {
     const parts = timeStr.split(':').reverse();
@@ -162,10 +165,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
               )}
             </div>
           ) : match.videoSource === 'twitter' ? (
-            <div className="twitter-embed-container" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'auto', background: '#000' }}>
-              <blockquote className="twitter-tweet" data-theme="dark">
-                <a href={`https://twitter.com/x/status/${currentVideoId}`}></a>
-              </blockquote>
+            <div 
+              ref={tweetContainerRef}
+              className="twitter-embed-container" 
+              style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'auto', background: '#000' }}
+            >
             </div>
           ) : (
             <iframe
