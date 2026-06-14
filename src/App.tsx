@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import matchesData from './data/matches.json';
 import type { Match } from './types';
 import { HeroBanner } from './components/HeroBanner';
@@ -6,6 +6,7 @@ import { MatchRow } from './components/MatchRow';
 import { VideoModal } from './components/VideoModal';
 import { FilterSortBar } from './components/FilterSortBar';
 import { DetailedMatchCard } from './components/DetailedMatchCard';
+import { SkeletonLoader } from './components/SkeletonLoader';
 
 import logoUrl from './assets/layout/wrestleflix_logo.webp';
 
@@ -43,6 +44,7 @@ const epicStories: Match[] = [
 ];
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
   const [selectedPromotion, setSelectedPromotion] = useState<string>('All');
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'highest_rated'>('newest');
@@ -161,6 +163,18 @@ function App() {
   }, [remainingMatches, matches, searchQuery, selectedPromotion]);
 
 
+
+  useEffect(() => {
+    // Simulate loading to display the skeleton loader
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <SkeletonLoader />;
+  }
 
   return (
     <div className="app-container">
