@@ -15,7 +15,7 @@
   --accent-hover: #f40612;
   --card-bg: #222225;
   --navbar-bg: rgba(15, 15, 19, 0.95);
-  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family: 'Outfit';
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -634,7 +634,7 @@ body {
   top: 0;
   right: 0;
   
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit';
   font-style: normal;
   font-weight: 300;
   
