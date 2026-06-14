@@ -89,7 +89,7 @@ export function generateThumbnail(match: Match): string {
 
   if (match.videoId || match.thumbnailId) {
     if (match.videoSource === 'dailymotion') {
-      return `https://www.dailymotion.com/thumbnail/video/${match.videoId}`;
+      return match.thumbnailId || `https://www.dailymotion.com/thumbnail/video/${match.videoId}`;
     }
     const targetId = match.thumbnailId || (Array.isArray(match.videoId) ? match.videoId[0] : match.videoId);
     if (targetId && !targetId.startsWith('PL')) {
