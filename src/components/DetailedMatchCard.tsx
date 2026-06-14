@@ -23,7 +23,18 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
         <>
           <div className={isPlaylist ? "playlist-stack-container" : ""}>
             <div className="detailed-thumbnail" onClick={() => onPlay(match)}>
-              <img src={generateThumbnail(match)} alt={match.match} />
+              <img 
+                src={generateThumbnail(match)} 
+                alt={match.match} 
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src.includes('maxresdefault.jpg')) {
+                    target.src = target.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
+                  } else if (target.src.includes('hqdefault.jpg')) {
+                    target.src = target.src.replace('hqdefault.jpg', 'mqdefault.jpg');
+                  }
+                }}
+              />
               <div className="play-overlay">
                 <Play fill="white" size={40} />
               </div>

@@ -93,7 +93,7 @@ export function generateThumbnail(match: Match): string {
     }
     const targetId = match.thumbnailId || (Array.isArray(match.videoId) ? match.videoId[0] : match.videoId);
     if (targetId && !targetId.startsWith('PL')) {
-      return `https://img.youtube.com/vi/${targetId}/mqdefault.jpg`;
+      return `https://img.youtube.com/vi/${targetId}/maxresdefault.jpg`;
     }
   }
   // Fallback to random placeholder image if no video ID

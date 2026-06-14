@@ -23,7 +23,19 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
         <>
           <div className={isPlaylist ? "playlist-stack-container" : ""}>
             <div className="match-card-image-wrapper">
-              <img src={generateThumbnail(match)} alt={match.match} className="match-card-bg" />
+              <img 
+                src={generateThumbnail(match)} 
+                alt={match.match} 
+                className="match-card-bg" 
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src.includes('maxresdefault.jpg')) {
+                    target.src = target.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
+                  } else if (target.src.includes('hqdefault.jpg')) {
+                    target.src = target.src.replace('hqdefault.jpg', 'mqdefault.jpg');
+                  }
+                }}
+              />
               <div className="promo-tag">#{match.promotion}</div>
               {isPlaylist && (
                 <div className="playlist-badge">
