@@ -639,18 +639,18 @@ body {
   font-weight: 300;
   
   color: #ffffff;
-  font-size: 18px;
+  font-size: 12px;
   
-  padding: 15px 20px 80px 120px; 
+  padding: 8px 12px 30px 50px; 
   
-  background: radial-gradient(ellipse at top right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.95) 25%, rgba(0, 0, 0, 0) 75%);
+  background: radial-gradient(100% 100% at top right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 100%);
   
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   box-sizing: border-box;
   z-index: 2;
-  text-shadow: 1px 1px 4px rgba(0,0,0,1);
+  text-shadow: 1px 1px 3px rgba(0,0,0,1);
   letter-spacing: 0.5px;
 }
 
