@@ -3487,7 +3487,8 @@
     "rating": "5",
     "videoId": "video-40248182_456241466",
     "videoSource": "vk",
-    "description": "At AEW's Full Gear, the acclaimed FTR, known for their \"Top Guys\" mentality and classic tag team wrestling, face the powerful and dynamic duo of Brodido (Bandido and Brody King). This highly anticipated tag team clash pits two distinct styles against each other, with both teams vying for supremacy in AEW's stacked tag division."
+    "description": "At AEW's Full Gear, the acclaimed FTR, known for their \"Top Guys\" mentality and classic tag team wrestling, face the powerful and dynamic duo of Brodido (Bandido and Brody King). This highly anticipated tag team clash pits two distinct styles against each other, with both teams vying for supremacy in AEW's stacked tag division.",
+    "thumbnailId": "https://img.youtube.com/vi/2XcSstdefMM/maxresdefault.jpg"
   },
   {
     "id": "310",
@@ -3935,7 +3936,8 @@
     "rating": "0",
     "videoId": "1mc978y",
     "videoSource": "reddit",
-    "description": "Lee England Jr. playing the violin live."
+    "description": "Lee England Jr. playing the violin live.",
+    "thumbnailId": "https://img.youtube.com/vi/woJyRmfia-M/maxresdefault.jpg"
   },
   {
     "id": "350",
@@ -3984,7 +3986,8 @@
     "rating": "0",
     "videoId": "1866162297296580743",
     "videoSource": "twitter",
-    "description": "The epic \"Kingdom\" singalong."
+    "description": "The epic \"Kingdom\" singalong.",
+    "thumbnailId": "https://img.youtube.com/vi/g3CoCUgrr2U/maxresdefault.jpg"
   },
   {
     "id": "354",
@@ -4044,7 +4047,8 @@
     "rating": "0",
     "videoId": "1ojvhfk",
     "videoSource": "reddit",
-    "description": "Coming out with a giant sword and a robotic dinosaur."
+    "description": "Coming out with a giant sword and a robotic dinosaur.",
+    "thumbnailId": "https://img.youtube.com/vi/XDjuC5uezKc/maxresdefault.jpg"
   },
   {
     "id": "360",
@@ -4102,7 +4106,7 @@
     "event": "G1 Climax 27",
     "category": "Comedy & Botches",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "TTu-c6EKsbQ",
     "videoSource": "youtube",
     "description": "Pure comedic genius in a serious tournament."
   },
@@ -4114,7 +4118,7 @@
     "event": "Raw",
     "category": "Comedy & Botches",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "mTxelTaoH1U",
     "videoSource": "youtube",
     "description": "Classic Attitude Era comedy."
   },
@@ -4126,7 +4130,7 @@
     "event": "Sacrifice",
     "category": "Comedy & Botches",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "8VIVGgzMWsc",
     "videoSource": "youtube",
     "description": "Scott Steiner's legendary and confusing promo."
   },
@@ -4138,7 +4142,7 @@
     "event": "In Your House",
     "category": "Comedy & Botches",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "rkyCCUNKvjs",
     "videoSource": "youtube",
     "description": "Sycho Sid asking for a do-over on live TV."
   },
@@ -4150,7 +4154,7 @@
     "event": "Survivor Series",
     "category": "Comedy & Botches",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "xp6ruCqGYKM",
     "videoSource": "youtube",
     "description": "A massive egg hatches at Survivor Series."
   },
@@ -4162,7 +4166,7 @@
     "event": "SummerSlam",
     "category": "Comedy & Botches",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "TTKNdx7CKVM",
     "videoSource": "youtube",
     "description": "A masterclass in ridiculous bumping for Hulk Hogan."
   },
@@ -4174,7 +4178,7 @@
     "event": "Spring Stampede",
     "category": "Comedy & Botches",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "XbwXcc-Gr1Y",
     "videoSource": "youtube",
     "description": "The most famous promo botch in WCW history."
   },
@@ -4186,7 +4190,7 @@
     "event": "SummerSlam",
     "category": "Comedy & Botches",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "hbcCO7OBafA",
     "videoSource": "youtube",
     "description": "When the SummerSlam sign fell down during an interview."
   },
@@ -4198,7 +4202,7 @@
     "event": "Raw",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "ZBGBvOJQWSk",
     "videoSource": "youtube",
     "description": "The promo that blurred reality and changed the industry."
   },
@@ -4210,7 +4214,7 @@
     "event": "Mid-Atlantic",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "Q5SiolEQLA4",
     "videoSource": "youtube",
     "description": "The most relatable, passionate babyface promo."
   },
@@ -4222,7 +4226,7 @@
     "event": "King of the Ring",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "tjWPoQWdmjg",
     "videoSource": "youtube",
     "description": "The birth of the Attitude Era."
   },
@@ -4234,7 +4238,7 @@
     "event": "Dynamite",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "Nv-RfAWEBIA",
     "videoSource": "youtube",
     "description": "A raw, emotional masterclass blending real-life trauma."
   },
@@ -4246,7 +4250,7 @@
     "event": "ECW One Night Stand",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "-7AoX3LkxpA",
     "videoSource": "youtube",
     "description": "Heyman shooting from the hip on WWE management."
   },
@@ -4258,7 +4262,7 @@
     "event": "Raw",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "OudejVGBS98",
     "videoSource": "youtube",
     "description": "The highest-rated segment in Raw history."
   },
@@ -4270,7 +4274,7 @@
     "event": "Nitro",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "ex6r7Cycm44",
     "videoSource": "youtube",
     "description": "Reading an endless list on live television."
   },
@@ -4282,7 +4286,7 @@
     "event": "Crockett Promotions",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "az1kmzHuoXM",
     "videoSource": "youtube",
     "description": "A collection of his most energetic, chaotic 80s promos."
   },
@@ -4294,7 +4298,7 @@
     "event": "Raw",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "gxm5c2XBcXo",
     "videoSource": "youtube",
     "description": "Wearing the salmon jacket and swerving the world."
   },
@@ -4318,7 +4322,7 @@
     "event": "Raw",
     "category": "Mic Masters",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "bw4V85UM_r0",
     "videoSource": "youtube",
     "description": "Cena completely dismantling Reigns on the mic."
   },
@@ -5000,7 +5004,7 @@
     "event": "Documentary",
     "category": "Behind the Curtain",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "7nhkv_W03po",
     "videoSource": "youtube",
     "description": "Behind the scenes of Edge's return from a career-ending injury."
   },
@@ -5012,7 +5016,7 @@
     "event": "Documentary",
     "category": "Behind the Curtain",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "J-6U4YrRoQs",
     "videoSource": "youtube",
     "description": "A look into the brutal Young Lion training regimen."
   },
@@ -5024,7 +5028,7 @@
     "event": "Reaction",
     "category": "Behind the Curtain",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "fqs2ZO_BUdY",
     "videoSource": "youtube",
     "description": "E.g., The Undertaker and Shawn Michaels rewatching WM25."
   },
@@ -5036,7 +5040,7 @@
     "event": "Gaming",
     "category": "Behind the Curtain",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "xLfK0FWdJlE",
     "videoSource": "youtube",
     "description": "Xavier Woods, Kenny Omega, and the gaming rivalry."
   },
@@ -5063,7 +5067,7 @@
     "event": "Documentary",
     "category": "Behind the Curtain",
     "rating": "0",
-    "videoId": "Z1V1V0Z4r34",
+    "videoId": "K9pLmTw8U6g",
     "videoSource": "youtube",
     "description": "Raw and unfiltered 1990s wrestling realities."
   },
