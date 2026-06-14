@@ -4919,19 +4919,8 @@
     "rating": "0",
     "videoId": "PLZ_hwG6UuEJZReR_jv12o73OY_gDu2mHV",
     "videoSource": "youtube",
-    "description": "Deep dives into the real-life struggles of wrestlers."
-  },
-  {
-    "id": "434",
-    "date": "Various",
-    "match": "Being The Elite (The Origins)",
-    "promotion": "AEW",
-    "event": "Vlog",
-    "category": "Behind the Curtain",
-    "rating": "0",
-    "videoId": "132YpG6350w",
-    "videoSource": "youtube",
-    "description": "Highlights of the vlog that literally spawned All Elite Wrestling."
+    "description": "Deep dives into the real-life struggles of wrestlers.",
+    "thumbnailId": "https://i.ytimg.com/vi/VxvcZHQQiwg/hqdefault.jpg"
   },
   {
     "id": "435",
@@ -5006,18 +4995,6 @@
     "description": "Chris Van Vliet's sit-downs with legends breaking character."
   },
   {
-    "id": "442",
-    "date": "Various",
-    "match": "Breaking Ground",
-    "promotion": "WWE",
-    "event": "Reality",
-    "category": "Behind the Curtain",
-    "rating": "0",
-    "videoId": "11hV8Yy3yO8",
-    "videoSource": "youtube",
-    "description": "The reality show detailing the grueling life in NXT."
-  },
-  {
     "id": "m1781431229754375",
     "match": "Grado's \"Like a Prayer\" Entrance",
     "date": "2015-11-15",
@@ -5062,11 +5039,20 @@
     "category": "Behind the Curtain",
     "rating": "0",
     "videoId": [
-      "x9ilziy",
-      "x9x552q"
+      "x9nsgiy",
+      "x9nsgiw",
+      "x9nt128",
+      "x9nt2he",
+      "x9nt2hc",
+      "xabc0x6",
+      "xabc12e",
+      "xabc182",
+      "xabc1iy",
+      "xabc1q8"
     ],
     "videoSource": "dailymotion",
-    "description": "Behind the scenes documentary covering the modern era of WWE."
+    "description": "Behind the scenes documentary covering the modern era of WWE.",
+    "thumbnailId": "https://www.dailymotion.com/thumbnail/video/x9nsgiy"
   },
   {
     "id": "m_77369f68",
