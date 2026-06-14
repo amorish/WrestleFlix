@@ -47,9 +47,9 @@ function App() {
     let result = [...matches];
     if (selectedPromotion === 'Others') {
       const topPromos = ['WWE', 'AEW', 'NJPW', 'WCW', 'TNA', 'ROH', 'AAA', 'ECW'];
-      result = result.filter(m => !topPromos.some(p => m.promotion.includes(p)));
+      result = result.filter(m => !topPromos.some(p => m.promotion.includes(p)) && !m.category);
     } else if (selectedPromotion !== 'All') {
-      result = result.filter(m => m.promotion === selectedPromotion);
+      result = result.filter(m => m.promotion === selectedPromotion && !m.category);
     }
     if (selectedDecade !== 'All Years') {
       result = result.filter(m => {
