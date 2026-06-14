@@ -38,7 +38,7 @@ const epicStories: Match[] = [
   { id: 'story-6', match: 'The Montreal Screwjob: What Really Happened', event: 'Story', promotion: 'WWE', date: '1997', rating: '0', videoId: 'GdlSrYNr3HM', videoSource: 'youtube', thumbnailId: 'GdlSrYNr3HM' },
   { id: 'story-7', match: 'The Complete Story of CM Punk', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'WrevIta43xk', videoSource: 'youtube', thumbnailId: 'WrevIta43xk' },
   { id: 'story-8', match: 'Undertaker: The Last Ride (Docuseries Premiere)', event: 'Story', promotion: 'WWE', date: '2020', rating: '0', videoId: 'k8yQlJIr7EY', videoSource: 'youtube', thumbnailId: 'k8yQlJIr7EY' },
-  { id: 'story-9', match: 'The Hangman Adam Page Saga', event: 'Story', promotion: 'AEW', date: '2021', rating: '0', videoId: '6y3k-q0QZ3U', videoSource: 'youtube', thumbnailId: '6y3k-q0QZ3U' },
+  { id: 'story-9', match: 'The Hangman Adam Page Saga', event: 'Story', promotion: 'AEW', date: '2021', rating: '0', videoId: 'cNkk8UI3GVw', videoSource: 'youtube', thumbnailId: 'cNkk8UI3GVw' },
   { id: 'story-10', match: 'The Monday Night War', event: 'Story', promotion: 'WWE/WCW', date: 'Various', rating: '0', videoId: 'td1TQ2D4pYI', videoSource: 'youtube', thumbnailId: 'td1TQ2D4pYI' }
 ];
 
