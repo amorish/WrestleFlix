@@ -6,7 +6,7 @@ export interface Match {
   event: string;
   rating: string;
   videoId?: string | string[];
-  videoSource?: 'youtube' | 'dailymotion' | 'vk' | 'bilibili' | 'archive';
+  videoSource?: 'youtube' | 'dailymotion' | 'vk' | 'bilibili' | 'archive' | 'wwe' | 'reddit' | 'twitter';
   timestamp?: string;
   endTimestamp?: string;
   thumbnailId?: string;

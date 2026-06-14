@@ -3860,7 +3860,7 @@
     "event": "WrestleMania 35",
     "category": "Moments",
     "rating": "0",
-    "videoId": "R6g3-b3z6f8",
+    "videoId": "RY_vqqXVSQk",
     "videoSource": "youtube",
     "description": "Kofi Kingston achieves his 11-year dream at WrestleMania 35."
   },
@@ -3884,7 +3884,7 @@
     "event": "Double or Nothing",
     "category": "Moments",
     "rating": "0",
-    "videoId": "j7ppjosBLZ0",
+    "videoId": "lZw8M5EXUsY",
     "videoSource": "youtube",
     "description": "Crashing the party through the crowd at Double or Nothing 2019."
   },
@@ -3932,8 +3932,8 @@
     "event": "NXT TakeOver: Dallas",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "Y0X3E8Z4Z0Y",
-    "videoSource": "youtube",
+    "videoId": "1mc978y",
+    "videoSource": "reddit",
     "description": "Lee England Jr. playing the violin live."
   },
   {
@@ -3944,8 +3944,8 @@
     "event": "WrestleMania 29",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "X1V1V0Z4r34",
-    "videoSource": "youtube",
+    "videoId": "the-undertaker-enters-on-the-grandest-stage-of-them-all-wrestlemania-29",
+    "videoSource": "wwe",
     "description": "The haunting live performance of his theme."
   },
   {
@@ -3974,14 +3974,14 @@
   },
   {
     "id": "353",
-    "date": "Apr 2, 2023",
-    "match": "Cody Rhodes Entrance",
+    "date": "2023-04-02",
+    "match": "Roman Reigns Entrance",
     "promotion": "WWE",
     "event": "WrestleMania 39",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "X1V1V0Z4r34",
-    "videoSource": "youtube",
+    "videoId": "1866162297296580743",
+    "videoSource": "twitter",
     "description": "The epic \"Kingdom\" singalong."
   },
   {
@@ -4004,7 +4004,7 @@
     "event": "WrestleMania 31",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "X1V1V0Z4r34",
+    "videoId": "_v6qGfZj14k",
     "videoSource": "youtube",
     "description": "Complete with Arnold Schwarzenegger intro."
   },
@@ -4052,8 +4052,8 @@
     "event": "Wrestle Kingdom 8",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "X1V1V0Z4r34",
-    "videoSource": "youtube",
+    "videoId": "1ojvhfk",
+    "videoSource": "reddit",
     "description": "Coming out with a giant sword and a robotic dinosaur."
   },
   {
@@ -4064,7 +4064,7 @@
     "event": "WrestleMania 32",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "X1V1V0Z4r34",
+    "videoId": "9sJC3QDHIAI",
     "videoSource": "youtube",
     "description": "Pop culture colliding with wrestling at WrestleMania."
   },
@@ -5106,5 +5106,27 @@
     ],
     "videoSource": "youtube",
     "description": "The reality show detailing the grueling life in NXT."
+  },
+  {
+    "id": "m1781431229754375",
+    "match": "Grado's \"Like a Prayer\" Entrance",
+    "date": "2015-11-15",
+    "promotion": "ICW",
+    "event": "Fear & Loathing VIII",
+    "rating": "0",
+    "category": "Iconic Entrances & Themes",
+    "videoId": "xBtGFaa0idY",
+    "videoSource": "youtube"
+  },
+  {
+    "id": "m1781431229754859",
+    "match": "\"The Fiend\" Bray Wyatt Debut Entrance",
+    "date": "2019-08-11",
+    "promotion": "WWE",
+    "event": "SummerSlam",
+    "rating": "0",
+    "category": "Iconic Entrances & Themes",
+    "videoId": "xix7bc",
+    "videoSource": "reddit"
   }
 ]

@@ -106,7 +106,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
       const endParam = endSeconds ? `&end=${endSeconds}` : '';
       videoUrl = `https://archive.org/embed/${currentVideoId}?autoplay=1${startParam}${endParam}`;
-    } else if (match.videoSource !== 'vk') {
+    } else if (match.videoSource && !['vk', 'reddit', 'twitter', 'wwe'].includes(match.videoSource)) {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
       const endParam = endSeconds ? `&end=${endSeconds}` : '';
       if (currentVideoId.startsWith('PL')) {
@@ -124,15 +124,23 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       </button>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <div className="video-container">
-          {match.videoSource === 'vk' ? (
+          {match.videoSource && ['vk', 'reddit', 'twitter', 'wwe'].includes(match.videoSource) ? (
             <div className="vk-fallback-container">
-              <h3>This match is hosted on VK</h3>
-              <p>Due to VK platform restrictions, this video cannot be embedded directly.</p>
-              <a href={`https://vk.com/${currentVideoId}`} target="_blank" rel="noreferrer" className="btn btn-accent vk-btn">
-                <Play fill="currentColor" size={16}/> Open Full Event on VK
+              <h3>This video is hosted on {match.videoSource === 'vk' ? 'VK' : match.videoSource === 'wwe' ? 'WWE.com' : match.videoSource === 'twitter' ? 'X (Twitter)' : 'Reddit'}</h3>
+              <p>Due to platform restrictions, this video cannot be embedded directly.</p>
+              <a 
+                href={
+                  match.videoSource === 'vk' ? `https://vk.com/${currentVideoId}` :
+                  match.videoSource === 'reddit' ? `https://www.reddit.com/r/SquaredCircle/comments/${currentVideoId}` :
+                  match.videoSource === 'twitter' ? `https://x.com/i/status/${currentVideoId}` :
+                  `https://www.wwe.com/videos/${currentVideoId}`
+                } 
+                target="_blank" rel="noreferrer" className="btn btn-accent vk-btn"
+              >
+                <Play fill="currentColor" size={16}/> Watch on {match.videoSource === 'vk' ? 'VK' : match.videoSource === 'wwe' ? 'WWE.com' : match.videoSource === 'twitter' ? 'X' : 'Reddit'}
               </a>
               {match.timestamp && (
-                <p className="vk-timestamp">The actual match begins at <strong>{match.timestamp}</strong></p>
+                <p className="vk-timestamp">The video begins at <strong>{match.timestamp}</strong></p>
               )}
             </div>
           ) : (
