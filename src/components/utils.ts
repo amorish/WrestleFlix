@@ -99,9 +99,9 @@ export function generateThumbnail(match: Match): string {
   // Fallback to random placeholder image if no video ID
   const hash = match.id.charCodeAt(0) + (match.match.charCodeAt(0) || 0);
   const images = [
-    'https://placehold.co/640x360/1e1e1e/ffffff?text=WrestleFlix',
-    'https://placehold.co/640x360/141414/e50914?text=WrestleFlix',
-    'https://placehold.co/640x360/000000/ffffff?text=Match+Not+Found'
+    'https://placehold.co/640x360/1e1e1e/ffffff?text=Not+Found',
+    'https://placehold.co/640x360/141414/e50914?text=Not+Found',
+    'https://placehold.co/640x360/000000/ffffff?text=Not+Found'
   ];
   return images[hash % images.length];
 }
