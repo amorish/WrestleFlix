@@ -29,11 +29,17 @@ const fullEvents: Match[] = [
   { id: 'fe-4', match: 'TNA Full Events', event: 'Full Event', promotion: 'TNA', date: 'Various', rating: '0', videoId: 'PLcovtt7Bdo9NjP43R0_lJH1tq3pyJnPRw', videoSource: 'youtube', thumbnailId: 'nZc0N8PE_x0' },
 ];
 
-const factionStories: Match[] = [
+const epicStories: Match[] = [
   { id: 'story-1', match: 'The Complete Story of The Bloodline', event: 'Story', promotion: 'WWE', date: '2023', rating: '0', videoId: 'GEpdhKHK4EI', videoSource: 'youtube', thumbnailId: 'GEpdhKHK4EI' },
   { id: 'story-2', match: 'History of BULLET CLUB', event: 'Story', promotion: 'NJPW', date: '2024', rating: '0', videoId: 'UFb8Dxypi00', videoSource: 'youtube', thumbnailId: 'UFb8Dxypi00' },
   { id: 'story-3', match: 'The nWo: A definitive history', event: 'Story', promotion: 'WCW', date: 'Various', rating: '0', videoId: 'baU1J1uJdvk', videoSource: 'youtube', thumbnailId: 'baU1J1uJdvk' },
-  { id: 'story-4', match: 'Complete history of The Shield', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'FKfBo1G83ao', videoSource: 'youtube', thumbnailId: 'FKfBo1G83ao' }
+  { id: 'story-4', match: 'Complete history of The Shield', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'FKfBo1G83ao', videoSource: 'youtube', thumbnailId: 'FKfBo1G83ao' },
+  { id: 'story-5', match: 'The Complete Story of Austin vs McMahon', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'ZWdF_NexO0g', videoSource: 'youtube', thumbnailId: 'ZWdF_NexO0g' },
+  { id: 'story-6', match: 'The Montreal Screwjob: What Really Happened', event: 'Story', promotion: 'WWE', date: '1997', rating: '0', videoId: 'GdlSrYNr3HM', videoSource: 'youtube', thumbnailId: 'GdlSrYNr3HM' },
+  { id: 'story-7', match: 'The Complete Story of CM Punk', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'WrevIta43xk', videoSource: 'youtube', thumbnailId: 'WrevIta43xk' },
+  { id: 'story-8', match: 'Undertaker: The Last Ride (Docuseries Premiere)', event: 'Story', promotion: 'WWE', date: '2020', rating: '0', videoId: 'k8yQlJIr7EY', videoSource: 'youtube', thumbnailId: 'k8yQlJIr7EY' },
+  { id: 'story-9', match: 'The Hangman Adam Page Saga', event: 'Story', promotion: 'AEW', date: '2021', rating: '0', videoId: '6y3k-q0QZ3U', videoSource: 'youtube', thumbnailId: '6y3k-q0QZ3U' },
+  { id: 'story-10', match: 'The Monday Night War', event: 'Story', promotion: 'WWE/WCW', date: 'Various', rating: '0', videoId: 'td1TQ2D4pYI', videoSource: 'youtube', thumbnailId: 'td1TQ2D4pYI' }
 ];
 
 function App() {
@@ -131,8 +137,8 @@ function App() {
     });
 
     rows.push({
-      title: 'Faction & Storyline Histories',
-      matches: factionStories
+      title: 'Epic Stories & Documentaries',
+      matches: epicStories
     });
 
     rows.push({
