@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import type { Match } from '../types';
 import { MatchCard } from './MatchCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -11,6 +11,22 @@ interface MatchRowProps {
 
 export const MatchRow: React.FC<MatchRowProps> = ({ title, matches, onPlay }) => {
   const rowRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    if (rowRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = rowRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+    return () => window.removeEventListener('resize', checkScroll);
+  }, [matches]);
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (rowRef.current) {
@@ -27,16 +43,26 @@ export const MatchRow: React.FC<MatchRowProps> = ({ title, matches, onPlay }) =>
       <div className="row-header">
         <h2 className="row-title">{title}</h2>
         <div className="row-nav-arrows">
-          <button className="slider-arrow-top left" onClick={() => handleScroll('left')}>
+          <button 
+            className="slider-arrow-top left" 
+            onClick={() => handleScroll('left')}
+            disabled={!canScrollLeft}
+            style={{ opacity: canScrollLeft ? 1 : 0.5, cursor: canScrollLeft ? 'pointer' : 'default' }}
+          >
             <ChevronLeft size={20} />
           </button>
-          <button className="slider-arrow-top right" onClick={() => handleScroll('right')}>
+          <button 
+            className="slider-arrow-top right" 
+            onClick={() => handleScroll('right')}
+            disabled={!canScrollRight}
+            style={{ opacity: canScrollRight ? 1 : 0.5, cursor: canScrollRight ? 'pointer' : 'default' }}
+          >
             <ChevronRight size={20} />
           </button>
         </div>
       </div>
       <div className="row-wrapper">
-        <div className="match-row" ref={rowRef}>
+        <div className="match-row" ref={rowRef} onScroll={checkScroll}>
           {matches.map(match => (
             <MatchCard key={match.id} match={match} onPlay={onPlay} />
           ))}
