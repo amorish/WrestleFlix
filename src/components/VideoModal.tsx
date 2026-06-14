@@ -107,11 +107,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
       const endParam = endSeconds ? `&end=${endSeconds}` : '';
       videoUrl = `https://archive.org/embed/${currentVideoId}?autoplay=1${startParam}${endParam}`;
-    } else if (match.videoSource === 'wwe') {
-      videoUrl = `https://www.wwe.com/embed/${currentVideoId}`;
     } else if (match.videoSource === 'reddit') {
       videoUrl = `https://embed.reddit.com/r/SquaredCircle/comments/${currentVideoId}`;
-    } else if (match.videoSource && !['vk', 'twitter'].includes(match.videoSource)) {
+    } else if (match.videoSource && !['vk', 'twitter', 'wwe'].includes(match.videoSource)) {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
       const endParam = endSeconds ? `&end=${endSeconds}` : '';
       if (currentVideoId.startsWith('PL')) {
@@ -129,15 +127,15 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       </button>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <div className="video-container">
-          {match.videoSource === 'vk' ? (
+          {match.videoSource && ['vk', 'wwe'].includes(match.videoSource) ? (
             <div className="vk-fallback-container">
-              <h3>This video is hosted on VK</h3>
+              <h3>This video is hosted on {match.videoSource === 'wwe' ? 'WWE.com' : 'VK'}</h3>
               <p>Due to platform restrictions, this video cannot be embedded directly.</p>
               <a 
-                href={`https://vk.com/${currentVideoId}`} 
+                href={match.videoSource === 'wwe' ? `https://www.wwe.com/videos/${currentVideoId}` : `https://vk.com/${currentVideoId}`} 
                 target="_blank" rel="noreferrer" className="btn btn-accent vk-btn"
               >
-                <Play fill="currentColor" size={16}/> Watch on VK
+                <Play fill="currentColor" size={16}/> Watch on {match.videoSource === 'wwe' ? 'WWE.com' : 'VK'}
               </a>
               {match.timestamp && (
                 <p className="vk-timestamp">The video begins at <strong>{match.timestamp}</strong></p>
