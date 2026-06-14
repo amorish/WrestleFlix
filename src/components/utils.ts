@@ -87,21 +87,29 @@ export function generateThumbnail(match: Match): string {
     return bestMatchUrl;
   }
 
+  // Not available
+  if (!match.videoId || match.videoId === 'Z1V1V0Z4r34' || match.videoId === 'TODO' || (Array.isArray(match.videoId) && match.videoId.length === 0)) {
+    return 'https://placehold.co/640x360/000000/ffffff?text=Not+Available';
+  }
+
+  const outerSources = ['vk', 'wwe', 'reddit', 'twitter', 'archive'];
+  if (match.videoSource && outerSources.includes(match.videoSource)) {
+    const titleText = match.match.length > 50 ? match.match.substring(0, 47) + '...' : match.match;
+    return `https://placehold.co/640x360/000000/ffffff?text=${encodeURIComponent(titleText)}`;
+  }
+
   if (match.videoId || match.thumbnailId) {
     if (match.videoSource === 'dailymotion') {
       return match.thumbnailId || `https://www.dailymotion.com/thumbnail/video/${match.videoId}`;
     }
     const targetId = match.thumbnailId || (Array.isArray(match.videoId) ? match.videoId[0] : match.videoId);
     if (targetId && !targetId.startsWith('PL')) {
+      if (targetId.startsWith('http')) {
+        return targetId;
+      }
       return `https://img.youtube.com/vi/${targetId}/maxresdefault.jpg`;
     }
   }
-  // Fallback to random placeholder image if no video ID
-  const hash = match.id.charCodeAt(0) + (match.match.charCodeAt(0) || 0);
-  const images = [
-    'https://placehold.co/640x360/1e1e1e/ffffff?text=Not+Found',
-    'https://placehold.co/640x360/141414/e50914?text=Not+Found',
-    'https://placehold.co/640x360/000000/ffffff?text=Not+Found'
-  ];
-  return images[hash % images.length];
+
+  return 'https://placehold.co/640x360/000000/ffffff?text=Not+Available';
 }
