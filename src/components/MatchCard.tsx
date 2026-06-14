@@ -32,12 +32,25 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
                 src={generateThumbnail(match)} 
                 alt={match.match} 
                 className="match-card-bg" 
+                onLoad={(e) => {
+                  const target = e.currentTarget;
+                  // YouTube's grey placeholder image is exactly 120px wide
+                  if (target.naturalWidth <= 120 && target.src.includes('youtube.com')) {
+                    if (target.src.includes('maxresdefault.jpg')) {
+                      target.src = target.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
+                    } else if (!target.src.includes('placehold.co')) {
+                      target.src = 'https://placehold.co/640x360/000000/ffffff?text=Not+Available';
+                    }
+                  }
+                }}
                 onError={(e) => {
                   const target = e.currentTarget;
                   if (target.src.includes('maxresdefault.jpg')) {
                     target.src = target.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
                   } else if (target.src.includes('hqdefault.jpg')) {
                     target.src = target.src.replace('hqdefault.jpg', 'mqdefault.jpg');
+                  } else if (!target.src.includes('placehold.co')) {
+                    target.src = 'https://placehold.co/640x360/000000/ffffff?text=Not+Available';
                   }
                 }}
               />
