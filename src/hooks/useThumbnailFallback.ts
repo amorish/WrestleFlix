@@ -33,7 +33,7 @@ export function useThumbnailFallback(initialSrc: string) {
       } else if (url.includes('hqdefault.jpg')) {
         nextUrl = url.replace('hqdefault.jpg', 'mqdefault.jpg');
       } else if (!url.includes('placehold.co')) {
-        nextUrl = 'https://placehold.co/640x360/000000/ffffff?text=Not+Available';
+        nextUrl = 'https://placehold.co/640x360/000000/ffffff?text=N/A';
       }
 
       if (nextUrl !== url) {

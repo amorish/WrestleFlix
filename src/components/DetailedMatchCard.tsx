@@ -26,7 +26,14 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
   const needsTag = (isOthers || isSpecialCategory) && match.promotion.toLowerCase() !== 'various';
 
   return (
-    <div ref={ref} className="detailed-match-card">
+    <div 
+      ref={ref} 
+      className="detailed-match-card"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') onPlay(match);
+      }}
+    >
       {inView ? (
         <>
           <div className={isPlaylist ? "playlist-stack-container" : ""}>
@@ -34,6 +41,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
               <img 
                 src={fallbackThumbnailUrl} 
                 alt={match.match} 
+                loading="lazy"
               />
               <div className="play-overlay">
                 <Play fill="white" size={40} />

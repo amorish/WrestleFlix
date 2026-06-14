@@ -657,3 +657,14 @@ body {
 
 .promo-logo { position: absolute; top: 12px; right: 12px; height: 24px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8)); z-index: 2; }
 .detailed-promo-logo { height: 30px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+
+/* Keyboard Accessibility Styles */
+.match-card-wrapper:focus,
+.detailed-match-card:focus {
+  outline: none;
+}
+.match-card-wrapper:focus-visible,
+.detailed-match-card:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}

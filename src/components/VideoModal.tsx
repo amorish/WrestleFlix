@@ -51,6 +51,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    
     if (match?.videoSource === 'twitter' && currentVideoId) {
       const renderTweet = () => {
         if (tweetContainerRef.current && (window as any).twttr?.widgets) {
@@ -77,8 +82,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
 
     return () => {
       document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [match, currentVideoId]);
+  }, [match, currentVideoId, onClose]);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => setCurrentPart(0), 0);

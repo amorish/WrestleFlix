@@ -1,5 +1,6 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
 import { useUrlState } from './hooks/useUrlState';
+import { useDebounce } from './hooks/useDebounce';
 import matchesData from './data/matches.json';
 import type { Match } from './types';
 import { HeroBanner } from './components/HeroBanner';
@@ -50,6 +51,7 @@ function App() {
   const [selectedPromotion, setSelectedPromotion] = useUrlState<string>('promo', 'All');
   const [sortOrder, setSortOrder] = useUrlState<'newest' | 'oldest' | 'highest_rated'>('sort', 'newest');
   const [searchQuery, setSearchQuery] = useUrlState<string>('q', '');
+  const debouncedSearchQuery = useDebounce(searchQuery, 300);
   const [selectedDecade, setSelectedDecade] = useUrlState<string>('decade', 'All Years');
 
   const matches: Match[] = matchesData as Match[];
@@ -59,9 +61,9 @@ function App() {
     return matches.find(m => m.id === selectedMatchId) || null;
   }, [selectedMatchId, matches]);
 
-  const handleSelectMatch = (match: Match | null) => {
+  const handleSelectMatch = useCallback((match: Match | null) => {
     setSelectedMatchId(match ? match.id : null);
-  };
+  }, [setSelectedMatchId]);
   
   const promotions = useMemo(() => {
     const promos = new Set(matches.map(m => m.promotion));
@@ -90,8 +92,8 @@ function App() {
         return true;
       });
     }
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase();
+    if (debouncedSearchQuery) {
+      const query = debouncedSearchQuery.toLowerCase();
       result = result.filter(m => 
         m.match.toLowerCase().includes(query) || 
         m.event.toLowerCase().includes(query) ||
@@ -105,7 +107,7 @@ function App() {
       return 0;
     });
     return result;
-  }, [matches, selectedPromotion, selectedDecade, sortOrder, searchQuery]);
+  }, [matches, selectedPromotion, selectedDecade, sortOrder, debouncedSearchQuery]);
 
   const heroMatch = useMemo(() => {
     return filteredAndSortedMatches.length > 0 ? filteredAndSortedMatches[0] : matches[0];
@@ -116,7 +118,7 @@ function App() {
   }, [filteredAndSortedMatches, heroMatch]);
 
   const rowsByPromotion = useMemo(() => {
-    if (searchQuery || selectedPromotion !== 'All') return null;
+    if (debouncedSearchQuery || selectedPromotion !== 'All') return null;
     
     const rows = [];
     
@@ -170,7 +172,7 @@ function App() {
     });
 
     return rows.filter(r => r.matches.length > 0);
-  }, [remainingMatches, matches, searchQuery, selectedPromotion]);
+  }, [remainingMatches, matches, debouncedSearchQuery, selectedPromotion]);
 
 
 

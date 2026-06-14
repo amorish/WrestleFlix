@@ -89,7 +89,7 @@ export function generateThumbnail(match: Match): string {
 
   // Not available
   if (!match.videoId || match.videoId === 'Z1V1V0Z4r34' || match.videoId === 'TODO' || (Array.isArray(match.videoId) && match.videoId.length === 0)) {
-    return 'https://placehold.co/640x360/000000/ffffff?text=Not+Available';
+    return 'https://placehold.co/640x360/000000/ffffff?text=N/A';
   }
 
   const outerSources = ['vk', 'wwe', 'reddit', 'twitter', 'archive'];
@@ -114,5 +114,5 @@ export function generateThumbnail(match: Match): string {
     }
   }
 
-  return 'https://placehold.co/640x360/000000/ffffff?text=Not+Available';
+  return 'https://placehold.co/640x360/000000/ffffff?text=N/A';
 }

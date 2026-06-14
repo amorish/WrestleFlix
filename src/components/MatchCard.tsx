@@ -26,7 +26,15 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
   const needsTag = (isOthers || isSpecialCategory) && match.promotion.toLowerCase() !== 'various';
 
   return (
-    <div ref={ref} className="match-card-wrapper" onClick={() => onPlay(match)}>
+    <div 
+      ref={ref} 
+      className="match-card-wrapper" 
+      onClick={() => onPlay(match)}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') onPlay(match);
+      }}
+    >
       {inView ? (
         <>
           <div className={isPlaylist ? "playlist-stack-container" : ""}>
@@ -34,7 +42,8 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
               <img 
                 src={fallbackThumbnailUrl} 
                 alt={match.match} 
-                className="match-card-bg" 
+                className="match-card-bg"
+                loading="lazy"
               />
               {needsTag ? (
                 <div className="promo-tag">#{match.promotion}</div>
