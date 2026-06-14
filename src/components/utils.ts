@@ -94,6 +94,9 @@ export function generateThumbnail(match: Match): string {
 
   const outerSources = ['vk', 'wwe', 'reddit', 'twitter', 'archive'];
   if (match.videoSource && outerSources.includes(match.videoSource)) {
+    if (match.thumbnailId && match.thumbnailId.startsWith('http')) {
+      return match.thumbnailId;
+    }
     const titleText = match.match.length > 50 ? match.match.substring(0, 47) + '...' : match.match;
     return `https://placehold.co/640x360/000000/ffffff?text=${encodeURIComponent(titleText)}`;
   }
