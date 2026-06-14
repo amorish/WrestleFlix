@@ -49,15 +49,16 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
     };
   }, []);
 
-  if (!match) return null;
+  
 
-  const isMultiPart = Array.isArray(match.videoId);
-  const videoIds = isMultiPart ? (match.videoId as string[]) : (match.videoId ? [match.videoId as string] : []);
+  const isMultiPart = Array.isArray(match?.videoId);
+  const videoIds = isMultiPart ? (match?.videoId as string[]) : (match?.videoId ? [match.videoId as string] : []);
   const [currentPart, setCurrentPart] = useState(0);
 
   useEffect(() => {
-    setCurrentPart(0);
-  }, [match.videoId]);
+    const timeoutId = setTimeout(() => setCurrentPart(0), 0);
+    return () => clearTimeout(timeoutId);
+  }, [match?.videoId]);
 
   useEffect(() => {
     if (!isMultiPart) return;
@@ -69,12 +70,16 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
         if (data && data.event === 'video_end') {
           setCurrentPart(prev => (prev < videoIds.length - 1 ? prev + 1 : prev));
         }
-      } catch (e) {}
+      } catch {
+        // ignore
+      }
     };
 
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
   }, [isMultiPart, videoIds.length]);
+
+  if (!match) return null;
 
   const searchQuery = encodeURIComponent(`${match.match} ${match.promotion} ${match.date} full match`);
   

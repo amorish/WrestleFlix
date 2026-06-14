@@ -97,13 +97,13 @@ function App() {
       'Moments',
       'Iconic Entrances & Themes',
       'Comedy & Botches',
+      'Behind the Curtain',
       'Mic Masters',
       'Dream Matches',
       'Legendary Rivalries',
       'Hidden Gems',
       'Unsanctioned & Hardcore',
-      'The Art of Storytelling',
-      'Behind the Curtain'
+      'Psychological / Philosophical'
     ];
 
     const mixedMatches = remainingMatches.filter(m => !m.category && m.event !== 'History of Wrestling' && m.event !== 'FULL EVENT');
@@ -114,6 +114,16 @@ function App() {
         matches: mixedMatches.slice(0, 15)
       });
     }
+
+    rows.push({
+      title: 'History of Wrestling',
+      matches: historyOfWrestling
+    });
+
+    rows.push({
+      title: 'FULL EVENT',
+      matches: fullEvents
+    });
 
     // Add dynamic categories
     categories.forEach(category => {
@@ -126,16 +136,6 @@ function App() {
       }
     });
 
-    rows.push({
-      title: 'History of Wrestling',
-      matches: historyOfWrestling
-    });
-
-    rows.push({
-      title: 'FULL EVENT',
-      matches: fullEvents
-    });
-    
     return rows.filter(r => r.matches.length > 0);
   }, [remainingMatches, matches, searchQuery, selectedPromotion]);
 

@@ -38,7 +38,7 @@ export function generateThumbnail(match: Match): string {
 
   for (const [path, url] of Object.entries(localThumbnails)) {
     const decodedPath = decodeURIComponent(path);
-    const filename = decodedPath.split('/').pop()?.toLowerCase().replace(/[_\-]/g, ' ').replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() || '';
+    const filename = decodedPath.split('/').pop()?.toLowerCase().replace(/[_-]/g, ' ').replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() || '';
     
     // Check for mismatched numbers (e.g. Dominion 6.11 vs 6.9)
     const filenameNumbers: string[] = filename.match(/\b\d+\b/g) || [];

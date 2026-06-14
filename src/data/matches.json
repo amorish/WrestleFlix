@@ -3258,8 +3258,8 @@
     "promotion": "CMLL",
     "event": "Leyenda de Plata",
     "rating": "5",
-    "videoId": null,
-    "videoSource": null,
+    "videoId": "dimdBZGiEuw",
+    "videoSource": "youtube",
     "description": "In the prestigious Leyenda de Plata tournament, the veteran Máscara Dorada faces the exciting new talent Neón in a generational clash. This match represents a pivotal moment for both luchadores, as Dorada aims to maintain his legacy while Neón seeks to make his mark and prove he is the future of CMLL."
   },
   {
@@ -3323,8 +3323,8 @@
     "promotion": "CMLL",
     "event": "92nd Anniversary Show",
     "rating": "5.5",
-    "videoId": null,
-    "videoSource": null,
+    "videoId": "Ylm-OG-pv1Y",
+    "videoSource": "youtube",
     "description": "In a truly unprecedented cross-promotional dream match at CMLL's 92nd Anniversary Show, the iconic Místico faces AEW's \"Devil\" MJF. This clash of cultures and styles pits CMLL's premier luchador against one of professional wrestling's most arrogant and cunning villains, promising an unforgettable spectacle with immense bragging rights at stake."
   },
   {
@@ -3645,19 +3645,6 @@
     "description": "The stage was set for a truly unique and personal clash at Noche de Los Grandes Week 1, as El Grande Americano faced off against \"The Original\" El Grande Americano. This highly anticipated AAA/WWE crossover bout was more than just a match; it was a battle for identity and legacy, with only one man able to claim the rightful mantle of El Grande Americano."
   },
   {
-    "id": "333",
-    "date": "September 19, 2025",
-    "match": "MJF vs. Místico",
-    "promotion": "CMLL",
-    "event": "92nd Anniversary Show",
-    "rating": "0",
-    "videoId": "x9qxoe2",
-    "videoSource": "dailymotion",
-    "timestamp": "21:15",
-    "endTimestamp": "47:04",
-    "description": "The bitter rivalry between MJF and Místico culminated in a massive Title vs. Mask match at the historic CMLL 92nd Anniversary Show. With the CMLL World Light Heavyweight Championship and Místico's legendary mask on the line, the stakes couldn't have been higher."
-  },
-  {
     "id": "334",
     "date": "October 21, 2023",
     "match": "\"Speedball\" Mike Bailey vs. Will Ospreay",
@@ -3710,7 +3697,7 @@
     "event": "G1 Climax",
     "category": "Moments",
     "rating": "0",
-    "videoId": "B_B9U6nKzX4",
+    "videoId": "Dct7m-MJDFs",
     "videoSource": "youtube",
     "description": "His emotional return at G1 Climax 2017 after a life-threatening injury."
   },
@@ -3722,7 +3709,7 @@
     "event": "Rampage",
     "category": "Moments",
     "rating": "0",
-    "videoId": "A5lU0q-U5Xg",
+    "videoId": "ByAXCjqBzLg",
     "videoSource": "youtube",
     "description": "The First Dance in Chicago; an unforgettable crowd reaction."
   },
@@ -3734,7 +3721,7 @@
     "event": "Bash at the Beach",
     "category": "Moments",
     "rating": "0",
-    "videoId": "cQO28uM6B3A",
+    "videoId": "B638ROb-iYk",
     "videoSource": "youtube",
     "description": "Hulk Hogan is the third man at Bash at the Beach 1996."
   },
@@ -3746,7 +3733,7 @@
     "event": "Honor Rising",
     "category": "Moments",
     "rating": "0",
-    "videoId": "e0F9wVj58-o",
+    "videoId": "4Q6NknbHNiQ",
     "videoSource": "youtube",
     "description": "Kenny Omega and Kota Ibushi finally embrace in NJPW."
   },
@@ -3758,7 +3745,7 @@
     "event": "No Way Out",
     "category": "Moments",
     "rating": "0",
-    "videoId": "j4mS78F1G78",
+    "videoId": "j0EiO7m-awc",
     "videoSource": "youtube",
     "description": "Defeating Brock Lesnar at No Way Out 2004."
   },
@@ -3782,7 +3769,7 @@
     "event": "Survivor Series",
     "category": "Moments",
     "rating": "0",
-    "videoId": "Q8bQ7gM5Z7s",
+    "videoId": "4qWKl9wLS9U",
     "videoSource": "youtube",
     "description": "The moment that changed the wrestling industry forever."
   },
@@ -3806,7 +3793,7 @@
     "event": "WrestleMania 24",
     "category": "Moments",
     "rating": "0",
-    "videoId": "0V0zQ2T3q-4",
+    "videoId": "PAIREqBFhnk",
     "videoSource": "youtube",
     "description": "Shawn Michaels retires Ric Flair at WrestleMania 24."
   },
@@ -3878,7 +3865,7 @@
     "event": "ECW One Night Stand",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "X1V1V0Z4r34",
+    "videoId": "1tPNQyGI8LQ",
     "videoSource": "youtube",
     "description": "The Hammerstein Ballroom singing \"Enter Sandman\"."
   },
@@ -3902,7 +3889,7 @@
     "event": "NXT TakeOver: Brooklyn II",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "X1V1V0Z4r34",
+    "videoId": "URNRTrpnT7g",
     "videoSource": "youtube",
     "description": "A choir elevating an already perfect theme."
   },
@@ -3926,7 +3913,7 @@
     "event": "Money in the Bank",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "X1V1V0Z4r34",
+    "videoId": "wroqcQVcoIg",
     "videoSource": "youtube",
     "description": "The electric walkout at Money in the Bank 2011."
   },
@@ -3950,7 +3937,7 @@
     "event": "NXT TakeOver: Brooklyn",
     "category": "Iconic Entrances & Themes",
     "rating": "0",
-    "videoId": "X1V1V0Z4r34",
+    "videoId": "Y4SYY41kVqc",
     "videoSource": "youtube",
     "description": "Complete with the chainsaw and body paint."
   },
@@ -4371,8 +4358,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL1",
-      "PL2"
+      "HHhalJbG4Zs",
+      "fQcz9j0Ceoc",
+      "d0am7-lXaus"
     ],
     "videoSource": "youtube",
     "description": "The 4-match saga that broke the star rating system."
@@ -4386,8 +4374,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL3",
-      "PL4"
+      "yWugBmcUBlo",
+      "rFoLA7nPHNg",
+      "UicJBCAIgto"
     ],
     "videoSource": "youtube",
     "description": "Their three epic WrestleMania encounters."
@@ -4401,8 +4390,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL5",
-      "PL6"
+      "ZywLvctwZj8",
+      "dPTqazz902E",
+      "F6BDAINNSxY"
     ],
     "videoSource": "youtube",
     "description": "The trilogy that redefined modern tag team wrestling."
@@ -4416,8 +4406,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL7",
-      "PL8"
+      "EdAVWuR7x5w",
+      "6eavM2BJDz8",
+      "lh4ro0Gzj64"
     ],
     "videoSource": "youtube",
     "description": "The quintessential King's Road rivalry."
@@ -4431,8 +4422,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL9",
-      "PL10"
+      "MsfEiZ_IY2U",
+      "LnaJzRCrz4c",
+      "S8JRVB-FUkw"
     ],
     "videoSource": "youtube",
     "description": "A multi-year story of anxiety, friendship, and triumph."
@@ -4446,8 +4438,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL11",
-      "PL12"
+      "SlSIP9A1Rt0",
+      "gUZDAULihlI",
+      "mK8UN4B2yoY"
     ],
     "videoSource": "youtube",
     "description": "The greatest sibling rivalry in sports entertainment."
@@ -4461,8 +4454,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL13",
-      "PL14"
+      "g4c1xDljsYQ",
+      "0Asbuywd1sY",
+      "MyOazK_8_m8"
     ],
     "videoSource": "youtube",
     "description": "A blood feud spanning from the indies to WrestleMania."
@@ -4476,8 +4470,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL15",
-      "PL16"
+      "l29mwpuKLJs",
+      "-qA9E1CHe_M",
+      "1shCkZCpp5k"
     ],
     "videoSource": "youtube",
     "description": "The storyline that legitimized the Women's Revolution."
@@ -4491,8 +4486,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL17",
-      "PL18"
+      "0a6SUIvOw7A",
+      "L_72bAYabGI",
+      "YpJddNlGjxc"
     ],
     "videoSource": "youtube",
     "description": "Deep-seated real-life animosity playing out on screen."
@@ -4506,8 +4502,9 @@
     "category": "Legendary Rivalries",
     "rating": "0",
     "videoId": [
-      "PL19",
-      "PL20"
+      "HhrraT5QwO8",
+      "n8gBvd31fhE",
+      "pGRd0rtQQdk"
     ],
     "videoSource": "youtube",
     "description": "The passing of the torch for the Ace of New Japan."
@@ -4758,7 +4755,7 @@
     "match": "Wrestling's Psychological Masterpiece",
     "promotion": "Various",
     "event": "User Submission",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Pjbix3yrBX4",
     "videoSource": "youtube",
@@ -4770,7 +4767,7 @@
     "match": "Why Professional Wrestling is Fascinating",
     "promotion": "Various",
     "event": "Super Eyepatch Wolf",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Z1V1V0Z4r34",
     "videoSource": "youtube",
@@ -4782,7 +4779,7 @@
     "match": "Wrestling Isn't Wrestling",
     "promotion": "WWE",
     "event": "Max Landis",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Z1V1V0Z4r34",
     "videoSource": "youtube",
@@ -4794,7 +4791,7 @@
     "match": "The Fascinating Story of the Golden Lovers",
     "promotion": "NJPW",
     "event": "Super Eyepatch Wolf",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Z1V1V0Z4r34",
     "videoSource": "youtube",
@@ -4806,7 +4803,7 @@
     "match": "Hangman Page's Millennial Anxiety",
     "promotion": "AEW",
     "event": "Tranquilo Club",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Z1V1V0Z4r34",
     "videoSource": "youtube",
@@ -4818,7 +4815,7 @@
     "match": "The Tragedy of the Undertaker",
     "promotion": "WWE",
     "event": "Super Eyepatch Wolf",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Z1V1V0Z4r34",
     "videoSource": "youtube",
@@ -4830,7 +4827,7 @@
     "match": "The Fall and Rise of Katsuyori Shibata",
     "promotion": "NJPW",
     "event": "Super Eyepatch Wolf",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Z1V1V0Z4r34",
     "videoSource": "youtube",
@@ -4842,7 +4839,7 @@
     "match": "The Brilliance of Toru Yano",
     "promotion": "NJPW",
     "event": "Showbuckle",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Z1V1V0Z4r34",
     "videoSource": "youtube",
@@ -4854,7 +4851,7 @@
     "match": "Roman Reigns: The Making of the Tribal Chief",
     "promotion": "WWE",
     "event": "Tranquilo Club",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Z1V1V0Z4r34",
     "videoSource": "youtube",
@@ -4866,7 +4863,7 @@
     "match": "NJPW's In-Ring Psychology Explained",
     "promotion": "NJPW",
     "event": "Showbuckle",
-    "category": "The Art of Storytelling",
+    "category": "Psychological / Philosophical",
     "rating": "0",
     "videoId": "Z1V1V0Z4r34",
     "videoSource": "youtube",
