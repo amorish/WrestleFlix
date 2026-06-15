@@ -4838,18 +4838,6 @@
     "description": "AEW's violent, unsanctioned classic."
   },
   {
-    "id": "422",
-    "date": "Jul 19, 2023",
-    "match": "The Elite vs. Blackpool Combat Club",
-    "promotion": "AEW",
-    "event": "Blood & Guts",
-    "category": "Unsanctioned & Hardcore",
-    "rating": "0",
-    "videoId": null,
-    "videoSource": null,
-    "description": "A chaotic dual-ring cage match war."
-  },
-  {
     "id": "423",
     "date": "Various",
     "match": "Wrestling's Psychological Masterpiece",
@@ -5018,19 +5006,6 @@
     "thumbnailId": "https://i.ytimg.com/vi/sx6ohfn_3VE/sddefault.jpg"
   },
   {
-    "id": "m_a9c1358b",
-    "match": "The Elite vs. Blackpool Combat Club",
-    "date": "2023-07-19",
-    "promotion": "AEW",
-    "event": "Dynamite: Blood & Guts",
-    "category": "Epic Multi-Man Battles",
-    "rating": "0",
-    "videoId": "VWoDFZYu8zs",
-    "videoSource": "youtube",
-    "timestamp": "1:19:13",
-    "endTimestamp": "2:21:43"
-  },
-  {
     "id": "m_72a2ca9f",
     "match": "WWE: Unreal (Season 1 & 2)",
     "date": "2024-01-01",
@@ -5110,6 +5085,7 @@
     "videoSource": "youtube",
     "thumbnailId": "VWoDFZYu8zs",
     "timestamp": "1:19:13",
-    "endTimestamp": "2:21:43"
+    "endTimestamp": "2:21:43",
+    "description": "A chaotic dual-ring cage match war."
   }
 ]
