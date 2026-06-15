@@ -26,7 +26,7 @@ export function Terms({ onBack }: TermsProps) {
         <section className="terms-section">
           <h2>Data & Content Sources</h2>
           <p className="page-text">
-            WrestleFlix is a community-driven curation project. The match lists, event metadata, and generated ratings are aggregated from publicly available wrestling databases, community forums, and historical archives. Our video sources are exclusively linked via official or publicly accessible uploads on platforms such as YouTube and DailyMotion. All match and event images are sourced from public search engines, promotional materials, or community contributions, and remain the property of their respective copyright holders. We do not claim original ownership of this raw data or imagery; our platform serves solely as an organized index to help fans navigate this publicly available history.
+            WrestleFlix is a community-driven curation project. The match lists, event metadata, and generated ratings are aggregated from publicly available wrestling databases, community forums (such as Reddit), and historical archives. Our video sources are exclusively linked via official or publicly accessible uploads on platforms such as YouTube, DailyMotion, Bilibili, X (formerly Twitter), VK, and others. All match and event images are sourced from public search engines, promotional materials, or community contributions, and remain the property of their respective copyright holders. We do not claim original ownership of this raw data or imagery; our platform serves solely as an organized index to help fans navigate this publicly available history.
           </p>
         </section>
 
