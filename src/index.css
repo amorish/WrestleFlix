@@ -23,6 +23,15 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--card-bg); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
 .app-container { min-height: 100vh; display: flex; flex-direction: column; }
 .glass-effect { background: rgba(20, 20, 20, 0.7); backdrop-filter: blur(10px); }
 
@@ -406,8 +415,7 @@ body {
 .video-buttons-container { display: flex; gap: 0.5rem; align-items: center; }
 .video-btn-img { height: 60px; object-fit: contain; cursor: pointer; transition: transform 0.2s; }
 .video-btn-img[src*="dailymotion"] { height: 68px; margin-left: 0.2rem; }
-.video-btn-img:hover { transform: scale(1.02); }
-.video-btn-img[src*="dailymotion"]:hover { transform: scale(1.02); }
+a:hover .video-btn-img { transform: scale(1.02); }
 
 @media (max-width: 768px) {
   /* Detailed list */
