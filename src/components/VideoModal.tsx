@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { Match } from '../types';
 import { X, Play } from 'lucide-react';
 
@@ -39,7 +39,6 @@ const CustomStarRating = ({ rating }: { rating: string }) => {
 
 export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
-  const tweetContainerRef = useRef<HTMLDivElement>(null);
 
   const isMultiPart = Array.isArray(match?.videoId);
   const videoIds = isMultiPart ? (match?.videoId as string[]) : (match?.videoId ? [match.videoId as string] : []);
@@ -53,36 +52,12 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
-    
-    if (match?.videoSource === 'twitter' && currentVideoId) {
-      const renderTweet = () => {
-        if (tweetContainerRef.current && (window as any).twttr?.widgets) {
-          tweetContainerRef.current.innerHTML = '';
-          (window as any).twttr.widgets.createTweet(
-            currentVideoId,
-            tweetContainerRef.current,
-            { theme: 'dark', align: 'center' }
-          );
-        }
-      };
-
-      if (!(window as any).twttr) {
-        const script = document.createElement('script');
-        script.src = 'https://platform.twitter.com/widgets.js';
-        script.async = true;
-        script.onload = renderTweet;
-        document.body.appendChild(script);
-      } else {
-        // Slight timeout to ensure the ref is attached if it was just mounted
-        setTimeout(renderTweet, 50);
-      }
-    }
 
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [match, currentVideoId, onClose]);
+  }, [onClose]);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => setCurrentPart(0), 0);
@@ -170,10 +145,15 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
             </div>
           ) : match.videoSource === 'twitter' ? (
             <div 
-              ref={tweetContainerRef}
               className="twitter-embed-container" 
               style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'auto', background: '#000' }}
             >
+              <iframe
+                src={`https://platform.twitter.com/embed/Tweet.html?id=${currentVideoId}&theme=dark`}
+                style={{ border: 'none', width: '100%', maxWidth: '550px', height: '100%' }}
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
           ) : (
             <iframe
