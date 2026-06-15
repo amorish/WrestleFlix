@@ -191,7 +191,14 @@ function App() {
       <div className="spatial-background"></div>
       
       <nav className="floating-topbar">
-        <div className="logo-container" onClick={() => window.location.reload()}>
+        <div className="logo-container" onClick={() => {
+          setSelectedMatchId(null);
+          setSelectedPromotion('All');
+          setSortOrder('newest');
+          setSearchQuery('');
+          setSelectedDecade('All Years');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}>
           <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" />
         </div>
       </nav>
