@@ -716,3 +716,5 @@ a:hover .video-btn-img { transform: scale(1.02); }
   .detailed-event { font-size: 1.4rem; }
   .btn { font-size: 1.2rem; padding: 0.8rem 2rem; }
 }
+
+.site-disclaimer { text-align: center; color: #666; font-size: 0.8rem; padding: 2rem 4%; margin-top: 4rem; font-weight: 400; }

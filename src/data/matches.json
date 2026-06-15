@@ -5097,5 +5097,19 @@
     "rating": "0",
     "videoId": "y6I4eU22hOM",
     "videoSource": "youtube"
+  },
+  {
+    "id": "bg-2023-blood-guts",
+    "match": "The Elite vs. Blackpool Combat Club",
+    "event": "Blood & Guts",
+    "promotion": "AEW",
+    "date": "July 19, 2023",
+    "rating": "0",
+    "category": "Unsanctioned & Hardcore",
+    "videoId": "VWoDFZYu8zs",
+    "videoSource": "youtube",
+    "thumbnailId": "VWoDFZYu8zs",
+    "timestamp": "1:19:13",
+    "endTimestamp": "2:21:43"
   }
 ]

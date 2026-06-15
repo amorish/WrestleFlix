@@ -264,6 +264,10 @@ function App() {
         )}
       </div>
 
+      <footer className="site-disclaimer">
+        Disclaimer: WrestleFlix does not host or provide any of the videos shown. All videos are publicly available on the internet and embedded from third-party platforms.
+      </footer>
+
       {selectedMatch && <VideoModal match={selectedMatch} onClose={() => handleSelectMatch(null)} />}
     </div>
   );
