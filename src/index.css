@@ -669,3 +669,50 @@ a:hover .video-btn-img { transform: scale(1.02); }
   outline: 2px solid var(--accent-color);
   outline-offset: 4px;
 }
+
+/* Tablet Responsiveness (901px to 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .spatial-hero-wrapper { gap: 1.5rem; }
+  .hero-spatial-poster { width: 180px; }
+  .hero-spatial-title { font-size: 2.2rem; }
+  .match-card-wrapper { flex: 0 0 280px; }
+  .detailed-match-card { width: 100%; max-width: 100%; }
+  .detailed-thumbnail { width: 320px; }
+}
+
+/* TV Responsiveness (1800px and up) */
+@media (min-width: 1800px) {
+  .floating-topbar { max-width: 2400px; padding-top: 50px; }
+  .logo-image { transform: scale(4); }
+  .spatial-hero-wrapper { max-width: 2400px; gap: 5rem; }
+  .spatial-hero-container { height: 800px; min-height: 800px; border-radius: 40px; }
+  .hero-spatial-title { font-size: 4rem; }
+  .hero-spatial-desc { font-size: 1.3rem; margin-bottom: 3rem; }
+  .hero-spatial-meta { font-size: 1.2rem; }
+  .hero-spatial-poster { width: 320px; }
+  .spatial-dock-container { height: 800px; gap: 1.5rem; }
+  .dock-item { width: 120px; height: 55px; font-size: 1.2rem; }
+  .dock-item img { max-width: 110px; max-height: 35px; }
+  .btn-spatial-primary, .btn-spatial-secondary { font-size: 1.3rem; padding: 0.8rem 2rem; }
+  
+  .main-content { max-width: 2400px; }
+  .explore-header-text h2 { font-size: 2.5rem; }
+  .explore-header-text p { font-size: 1.2rem; }
+  .compact-search { padding: 1rem 1.5rem; }
+  .compact-search input { width: 250px; font-size: 1.2rem; }
+  .custom-dropdown-trigger { padding: 1rem 2rem; font-size: 1.2rem; }
+  .pill { font-size: 1.2rem; padding: 0.8rem 1.8rem; }
+  
+  .row-title { font-size: 1.8rem; }
+  .match-card-wrapper { flex: 0 0 450px; }
+  .match-card-title-row h4 { font-size: 1.3rem; }
+  .rating-stars { font-size: 1.1rem; }
+  .match-card-meta { font-size: 1.1rem; }
+  
+  .detailed-match-card { max-width: 1400px; padding: 2.5rem; border-radius: 20px; }
+  .detailed-thumbnail { width: 550px; }
+  .detailed-title { font-size: 2rem; }
+  .detailed-meta { font-size: 1.2rem; }
+  .detailed-event { font-size: 1.4rem; }
+  .btn { font-size: 1.2rem; padding: 0.8rem 2rem; }
+}
