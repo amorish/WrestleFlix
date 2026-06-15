@@ -167,7 +167,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
               className="twitter-embed-container" 
               style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'auto', background: '#000' }}
             >
-              <blockquote className="twitter-tweet" data-theme="dark" data-dnt="true" align="center">
+              <blockquote className="twitter-tweet" data-theme="dark" data-dnt="true">
                 <a href={`https://x.com/i/status/${currentVideoId}`}></a>
               </blockquote>
             </div>
