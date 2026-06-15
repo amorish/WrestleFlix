@@ -53,11 +53,30 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
     };
     window.addEventListener('keydown', handleKeyDown);
 
+    if (match?.videoSource === 'twitter' && currentVideoId) {
+      const loadTwitterWidget = () => {
+        if ((window as any).twttr && (window as any).twttr.widgets) {
+          (window as any).twttr.widgets.load();
+        }
+      };
+
+      if (!(window as any).twttr) {
+        const script = document.createElement('script');
+        script.setAttribute('src', 'https://platform.x.com/widgets.js');
+        script.setAttribute('charset', 'utf-8');
+        script.setAttribute('async', 'true');
+        script.onload = loadTwitterWidget;
+        document.head.appendChild(script);
+      } else {
+        setTimeout(loadTwitterWidget, 50);
+      }
+    }
+
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onClose]);
+  }, [match, currentVideoId, onClose]);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => setCurrentPart(0), 0);
@@ -148,12 +167,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
               className="twitter-embed-container" 
               style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'auto', background: '#000' }}
             >
-              <iframe
-                src={`https://platform.twitter.com/embed/Tweet.html?id=${currentVideoId}&theme=dark`}
-                style={{ border: 'none', width: '100%', maxWidth: '550px', height: '100%' }}
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+              <blockquote className="twitter-tweet" data-theme="dark" data-dnt="true" align="center">
+                <a href={`https://x.com/i/status/${currentVideoId}`}></a>
+              </blockquote>
             </div>
           ) : (
             <iframe
