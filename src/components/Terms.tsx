@@ -23,7 +23,13 @@ export function Terms({ onBack }: TermsProps) {
             All multimedia content available here is publicly accessible on the internet and is embedded via third-party video sharing platforms, primarily YouTube and DailyMotion, utilizing their standard, publicly available embed iframe APIs. We do not claim any copyright, trademark, or ownership over any of the wrestling promotions, brands, logos, or video footage featured. All intellectual property remains entirely with its respective owners, including but not limited to WWE, AEW, NJPW, TNA, and other independent promotions. If you are a copyright owner and believe your content should not be embedded here, please contact the host platform directly (e.g., YouTube) to request the video's removal, which will automatically reflect across our directory.
           </p>
         </section>
-        
+        <section className="terms-section">
+          <h2>Data & Content Sources</h2>
+          <p className="page-text">
+            WrestleFlix is a community-driven curation project. The match lists, event metadata, and generated ratings are aggregated from publicly available wrestling databases, community forums, and historical archives. Our video sources are exclusively linked via official or publicly accessible uploads on platforms such as YouTube and DailyMotion. All match and event images are sourced from public search engines, promotional materials, or community contributions, and remain the property of their respective copyright holders. We do not claim original ownership of this raw data or imagery; our platform serves solely as an organized index to help fans navigate this publicly available history.
+          </p>
+        </section>
+
         <section className="terms-section">
           <h2>Terms of Use</h2>
           <p className="page-text">
