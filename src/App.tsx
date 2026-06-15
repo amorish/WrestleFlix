@@ -72,13 +72,11 @@ function App() {
 
   const filteredAndSortedMatches = useMemo(() => {
     let result = [...matches];
-    const includedCategories = ['Unsanctioned & Hardcore', 'Hidden Gems', 'Legendary Rivalries', 'Dream Matches'];
-    
     if (selectedPromotion === 'Others') {
       const topPromos = ['WWE', 'AEW', 'NJPW', 'WCW', 'TNA', 'ROH', 'AAA', 'ECW'];
-      result = result.filter(m => !topPromos.some(p => m.promotion.includes(p)) && (!m.category || includedCategories.includes(m.category)));
+      result = result.filter(m => !topPromos.some(p => m.promotion.includes(p)) && !m.category);
     } else if (selectedPromotion !== 'All') {
-      result = result.filter(m => m.promotion === selectedPromotion && (!m.category || includedCategories.includes(m.category)));
+      result = result.filter(m => m.promotion === selectedPromotion && !m.category);
     }
     
     if (selectedDecade !== 'All Years') {
@@ -129,10 +127,6 @@ function App() {
       'Comedy & Botches',
       'Behind the Curtain',
       'Mic Masters',
-      'Dream Matches',
-      'Legendary Rivalries',
-      'Hidden Gems',
-      'Unsanctioned & Hardcore',
       'Psychological / Philosophical'
     ];
 

@@ -21,9 +21,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
   const videoCount = Array.isArray(match.videoId) ? match.videoId.length : null;
   const mainPromotions = ['WWE', 'AEW', 'NJPW', 'ROH', 'TNA'];
   const isOthers = !mainPromotions.includes(match.promotion);
-  const specialCategories = ['Unsanctioned & Hardcore', 'Hidden Gems', 'Legendary Rivalries', 'Dream Matches'];
-  const isSpecialCategory = match.category && specialCategories.includes(match.category);
-  const needsTag = (isOthers || isSpecialCategory) && match.promotion.toLowerCase() !== 'various';
+  const needsTag = isOthers && match.promotion.toLowerCase() !== 'various';
 
   return (
     <div 
