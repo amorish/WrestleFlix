@@ -127,6 +127,10 @@ function App() {
       'Comedy & Botches',
       'Behind the Curtain',
       'Mic Masters',
+      'Dream Matches',
+      'Legendary Rivalries',
+      'Hidden Gems',
+      'Unsanctioned & Hardcore',
       'Psychological / Philosophical'
     ];
 
