@@ -9,6 +9,9 @@ import { VideoModal } from './components/VideoModal';
 import { FilterSortBar } from './components/FilterSortBar';
 import { DetailedMatchCard } from './components/DetailedMatchCard';
 import { SkeletonLoader } from './components/SkeletonLoader';
+import { AboutUs } from './components/AboutUs';
+import { Terms } from './components/Terms';
+import { FeedbackForm } from './components/FeedbackForm';
 
 import logoUrl from './assets/layout/wrestleflix_logo.webp';
 
@@ -53,6 +56,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useUrlState<string>('q', '');
   const debouncedSearchQuery = useDebounce(searchQuery, 300);
   const [selectedDecade, setSelectedDecade] = useUrlState<string>('decade', 'All Years');
+  const [currentPage, setCurrentPage] = useUrlState<string>('page', 'home');
 
   const matches: Match[] = matchesData as Match[];
   
@@ -197,15 +201,23 @@ function App() {
           setSortOrder('newest');
           setSearchQuery('');
           setSelectedDecade('All Years');
+          setCurrentPage('home');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}>
           <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" />
         </div>
+        <div className="topbar-nav-links">
+          <button className={`nav-link ${currentPage === 'about' ? 'active' : ''}`} onClick={() => { setCurrentPage('about'); window.scrollTo(0,0); }}>About Us</button>
+          <button className={`nav-link ${currentPage === 'terms' ? 'active' : ''}`} onClick={() => { setCurrentPage('terms'); window.scrollTo(0,0); }}>Terms</button>
+          <button className={`nav-link ${currentPage === 'forms' ? 'active' : ''}`} onClick={() => { setCurrentPage('forms'); window.scrollTo(0,0); }}>Feedback</button>
+        </div>
       </nav>
 
-      <HeroBanner 
-        match={heroMatch} 
-        onPlay={handleSelectMatch} 
+      {currentPage === 'home' && (
+        <>
+          <HeroBanner 
+            match={heroMatch} 
+            onPlay={handleSelectMatch} 
         promotions={promotions}
         selectedPromotion={selectedPromotion}
         onPromotionChange={setSelectedPromotion}
@@ -263,8 +275,19 @@ function App() {
           </div>
         )}
       </div>
+        </>
+      )}
+
+      {currentPage === 'about' && <AboutUs onBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />}
+      {currentPage === 'terms' && <Terms onBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />}
+      {currentPage === 'forms' && <FeedbackForm onBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />}
 
       <footer className="site-disclaimer">
+        <div className="footer-links">
+          <button className="nav-link" onClick={() => { setCurrentPage('about'); window.scrollTo(0,0); }}>About Us</button>
+          <button className="nav-link" onClick={() => { setCurrentPage('terms'); window.scrollTo(0,0); }}>Terms, Security & Disclaimer</button>
+          <button className="nav-link" onClick={() => { setCurrentPage('forms'); window.scrollTo(0,0); }}>Feedback Form</button>
+        </div>
         Disclaimer: WrestleFlix does not host or provide any of the videos shown. All videos are publicly available on the internet and embedded from third-party platforms.
       </footer>
 

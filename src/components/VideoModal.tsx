@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import type { Match } from '../types';
 import { X, Play } from 'lucide-react';
-import youtubeBtn from '../assets/layout/watch it on youtube.webp';
-import dailymotionBtn from '../assets/layout/watch it on dailymotion.webp';
 
 interface VideoModalProps {
   match: Match | null;
@@ -249,27 +247,6 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
               )}
             </div>
           )}
-          
-          <div className="video-buttons-container">
-            {match.videoSource !== 'dailymotion' && (
-              <a 
-                href={currentVideoId ? (currentVideoId.startsWith('PL') ? `https://www.youtube.com/playlist?list=${currentVideoId}` : `https://www.youtube.com/watch?v=${currentVideoId}`) : `https://www.youtube.com/results?search_query=${searchQuery}`} 
-                target="_blank" 
-                rel="noreferrer" 
-              >
-                <img src={youtubeBtn} alt="Watch on YouTube" className="video-btn-img" />
-              </a>
-            )}
-            {(match.videoSource === 'dailymotion' || !match.videoSource) && (
-              <a 
-                href={currentVideoId && match.videoSource === 'dailymotion' ? `https://www.dailymotion.com/video/${currentVideoId}` : `https://www.dailymotion.com/search/${searchQuery}`} 
-                target="_blank" 
-                rel="noreferrer" 
-              >
-                <img src={dailymotionBtn} alt="Watch on DailyMotion" className="video-btn-img" />
-              </a>
-            )}
-          </div>
         </div>
       </div>
     </div>
