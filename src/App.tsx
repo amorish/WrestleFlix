@@ -207,9 +207,9 @@ function App() {
           <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" />
         </div>
         <div className="topbar-nav-links">
-          <button className={`nav-link ${currentPage === 'about' ? 'active' : ''}`} onClick={() => { setCurrentPage('about'); window.scrollTo(0,0); }}>About Us</button>
-          <button className={`nav-link ${currentPage === 'terms' ? 'active' : ''}`} onClick={() => { setCurrentPage('terms'); window.scrollTo(0,0); }}>Terms</button>
-          <button className={`nav-link ${currentPage === 'forms' ? 'active' : ''}`} onClick={() => { setCurrentPage('forms'); window.scrollTo(0,0); }}>Feedback</button>
+          <button className={`nav-link ${currentPage === 'about' ? 'active' : ''}`} onClick={() => { setCurrentPage('about'); window.scrollTo(0,0); }}>Our Mission</button>
+          <button className={`nav-link ${currentPage === 'terms' ? 'active' : ''}`} onClick={() => { setCurrentPage('terms'); window.scrollTo(0,0); }}>Legal & Security</button>
+          <button className={`nav-link ${currentPage === 'forms' ? 'active' : ''}`} onClick={() => { setCurrentPage('forms'); window.scrollTo(0,0); }}>Contact Support</button>
         </div>
       </nav>
 
@@ -284,11 +284,10 @@ function App() {
 
       <footer className="site-disclaimer">
         <div className="footer-links">
-          <button className="nav-link" onClick={() => { setCurrentPage('about'); window.scrollTo(0,0); }}>About Us</button>
-          <button className="nav-link" onClick={() => { setCurrentPage('terms'); window.scrollTo(0,0); }}>Terms, Security & Disclaimer</button>
-          <button className="nav-link" onClick={() => { setCurrentPage('forms'); window.scrollTo(0,0); }}>Feedback Form</button>
+          <button className="nav-link" onClick={() => { setCurrentPage('about'); window.scrollTo(0,0); }}>Our Mission</button>
+          <button className="nav-link" onClick={() => { setCurrentPage('terms'); window.scrollTo(0,0); }}>Legal & Security</button>
+          <button className="nav-link" onClick={() => { setCurrentPage('forms'); window.scrollTo(0,0); }}>Contact Support</button>
         </div>
-        Disclaimer: WrestleFlix does not host or provide any of the videos shown. All videos are publicly available on the internet and embedded from third-party platforms.
       </footer>
 
       {selectedMatch && <VideoModal match={selectedMatch} onClose={() => handleSelectMatch(null)} />}

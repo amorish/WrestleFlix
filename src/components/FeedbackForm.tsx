@@ -28,13 +28,13 @@ export function FeedbackForm({ onBack }: FeedbackFormProps) {
     <div className="page-container">
       <div className="page-header">
         <button className="btn btn-secondary back-btn" onClick={onBack}>
-          <ArrowLeft size={20} /> Back to Home
+          <ArrowLeft size={20} /> Back
         </button>
-        <h1 className="page-title">Feedback & Contact</h1>
+        <h1 className="page-title">Contact Support</h1>
       </div>
       <div className="page-content glass-effect">
         <p className="page-text" style={{ marginBottom: '2rem' }}>
-          Have a suggestion, found a bug, or want to request content? Send us a message!
+          WrestleFlix thrives on the passion and input of its community. Whether you have discovered a technical bug, wish to suggest a legendary match we may have missed, or simply want to share your thoughts on how we can improve the platform, our inbox is always open. Please provide as much detail as possible so our team can address your request efficiently and thoughtfully.
         </p>
         
         <form className="feedback-form" onSubmit={handleSubmit}>
