@@ -53,29 +53,6 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
     };
     window.addEventListener('keydown', handleKeyDown);
 
-    if (match?.videoSource === 'twitter' && currentVideoId) {
-      let retries = 0;
-      const loadTwitterWidget = () => {
-        if ((window as any).twttr && (window as any).twttr.widgets) {
-          (window as any).twttr.widgets.load();
-        } else if (retries < 20) {
-          retries++;
-          setTimeout(loadTwitterWidget, 100);
-        }
-      };
-
-      if (!document.getElementById('twitter-wjs')) {
-        const script = document.createElement('script');
-        script.id = 'twitter-wjs';
-        script.setAttribute('src', 'https://platform.x.com/widgets.js');
-        script.setAttribute('charset', 'utf-8');
-        script.setAttribute('async', 'true');
-        document.head.appendChild(script);
-      }
-      
-      loadTwitterWidget();
-    }
-
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
@@ -166,12 +143,6 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
                 <p className="vk-timestamp">The video begins at <strong>{match.timestamp}</strong></p>
               )}
             </div>
-          ) : match.videoSource === 'twitter' ? (
-            <div 
-              className="twitter-embed-container" 
-              style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'auto', background: '#000' }}
-              dangerouslySetInnerHTML={{ __html: `<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true"><a href="https://x.com/x/status/${currentVideoId}">Loading video...</a></blockquote>` }}
-            />
           ) : (
             <iframe
               src={videoUrl}
