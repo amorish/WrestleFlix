@@ -206,11 +206,6 @@ function App() {
         }}>
           <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" />
         </div>
-        <div className="topbar-nav-links">
-          <button className={`nav-link ${currentPage === 'about' ? 'active' : ''}`} onClick={() => { setCurrentPage('about'); window.scrollTo(0,0); }}>Our Mission</button>
-          <button className={`nav-link ${currentPage === 'terms' ? 'active' : ''}`} onClick={() => { setCurrentPage('terms'); window.scrollTo(0,0); }}>Legal & Security</button>
-          <button className={`nav-link ${currentPage === 'forms' ? 'active' : ''}`} onClick={() => { setCurrentPage('forms'); window.scrollTo(0,0); }}>Contact Support</button>
-        </div>
       </nav>
 
       {currentPage === 'home' && (
