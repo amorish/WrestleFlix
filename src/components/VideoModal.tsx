@@ -129,15 +129,19 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       </button>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <div className="video-container">
-          {match.videoSource && ['vk', 'wwe'].includes(match.videoSource) ? (
+          {match.videoSource && (['vk', 'wwe'].includes(match.videoSource) || match.externalOnly) ? (
             <div className="vk-fallback-container">
-              <h3>This video is hosted on {match.videoSource === 'wwe' ? 'WWE.com' : 'VK'}</h3>
+              <h3>This video is hosted on {match.videoSource === 'wwe' ? 'WWE.com' : match.videoSource === 'reddit' ? 'Reddit' : 'VK'}</h3>
               <p>Due to platform restrictions, this video cannot be embedded directly.</p>
               <a 
-                href={match.videoSource === 'wwe' ? `https://www.wwe.com/videos/${currentVideoId}` : `https://vk.com/${currentVideoId}`} 
+                href={
+                  match.videoSource === 'wwe' ? `https://www.wwe.com/videos/${currentVideoId}` : 
+                  match.videoSource === 'reddit' ? `https://www.reddit.com/r/SquaredCircle/comments/${currentVideoId}` :
+                  `https://vk.com/${currentVideoId}`
+                } 
                 target="_blank" rel="noreferrer" className="btn btn-accent vk-btn"
               >
-                <Play fill="currentColor" size={16}/> Watch on {match.videoSource === 'wwe' ? 'WWE.com' : 'VK'}
+                <Play fill="currentColor" size={16}/> Watch on {match.videoSource === 'wwe' ? 'WWE.com' : match.videoSource === 'reddit' ? 'Reddit' : 'VK'}
               </a>
               {match.timestamp && (
                 <p className="vk-timestamp">The video begins at <strong>{match.timestamp}</strong></p>

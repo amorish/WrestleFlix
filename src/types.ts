@@ -12,4 +12,5 @@ export interface Match {
   thumbnailId?: string;
   description?: string;
   category?: string;
+  externalOnly?: boolean;
 }
