@@ -19,7 +19,7 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
 
   const isPlaylist = Array.isArray(match.videoId) || (typeof match.videoId === 'string' && match.videoId.startsWith('PL'));
   const videoCount = Array.isArray(match.videoId) ? match.videoId.length : null;
-  const mainPromotions = ['WWE', 'AEW', 'NJPW', 'ROH', 'TNA'];
+  const mainPromotions = ['WWE', 'AEW', 'NJPW', 'ROH', 'TNA', 'WCW', 'AAA', 'ECW'];
   const isOthers = !mainPromotions.includes(match.promotion);
   const specialCategories = ['Unsanctioned & Hardcore', 'Hidden Gems', 'Legendary Rivalries', 'Dream Matches'];
   const isSpecialCategory = match.category && specialCategories.includes(match.category);
