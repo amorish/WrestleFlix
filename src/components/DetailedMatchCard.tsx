@@ -1,5 +1,5 @@
 import type { Match } from '../types';
-import { generateThumbnail, getPromotionLogo, isBWLogoPromotion } from './utils';
+import { generateThumbnail, getPromotionLogo, isBWLogoPromotion, getMockDuration } from './utils';
 import { useThumbnailFallback } from '../hooks/useThumbnailFallback';
 import { Play, Star, Calendar, ListVideo } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
@@ -58,6 +58,9 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
                   <Star fill="#f5c518" color="#f5c518" size={14} /> {match.rating}
                 </div>
               )}
+              <div className="duration-badge">
+                {getMockDuration(match.id)}
+              </div>
             </div>
           </div>
           

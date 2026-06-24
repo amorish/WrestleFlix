@@ -41,6 +41,17 @@ export function getPromotionLogo(promotion: string): string | null {
   return null;
 }
 
+export function getMockDuration(id: string): string {
+  const hash = id.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+  const h = Math.floor((hash % 100) / 60);
+  const m = 10 + (hash % 40) + (h * 60);
+  const s = hash % 60;
+  if (h > 0) {
+    return `${h}:${(m % 60).toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  }
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
 export function isBWLogoPromotion(promotion: string): boolean {
   const lower = promotion.toLowerCase();
   // Keep WWE, AEW, NJPW in their original colors. Make almost everything else white.

@@ -1,5 +1,5 @@
 import type { Match } from '../types';
-import { generateThumbnail, getPromotionLogo, isBWLogoPromotion } from './utils';
+import { generateThumbnail, getPromotionLogo, isBWLogoPromotion, getMockDuration } from './utils';
 import { useThumbnailFallback } from '../hooks/useThumbnailFallback';
 import { Play, ListVideo } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
@@ -54,6 +54,9 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
               )}
               <div className="match-card-hover-overlay">
                 <Play className="play-icon-large" size={48} />
+              </div>
+              <div className="duration-badge">
+                {getMockDuration(match.id)}
               </div>
             </div>
           </div>

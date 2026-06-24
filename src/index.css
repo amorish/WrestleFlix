@@ -282,6 +282,23 @@ img {
 .play-icon-large { color: white; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
 .match-card-wrapper:hover .play-icon-large { transform: scale(1); }
 
+.duration-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family: inherit;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 18px 24px 6px 8px;
+  background: radial-gradient(100% 100% at bottom left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+  z-index: 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+
 .match-card-info { padding: 0.8rem 0; }
 .match-card-title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.2rem; }
 .match-card-title-row h4 { font-size: 1.05rem; font-weight: 600; color: #ececec; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -1018,4 +1035,10 @@ a:hover .video-btn-img { transform: scale(1.02); }
     padding: 2rem 4% 1.5rem;
     margin-top: 3rem;
   }
+}
+
+body.light-mode {
+  /* To be filled in later based on user instructions */
+  background: #f0f0f0;
+  color: #111;
 }

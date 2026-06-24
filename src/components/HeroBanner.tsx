@@ -1,5 +1,5 @@
 import type { Match } from '../types';
-import { generateThumbnail } from './utils';
+import { generateThumbnail, getMockDuration } from './utils';
 import { useThumbnailFallback } from '../hooks/useThumbnailFallback';
 import { Play } from 'lucide-react';
 import wweLogo from '../assets/promotions/wwe.svg';
@@ -54,6 +54,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               {match.rating !== '0' && <span className="imdb-badge">{match.rating}</span>}
               <span>{match.date}</span>
               <span>{match.promotion}</span>
+              <span>{getMockDuration(match.id)}</span>
             </div>
             
             <p className="hero-spatial-desc">

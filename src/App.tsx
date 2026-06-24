@@ -12,6 +12,7 @@ import { SkeletonLoader } from './components/SkeletonLoader';
 import { AboutUs } from './components/AboutUs';
 import { Terms } from './components/Terms';
 import { FeedbackForm } from './components/FeedbackForm';
+import { Search, Settings } from 'lucide-react';
 
 import logoUrl from './assets/layout/wrestleflix_logo.webp';
 
@@ -57,6 +58,16 @@ function App() {
   const debouncedSearchQuery = useDebounce(searchQuery, 300);
   const [selectedDecade, setSelectedDecade] = useUrlState<string>('decade', 'All Years');
   const [currentPage, setCurrentPage] = useUrlState<string>('page', 'home');
+  const [isLightMode, setIsLightMode] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+
+  useEffect(() => {
+    if (isLightMode) {
+      document.body.classList.add('light-mode');
+    } else {
+      document.body.classList.remove('light-mode');
+    }
+  }, [isLightMode]);
 
   const matches: Match[] = matchesData as Match[];
   
@@ -195,11 +206,60 @@ function App() {
     <div className="app-container">
       <div className="spatial-background"></div>
       
-      <nav className="floating-topbar">
+      <nav className="floating-topbar" style={{ justifyContent: 'space-between' }}>
         <div className="logo-container">
           <a href="https://wrestleflix.pages.dev/" style={{ display: 'flex' }}>
             <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" style={{ cursor: 'pointer' }} />
           </a>
+        </div>
+        
+        <div className="header-right-actions" style={{ display: 'flex', alignItems: 'center', gap: '1rem', position: 'relative' }}>
+          {currentPage === 'home' && (
+            <div className="compact-search">
+              <Search size={18} className="search-icon" />
+              <input 
+                type="text" 
+                placeholder="Search Match" 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          )}
+          
+          <button 
+            className="settings-toggle-btn" 
+            onClick={() => setShowSettings(!showSettings)}
+            style={{ background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+          >
+            <Settings size={24} />
+          </button>
+
+          {showSettings && (
+            <div className="settings-dropdown-menu" style={{ 
+              position: 'absolute', top: '100%', right: 0, marginTop: '0.5rem',
+              background: 'rgba(25, 25, 27, 0.95)', border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '8px', padding: '1rem', minWidth: '200px',
+              backdropFilter: 'blur(10px)', zIndex: 1000
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                <span style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 500 }}>Light Mode</span>
+                <button 
+                  onClick={() => setIsLightMode(!isLightMode)}
+                  style={{
+                    background: isLightMode ? '#e50914' : 'rgba(255,255,255,0.1)',
+                    border: 'none', borderRadius: '20px', width: '40px', height: '22px',
+                    position: 'relative', cursor: 'pointer', transition: 'background 0.3s'
+                  }}
+                >
+                  <div style={{
+                    width: '18px', height: '18px', background: '#fff', borderRadius: '50%',
+                    position: 'absolute', top: '2px', left: isLightMode ? '20px' : '2px',
+                    transition: 'left 0.3s'
+                  }} />
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -225,8 +285,6 @@ function App() {
               onPromotionChange={setSelectedPromotion}
               sortOrder={sortOrder}
               onSortChange={setSortOrder}
-              searchQuery={searchQuery}
-              onSearchChange={setSearchQuery}
               selectedDecade={selectedDecade}
               onDecadeChange={setSelectedDecade}
             />
@@ -245,8 +303,6 @@ function App() {
                 onPromotionChange={setSelectedPromotion}
                 sortOrder={sortOrder}
                 onSortChange={setSortOrder}
-                searchQuery={searchQuery}
-                onSearchChange={setSearchQuery}
                 selectedDecade={selectedDecade}
                 onDecadeChange={setSelectedDecade}
               />
