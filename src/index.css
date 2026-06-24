@@ -798,6 +798,7 @@ a:hover .video-btn-img { transform: scale(1.02); }
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
 
 /* Light Mode Variables and Adjustments */
 body.light-mode {
