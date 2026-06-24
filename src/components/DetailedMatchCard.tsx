@@ -1,5 +1,5 @@
 import type { Match } from '../types';
-import { generateThumbnail, getPromotionLogo, isWhiteLogoPromotion } from './utils';
+import { generateThumbnail, getPromotionLogo, isGrayscaleLogoPromotion } from './utils';
 import { useThumbnailFallback } from '../hooks/useThumbnailFallback';
 import { Play, Star, Calendar, ListVideo } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
@@ -44,7 +44,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
                 <Play fill="white" size={40} />
               </div>
               {logoUrl ? (
-                <img src={logoUrl as string} alt={match.promotion} className={`promo-logo ${isWhiteLogoPromotion(match.promotion) ? 'logo-white' : ''}`} />
+                <img src={logoUrl as string} alt={match.promotion} className={`promo-logo ${isGrayscaleLogoPromotion(match.promotion) ? 'logo-grayscale' : ''}`} />
               ) : showTag ? (
                 <div className="promo-tag">#{match.promotion}</div>
               ) : null}
@@ -64,7 +64,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
           <div className="detailed-info">
             <div className="detailed-header">
               <h3 className="detailed-title" onClick={() => onPlay(match)}>{match.match}</h3>
-              {logoUrl && <img src={logoUrl as string} alt={match.promotion} className={`detailed-promo-logo ${isWhiteLogoPromotion(match.promotion) ? 'logo-white' : ''}`} />}
+              {logoUrl && <img src={logoUrl as string} alt={match.promotion} className={`detailed-promo-logo ${isGrayscaleLogoPromotion(match.promotion) ? 'logo-grayscale' : ''}`} />}
             </div>
             
             <div className="detailed-meta">
