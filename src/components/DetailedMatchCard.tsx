@@ -19,11 +19,8 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
 
   const isPlaylist = Array.isArray(match.videoId) || (typeof match.videoId === 'string' && match.videoId.startsWith('PL'));
   const videoCount = Array.isArray(match.videoId) ? match.videoId.length : null;
-  const mainPromotions = ['WWE', 'AEW', 'NJPW', 'ROH', 'TNA', 'WCW', 'AAA', 'ECW'];
-  const isOthers = !mainPromotions.includes(match.promotion);
-  const specialCategories = ['Unsanctioned & Hardcore', 'Hidden Gems', 'Legendary Rivalries', 'Dream Matches'];
-  const isSpecialCategory = match.category && specialCategories.includes(match.category);
-  const needsTag = (isOthers || isSpecialCategory) && match.promotion.toLowerCase() !== 'various';
+  const logoUrl = getPromotionLogo(match.promotion);
+  const showTag = !logoUrl && match.promotion.toLowerCase() !== 'various';
 
   return (
     <div 
@@ -46,7 +43,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
               <div className="play-overlay">
                 <Play fill="white" size={40} />
               </div>
-              {needsTag && <div className="promo-tag">#{match.promotion}</div>}
+              {showTag && <div className="promo-tag">#{match.promotion}</div>}
               {isPlaylist && (
                 <div className="playlist-badge" style={match.rating !== '0' ? { bottom: '35px' } : {}}>
                   <ListVideo size={14} /> {videoCount ? `${videoCount} videos` : 'Playlist'}
@@ -63,7 +60,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
           <div className="detailed-info">
             <div className="detailed-header">
               <h3 className="detailed-title" onClick={() => onPlay(match)}>{match.match}</h3>
-              {!needsTag && getPromotionLogo(match.promotion) && <img src={getPromotionLogo(match.promotion) as string} alt={match.promotion} className="detailed-promo-logo" />}
+              {logoUrl && <img src={logoUrl as string} alt={match.promotion} className="detailed-promo-logo" />}
             </div>
             
             <div className="detailed-meta">

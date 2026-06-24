@@ -19,11 +19,8 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
 
   const isPlaylist = Array.isArray(match.videoId) || (typeof match.videoId === 'string' && match.videoId.startsWith('PL'));
   const videoCount = Array.isArray(match.videoId) ? match.videoId.length : null;
-  const mainPromotions = ['WWE', 'AEW', 'NJPW', 'ROH', 'TNA', 'WCW', 'AAA', 'ECW'];
-  const isOthers = !mainPromotions.includes(match.promotion);
-  const specialCategories = ['Unsanctioned & Hardcore', 'Hidden Gems', 'Legendary Rivalries', 'Dream Matches'];
-  const isSpecialCategory = match.category && specialCategories.includes(match.category);
-  const needsTag = (isOthers || isSpecialCategory) && match.promotion.toLowerCase() !== 'various';
+  const logoUrl = getPromotionLogo(match.promotion);
+  const showTag = !logoUrl && match.promotion.toLowerCase() !== 'various';
 
   return (
     <div 
@@ -45,11 +42,11 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
                 className="match-card-bg"
                 loading="lazy"
               />
-              {needsTag ? (
+              {logoUrl ? (
+                <img src={logoUrl as string} alt={match.promotion} className="promo-logo" />
+              ) : showTag ? (
                 <div className="promo-tag">#{match.promotion}</div>
-              ) : (
-                getPromotionLogo(match.promotion) && <img src={getPromotionLogo(match.promotion) as string} alt={match.promotion} className="promo-logo" />
-              )}
+              ) : null}
               {isPlaylist && (
                 <div className="playlist-badge">
                   <ListVideo size={14} /> {videoCount ? `${videoCount} videos` : 'Playlist'}
