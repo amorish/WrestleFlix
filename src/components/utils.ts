@@ -36,6 +36,14 @@ export function generateThumbnail(match: Match): string {
     return grandeImg;
   }
 
+  if (match.match.toLowerCase().includes('unreal')) {
+    // If wwe unreal thumbnail is imported, we can return it. But since it is in localThumbnails, let's just find it manually from the localThumbnails object.
+    const unrealKey = Object.keys(localThumbnails).find(key => key.toLowerCase().includes('wwe unreal thumbnail.png'));
+    if (unrealKey) {
+      return localThumbnails[unrealKey];
+    }
+  }
+
   const normalizedMatchName = match.match.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
   const matchNameNoParens = match.match.toLowerCase().replace(/\([^)]*\)/g, '').replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
   const normalizedEventName = match.event ? match.event.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim() : '';
