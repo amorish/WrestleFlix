@@ -229,7 +229,7 @@ function App() {
           <button 
             className="settings-toggle-btn" 
             onClick={() => setShowSettings(!showSettings)}
-            style={{ background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+            style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
           >
             <Settings size={24} />
           </button>
@@ -237,12 +237,13 @@ function App() {
           {showSettings && (
             <div className="settings-dropdown-menu" style={{ 
               position: 'absolute', top: '100%', right: 0, marginTop: '0.5rem',
-              background: 'rgba(25, 25, 27, 0.95)', border: '1px solid rgba(255,255,255,0.1)',
+              background: 'var(--card-bg)', border: '1px solid rgba(128,128,128,0.2)',
               borderRadius: '8px', padding: '1rem', minWidth: '200px',
-              backdropFilter: 'blur(10px)', zIndex: 1000
+              backdropFilter: 'blur(10px)', zIndex: 1000,
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                <span style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 500 }}>Light Mode</span>
+                <span style={{ color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: 500 }}>Light Mode</span>
                 <button 
                   onClick={() => setIsLightMode(!isLightMode)}
                   style={{

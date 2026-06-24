@@ -60,12 +60,12 @@ img {
 .floating-topbar {
   position: relative; top: auto; left: auto;
   width: 100%; max-width: 1800px; margin: 0 auto;
-  padding: 30px 4% 0 4%;
+  padding: 15px 4% 0 4%;
   display: flex; align-items: center; justify-content: flex-start;
   z-index: 1000;
 }
-.logo-container { display: flex; align-items: center; gap: 0.8rem; cursor: pointer; margin-left: -15px; transform: scale(3); transform-origin: left center; width: max-content; }
-.logo-image { height: 45px; width: auto; object-fit: contain; }
+.logo-container { display: flex; align-items: center; gap: 0.8rem; cursor: pointer; margin-left: -15px; transform: scale(3.5); transform-origin: left center; width: max-content; }
+.logo-image { height: 50px; width: auto; object-fit: contain; }
 .topbar-actions { display: flex; align-items: center; gap: 1rem; }
 .profile-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.2); }
 
@@ -156,7 +156,7 @@ img {
 .btn-spatial-secondary:hover { background: rgba(70, 70, 75, 0.8); }
 
 @media (max-width: 900px) {
-  .floating-topbar { padding: 25px 6% 0 6%; }
+  .floating-topbar { padding: 15px 6% 0 6%; }
   .explore-header-container { padding: 0 6%; }
   .row-header { padding: 0 6%; }
   .match-row { padding: 10px 6% 30px 6%; }
@@ -459,7 +459,7 @@ a:hover .video-btn-img { transform: scale(1.02); }
 
 @media (max-width: 768px) {
   /* Floating Topbar */
-  .logo-container { transform: scale(3.5); } .logo-image { height: 38px; }
+  .logo-container { transform: scale(4); } .logo-image { height: 42px; }
   
   /* Explore Header Text Fix */
   .explore-header-text h2 { font-size: 1.4rem; }
@@ -798,6 +798,102 @@ a:hover .video-btn-img { transform: scale(1.02); }
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+/* Light Mode Variables and Adjustments */
+body.light-mode {
+  --bg-color: #f4f4f5;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --card-bg: #ffffff;
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+}
+
+body.light-mode .spatial-background {
+  background: radial-gradient(circle at 50% 30%, #e4e4e7 0%, #f4f4f5 70%);
+}
+
+body.light-mode .hero-overlay-spatial {
+  background: linear-gradient(to right, rgba(244,244,245,0.95) 0%, rgba(244,244,245,0.6) 40%, rgba(244,244,245,0.1) 100%),
+              linear-gradient(to top, rgba(244,244,245,0.9) 0%, transparent 40%);
+}
+
+body.light-mode .compact-search,
+body.light-mode .custom-dropdown-trigger {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+}
+
+body.light-mode .compact-search input {
+  color: var(--text-primary);
+}
+
+body.light-mode .custom-dropdown-menu {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .custom-dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+body.light-mode .pill {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .pill:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .pill.active {
+  background: var(--text-primary);
+  color: #fff;
+}
+
+body.light-mode .detailed-match-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .detailed-match-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+body.light-mode .match-card-title-row h4,
+body.light-mode .detailed-title,
+body.light-mode .row-title,
+body.light-mode .explore-header-text h2 {
+  color: var(--text-primary);
+}
+
+body.light-mode .detailed-event {
+  color: var(--text-secondary);
+}
+
+body.light-mode .modal-content {
+  background: #ffffff;
+}
+
+body.light-mode .modal-info {
+  background: #f4f4f5;
+}
+
+body.light-mode .modal-info h2 {
+  color: var(--text-primary);
+}
+
+body.light-mode .rating-number {
+  color: var(--text-primary);
+}
+
+body.light-mode .slider-arrow-top {
+  background: rgba(200, 200, 200, 0.6);
+  color: var(--text-primary);
+}
   max-width: 600px;
 }
 
