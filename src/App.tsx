@@ -126,6 +126,7 @@ function App() {
     
     // Group matches by category
     const categories = [
+      'Legacy Matches',
       'Moments',
       'Iconic Entrances & Themes',
       'Comedy & Botches',
