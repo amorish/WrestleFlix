@@ -197,13 +197,7 @@ function App() {
       
       <nav className="floating-topbar">
         <div className="logo-container" onClick={() => {
-          setSelectedMatchId(null);
-          setSelectedPromotion('All');
-          setSortOrder('newest');
-          setSearchQuery('');
-          setSelectedDecade('All Years');
-          setCurrentPage('home');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.location.href = 'https://wrestleflix.pages.dev/';
         }}>
           <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" />
         </div>
