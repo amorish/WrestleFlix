@@ -196,10 +196,10 @@ function App() {
       <div className="spatial-background"></div>
       
       <nav className="floating-topbar">
-        <div className="logo-container" onClick={() => {
-          window.location.href = 'https://wrestleflix.pages.dev/';
-        }}>
-          <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" />
+        <div className="logo-container">
+          <a href="https://wrestleflix.pages.dev/" style={{ display: 'flex' }}>
+            <img src={logoUrl} alt="WrestleFlix Logo" className="logo-image" style={{ cursor: 'pointer' }} />
+          </a>
         </div>
       </nav>
 
