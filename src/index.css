@@ -49,7 +49,7 @@ img {
 .btn-accent:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4); }
 
 /* Spatial App Container */
-.app-container { min-height: 100vh; display: flex; flex-direction: column; background: #000; overflow-x: hidden; }
+.app-container { min-height: 100vh; display: flex; flex-direction: column; background: var(--bg-color); overflow-x: hidden; }
 .spatial-background {
   position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   background: radial-gradient(circle at 50% 30%, #1a1a24 0%, #000000 70%);
@@ -60,7 +60,7 @@ img {
 .floating-topbar {
   position: relative; top: auto; left: auto;
   width: 100%; max-width: 1800px; margin: 0 auto;
-  padding: 15px 4% 0 4%;
+  padding: 30px 4% 0 4%;
   display: flex; align-items: center; justify-content: flex-start;
   z-index: 1000;
 }
@@ -872,6 +872,15 @@ body.light-mode .explore-header-text h2 {
 
 body.light-mode .detailed-event {
   color: var(--text-secondary);
+}
+
+body.light-mode .dock-item img {
+  filter: brightness(0) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+body.light-mode .detailed-promo-logo,
+body.light-mode .logo-bw {
+  filter: brightness(0) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 body.light-mode .modal-content {
