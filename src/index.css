@@ -798,6 +798,7 @@ a:hover .video-btn-img { transform: scale(1.02); }
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 600px;
 }
 
 /* Light Mode Variables and Adjustments */
@@ -903,8 +904,6 @@ body.light-mode .rating-number {
 body.light-mode .slider-arrow-top {
   background: rgba(200, 200, 200, 0.6);
   color: var(--text-primary);
-}
-  max-width: 600px;
 }
 
 .form-group {
