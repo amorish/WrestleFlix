@@ -43,7 +43,11 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
               <div className="play-overlay">
                 <Play fill="white" size={40} />
               </div>
-              {showTag && <div className="promo-tag">#{match.promotion}</div>}
+              {logoUrl ? (
+                <img src={logoUrl as string} alt={match.promotion} className={`promo-logo ${isWhiteLogoPromotion(match.promotion) ? 'logo-white' : ''}`} />
+              ) : showTag ? (
+                <div className="promo-tag">#{match.promotion}</div>
+              ) : null}
               {isPlaylist && (
                 <div className="playlist-badge" style={match.rating !== '0' ? { bottom: '35px' } : {}}>
                   <ListVideo size={14} /> {videoCount ? `${videoCount} videos` : 'Playlist'}
