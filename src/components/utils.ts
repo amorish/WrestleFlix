@@ -41,7 +41,7 @@ export function getPromotionLogo(promotion: string): string | null {
   return null;
 }
 
-export function isGrayscaleLogoPromotion(promotion: string): boolean {
+export function isBWLogoPromotion(promotion: string): boolean {
   const lower = promotion.toLowerCase();
   // Keep WWE, AEW, NJPW in their original colors. Make almost everything else white.
   const originalColorPromos = ['wwe', 'wwf', 'aew', 'njpw'];

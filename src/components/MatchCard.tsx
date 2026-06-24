@@ -1,5 +1,5 @@
 import type { Match } from '../types';
-import { generateThumbnail, getPromotionLogo, isGrayscaleLogoPromotion } from './utils';
+import { generateThumbnail, getPromotionLogo, isBWLogoPromotion } from './utils';
 import { useThumbnailFallback } from '../hooks/useThumbnailFallback';
 import { Play, ListVideo } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
@@ -43,7 +43,7 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
                 loading="lazy"
               />
               {logoUrl ? (
-                <img src={logoUrl as string} alt={match.promotion} className={`promo-logo ${isGrayscaleLogoPromotion(match.promotion) ? 'logo-grayscale' : ''}`} />
+                <img src={logoUrl as string} alt={match.promotion} className={`promo-logo ${isBWLogoPromotion(match.promotion) ? 'logo-bw' : ''}`} />
               ) : showTag ? (
                 <div className="promo-tag">#{match.promotion}</div>
               ) : null}
