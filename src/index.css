@@ -986,3 +986,30 @@ a:hover .video-btn-img { transform: scale(1.02); }
 .logo-bw {
   filter: grayscale(100%) contrast(1000%) drop-shadow(0 2px 4px rgba(255,255,255,0.2)) !important;
 }
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1.5rem 1rem;
+    margin: 100px 4% 30px;
+  }
+  .page-content {
+    padding: 1.5rem 1rem;
+  }
+  .page-title {
+    font-size: 1.8rem;
+  }
+  .page-text {
+    font-size: 1rem;
+  }
+  .terms-section h2 {
+    font-size: 1.3rem;
+  }
+  .footer-links {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .site-disclaimer {
+    padding: 2rem 4% 1.5rem;
+    margin-top: 3rem;
+  }
+}
