@@ -811,6 +811,42 @@ body.light-mode {
   --navbar-bg: rgba(255, 255, 255, 0.95);
 }
 
+body.light-mode .page-content.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+body.light-mode .page-text {
+  color: var(--text-secondary);
+}
+
+body.light-mode .terms-section h2 {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group select,
+body.light-mode .form-group textarea {
+  background: rgba(0,0,0,0.03);
+  color: var(--text-primary);
+  border-color: rgba(0,0,0,0.1);
+}
+
+body.light-mode .form-group label {
+  color: var(--text-secondary);
+}
+
+body.light-mode .back-btn {
+  background: rgba(0,0,0,0.05);
+  color: var(--text-primary);
+  border-color: rgba(0,0,0,0.1);
+}
+
+body.light-mode .back-btn:hover {
+  background: rgba(0,0,0,0.1);
+}
+
 body.light-mode .spatial-background {
   background: radial-gradient(circle at 50% 30%, #e4e4e7 0%, #f4f4f5 70%);
 }
@@ -818,6 +854,15 @@ body.light-mode .spatial-background {
 body.light-mode .hero-overlay-spatial {
   background: linear-gradient(to right, rgba(244,244,245,0.95) 0%, rgba(244,244,245,0.6) 40%, rgba(244,244,245,0.1) 100%),
               linear-gradient(to top, rgba(244,244,245,0.9) 0%, transparent 40%);
+}
+
+body.light-mode .hero-spatial-meta,
+body.light-mode .hero-spatial-desc {
+  color: var(--text-secondary);
+}
+
+body.light-mode .hero-spatial-title {
+  text-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 body.light-mode .compact-search,
