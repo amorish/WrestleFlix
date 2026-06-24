@@ -1035,6 +1035,21 @@ a:hover .video-btn-img { transform: scale(1.02); }
     padding: 2rem 4% 1.5rem;
     margin-top: 3rem;
   }
+  .logo-container {
+    transform: scale(1.8);
+    margin-left: 0;
+  }
+  .compact-search {
+    padding: 0.5rem 0.8rem;
+    gap: 0.4rem;
+  }
+  .compact-search input {
+    width: 80px;
+    font-size: 0.85rem;
+  }
+  .settings-toggle-btn {
+    transform: scale(0.85);
+  }
 }
 
 body.light-mode {
