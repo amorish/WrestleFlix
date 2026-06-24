@@ -8,6 +8,13 @@ import tnaLogo from '../assets/promotions/TNA.svg';
 import rohLogo from '../assets/promotions/ROH.svg';
 import aaaLogo from '../assets/promotions/aaa.svg';
 import ecwLogo from '../assets/promotions/ecw.svg';
+import ajwLogo from '../assets/promotions/extra/All_Japan_Women\'s_Pro-Wrestling_logo.svg';
+import impactLogo from '../assets/promotions/extra/IMPACT!_Wrestling_logo_(2019).svg';
+import jcpLogo from '../assets/promotions/extra/Jim_Crockett_Promotions_(Logo).svg';
+import luchaUndergroundLogo from '../assets/promotions/extra/Lucha-Underground-logo.svg';
+import pwgLogo from '../assets/promotions/extra/PWG_Logo.svg';
+import ajpwLogo from '../assets/promotions/extra/all-jpan-pro-wrestling-logo.svg';
+import nwaLogo from '../assets/promotions/extra/nwa.svg';
 
 export function getPromotionLogo(promotion: string): string | null {
   const lower = promotion.toLowerCase();
@@ -16,15 +23,21 @@ export function getPromotionLogo(promotion: string): string | null {
   if (lower.includes('njpw')) return njpwLogo;
   if (lower.includes('wcw')) return wcwLogo;
   if (lower.includes('tna')) return tnaLogo;
+  if (lower.includes('impact')) return impactLogo;
   if (lower.includes('roh')) return rohLogo;
   if (lower.includes('aaa')) return aaaLogo;
   if (lower.includes('ecw')) return ecwLogo;
+  if (lower.includes('ajpw')) return ajpwLogo;
+  if (lower.includes('ajw')) return ajwLogo;
+  if (lower.includes('jcp')) return jcpLogo;
+  if (lower.includes('lucha underground')) return luchaUndergroundLogo;
+  if (lower.includes('pwg')) return pwgLogo;
+  if (lower.includes('nwa')) return nwaLogo;
   
   // For ones that don't have a local logo yet, return null so it falls back to text tag
   if (lower.includes('cmll')) return 'https://logo.clearbit.com/cmll.com';
   if (lower.includes('stardom')) return 'https://logo.clearbit.com/wwr-stardom.com';
   if (lower.includes('noah')) return 'https://logo.clearbit.com/noah.co.jp';
-  if (lower.includes('ajpw')) return 'https://logo.clearbit.com/all-japan.co.jp';
   return null;
 }
 import grandeImg from '../assets/matches thumbnail/WWE/AAANoches_GrandeGrande_ENCORE_16x9.jpg';
