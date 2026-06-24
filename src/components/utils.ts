@@ -40,6 +40,13 @@ export function getPromotionLogo(promotion: string): string | null {
   if (lower.includes('noah')) return 'https://logo.clearbit.com/noah.co.jp';
   return null;
 }
+
+export function isWhiteLogoPromotion(promotion: string): boolean {
+  const lower = promotion.toLowerCase();
+  // Keep WWE, AEW, NJPW in their original colors. Make almost everything else white.
+  const originalColorPromos = ['wwe', 'wwf', 'aew', 'njpw'];
+  return !originalColorPromos.some(p => lower.includes(p));
+}
 import grandeImg from '../assets/matches thumbnail/WWE/AAANoches_GrandeGrande_ENCORE_16x9.jpg';
 
 const localThumbnails = import.meta.glob('../assets/matches thumbnail/**/*.{jpg,jpeg,png,avif,webp}', { eager: true, import: 'default' }) as Record<string, string>;
