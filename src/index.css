@@ -65,7 +65,7 @@ img {
   z-index: 1000;
 }
 .logo-container { display: flex; align-items: center; gap: 0.8rem; cursor: pointer; margin-left: -5px; width: max-content; }
-.logo-image { height: 120px; width: auto; object-fit: contain; }
+.logo-image { height: 40px; width: auto; object-fit: contain; transform: scale(4.5) translateY(-2px); transform-origin: left center; }
 .topbar-actions { display: flex; align-items: center; gap: 1rem; }
 .profile-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.2); }
 
@@ -459,7 +459,7 @@ a:hover .video-btn-img { transform: scale(1.02); }
 
 @media (max-width: 768px) {
   /* Floating Topbar */
-  .logo-container { } .logo-image { height: 75px; margin-left: -10px; }
+  .logo-container { } .logo-image { height: 30px; transform: scale(4.5) translateY(-2px); margin-left: 5px; }
   
   /* Explore Header Text Fix */
   .explore-header-text h2 { font-size: 1.4rem; }
@@ -701,7 +701,7 @@ a:hover .video-btn-img { transform: scale(1.02); }
 @media (min-width: 1800px) {
   .floating-topbar { max-width: 2400px; padding-top: 50px; }
   .logo-container { }
-  .logo-image { height: 180px; margin-left: -30px; }
+  .logo-image { height: 60px; transform: scale(4.5) translateY(-2px); }
   .spatial-hero-wrapper { max-width: 2400px; gap: 5rem; }
   .spatial-hero-container { height: 800px; min-height: 800px; border-radius: 40px; }
   .hero-spatial-title { font-size: 4rem; }
