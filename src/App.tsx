@@ -58,13 +58,21 @@ function App() {
   const debouncedSearchQuery = useDebounce(searchQuery, 300);
   const [selectedDecade, setSelectedDecade] = useUrlState<string>('decade', 'All Years');
   const [currentPage, setCurrentPage] = useUrlState<string>('page', 'home');
-  const [isLightMode, setIsLightMode] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(() => {
+    try {
+      return localStorage.getItem('themeMode') === 'light';
+    } catch {
+      return false;
+    }
+  });
 
   useEffect(() => {
     if (isLightMode) {
       document.body.classList.add('light-mode');
+      try { localStorage.setItem('themeMode', 'light'); } catch {}
     } else {
       document.body.classList.remove('light-mode');
+      try { localStorage.setItem('themeMode', 'dark'); } catch {}
     }
   }, [isLightMode]);
 
