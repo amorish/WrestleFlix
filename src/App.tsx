@@ -12,7 +12,7 @@ import { SkeletonLoader } from './components/SkeletonLoader';
 import { AboutUs } from './components/AboutUs';
 import { Terms } from './components/Terms';
 import { FeedbackForm } from './components/FeedbackForm';
-import { Search, Sun, Moon } from 'lucide-react';
+import { Search, SunMoon } from 'lucide-react';
 
 import logoUrl from './assets/layout/wrestleflix_logo.webp';
 
@@ -239,7 +239,7 @@ function App() {
             style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
             title={isLightMode ? "Switch to Dark Mode" : "Switch to Light Mode"}
           >
-            {isLightMode ? <Moon size={24} /> : <Sun size={24} />}
+            <SunMoon size={24} />
           </button>
         </div>
       </nav>
