@@ -41,7 +41,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
                 loading="lazy"
               />
               <div className="play-overlay">
-                <Play fill="white" size={40} />
+                <Play fill="white" color="white" size={32} style={{ marginLeft: '4px' }} />
               </div>
               {logoUrl ? (
                 <img src={logoUrl as string} alt={match.promotion} className={`promo-logo ${isBWLogoPromotion(match.promotion) ? 'logo-bw' : ''}`} />
@@ -72,11 +72,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
               
               <div className="detailed-meta">
                 <span className="meta-item">
-                  {logoUrl ? (
-                    <img src={logoUrl as string} alt={match.promotion} className={`detailed-promo-logo ${isBWLogoPromotion(match.promotion) ? 'logo-bw' : ''}`} style={{ height: '24px' }} />
-                  ) : (
-                    match.promotion
-                  )}
+                  {match.promotion}
                 </span>
                 <span className="meta-item"><Calendar size={16}/> {match.date}</span>
               </div>

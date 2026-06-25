@@ -12,7 +12,7 @@ import { SkeletonLoader } from './components/SkeletonLoader';
 import { AboutUs } from './components/AboutUs';
 import { Terms } from './components/Terms';
 import { FeedbackForm } from './components/FeedbackForm';
-import { Search, Settings } from 'lucide-react';
+import { Search, Sun, Moon } from 'lucide-react';
 
 import logoUrl from './assets/layout/wrestleflix_logo.webp';
 
@@ -59,22 +59,6 @@ function App() {
   const [selectedDecade, setSelectedDecade] = useUrlState<string>('decade', 'All Years');
   const [currentPage, setCurrentPage] = useUrlState<string>('page', 'home');
   const [isLightMode, setIsLightMode] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
-  const settingsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (settingsRef.current && !settingsRef.current.contains(event.target as Node)) {
-        setShowSettings(false);
-      }
-    }
-    if (showSettings) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showSettings]);
 
   useEffect(() => {
     if (isLightMode) {
@@ -228,7 +212,7 @@ function App() {
           </a>
         </div>
         
-        <div className="header-right-actions" ref={settingsRef}>
+        <div className={`header-right-actions ${currentPage === 'home' ? 'home-layout' : ''}`}>
           {currentPage === 'home' && (
             <div className="compact-search">
               <Search size={18} className="search-icon" />
@@ -243,39 +227,12 @@ function App() {
           
           <button 
             className="settings-toggle-btn" 
-            onClick={() => setShowSettings(!showSettings)}
+            onClick={() => setIsLightMode(!isLightMode)}
             style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+            title={isLightMode ? "Switch to Dark Mode" : "Switch to Light Mode"}
           >
-            <Settings size={24} />
+            {isLightMode ? <Moon size={24} /> : <Sun size={24} />}
           </button>
-
-          {showSettings && (
-            <div className="settings-dropdown-menu" style={{ 
-              position: 'absolute', top: '100%', right: 0, marginTop: '0.5rem',
-              background: 'var(--card-bg)', border: '1px solid rgba(128,128,128,0.2)',
-              borderRadius: '8px', padding: '1rem', minWidth: '200px',
-              backdropFilter: 'blur(10px)', zIndex: 1000,
-              boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                <span style={{ color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: 500 }}>Light Mode</span>
-                <button 
-                  onClick={() => setIsLightMode(!isLightMode)}
-                  style={{
-                    background: isLightMode ? '#e50914' : 'rgba(255,255,255,0.1)',
-                    border: 'none', borderRadius: '20px', width: '40px', height: '22px',
-                    position: 'relative', cursor: 'pointer', transition: 'background 0.3s'
-                  }}
-                >
-                  <div style={{
-                    width: '18px', height: '18px', background: '#fff', borderRadius: '50%',
-                    position: 'absolute', top: '2px', left: isLightMode ? '20px' : '2px',
-                    transition: 'left 0.3s'
-                  }} />
-                </button>
-              </div>
-            </div>
-          )}
         </div>
       </nav>
 
