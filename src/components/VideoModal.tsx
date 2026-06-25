@@ -44,6 +44,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
   const videoIds = isMultiPart ? (match?.videoId as string[]) : (match?.videoId ? [match.videoId as string] : []);
   const [currentPart, setCurrentPart] = useState(0);
   const currentVideoId = videoIds.length > 0 ? videoIds[currentPart] : null;
+  const activePlaylistId = match?.playlistId || (typeof match?.videoId === 'string' && match?.videoId.startsWith('PL') ? match.videoId : null);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -160,9 +161,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-              {currentVideoId?.startsWith('PL') && (
+              {activePlaylistId && (
                 <div style={{ padding: '10px', textAlign: 'center', background: '#111', color: '#ccc', fontSize: '0.9rem', borderTop: '1px solid #222' }}>
-                  If YouTube restricts playlist playback in embedded players, <a href={`https://www.youtube.com/playlist?list=${currentVideoId}`} target="_blank" rel="noreferrer" style={{ color: '#e50914', fontWeight: 'bold', marginLeft: '6px', textDecoration: 'underline' }}>Watch Playlist on YouTube ↗</a>
+                  Watching a multi-part playlist. <a href={`https://www.youtube.com/playlist?list=${activePlaylistId}`} target="_blank" rel="noreferrer" style={{ color: '#e50914', fontWeight: 'bold', marginLeft: '6px', textDecoration: 'underline' }}>Open full playlist on YouTube ↗</a>
                 </div>
               )}
             </>

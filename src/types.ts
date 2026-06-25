@@ -10,6 +10,7 @@ export interface Match {
   timestamp?: string;
   endTimestamp?: string;
   thumbnailId?: string;
+  playlistId?: string;
   duration?: string;
   description?: string;
   category?: string;

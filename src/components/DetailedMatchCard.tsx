@@ -17,7 +17,7 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
 
   const fallbackThumbnailUrl = useThumbnailFallback(generateThumbnail(match));
 
-  const isPlaylist = Array.isArray(match.videoId) || (typeof match.videoId === 'string' && match.videoId.startsWith('PL'));
+  const isPlaylist = Array.isArray(match.videoId) || (typeof match.videoId === 'string' && match.videoId.startsWith('PL')) || !!match.playlistId;
   const videoCount = Array.isArray(match.videoId) ? match.videoId.length : null;
   const logoUrl = getPromotionLogo(match.promotion);
   const showTag = !logoUrl && match.promotion.toLowerCase() !== 'various';
