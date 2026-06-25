@@ -1129,6 +1129,10 @@ body.light-mode .site-disclaimer a:hover {
   color: var(--text-primary);
 }
 
+body.light-mode .footer-links .nav-link:hover {
+  color: var(--text-primary);
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
