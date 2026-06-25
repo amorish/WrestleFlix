@@ -947,6 +947,13 @@ body.light-mode .back-btn:hover {
   background: rgba(0,0,0,0.1);
 }
 
+body.light-mode .match-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+body.light-mode .match-card-wrapper:hover {
+  transform: translateY(-4px);
+}
+
 body.light-mode .spatial-background {
   background: radial-gradient(circle at 50% 30%, #e4e4e7 0%, #f4f4f5 70%);
 }
@@ -1003,7 +1010,8 @@ body.light-mode .detailed-match-card {
 
 body.light-mode .detailed-match-card:hover {
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
 }
 
 body.light-mode .match-card-title-row h4,
@@ -1082,6 +1090,10 @@ body.light-mode .page-container {
 body.light-mode .page-title {
   color: var(--text-primary);
   text-shadow: none;
+}
+
+body.light-mode .site-disclaimer a:hover {
+  color: var(--text-primary);
 }
 
 .form-group {
