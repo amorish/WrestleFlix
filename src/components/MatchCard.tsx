@@ -56,7 +56,7 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match, onPlay }) => {
                 <Play className="play-icon-large" size={48} />
               </div>
               <div className="duration-badge">
-                {getMockDuration(match.id)}
+                {match.duration && match.duration !== 'N/A' ? match.duration : getMockDuration(match.id)}
               </div>
             </div>
           </div>

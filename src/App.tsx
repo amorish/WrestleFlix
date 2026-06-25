@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useCallback } from 'react';
+import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { useUrlState } from './hooks/useUrlState';
 import { useDebounce } from './hooks/useDebounce';
 import matchesData from './data/matches.json';
@@ -60,6 +60,21 @@ function App() {
   const [currentPage, setCurrentPage] = useUrlState<string>('page', 'home');
   const [isLightMode, setIsLightMode] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const settingsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (settingsRef.current && !settingsRef.current.contains(event.target as Node)) {
+        setShowSettings(false);
+      }
+    }
+    if (showSettings) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSettings]);
 
   useEffect(() => {
     if (isLightMode) {
@@ -213,7 +228,7 @@ function App() {
           </a>
         </div>
         
-        <div className="header-right-actions" style={{ display: 'flex', alignItems: 'center', gap: '1rem', position: 'relative' }}>
+        <div className="header-right-actions" ref={settingsRef} style={{ display: 'flex', alignItems: 'center', gap: '1rem', position: 'relative', flex: 1, justifyContent: 'flex-end', marginLeft: '2rem' }}>
           {currentPage === 'home' && (
             <div className="compact-search">
               <Search size={18} className="search-icon" />
