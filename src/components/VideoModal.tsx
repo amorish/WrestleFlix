@@ -115,7 +115,12 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
       const startParam = startSeconds ? `&start=${startSeconds}` : '';
       const endParam = endSeconds ? `&end=${endSeconds}` : '';
       if (currentVideoId.startsWith('PL')) {
-        videoUrl = `https://www.youtube.com/embed/videoseries?list=${currentVideoId}&autoplay=1`;
+        const firstVid = match.thumbnailId && !match.thumbnailId.startsWith('http') && !match.thumbnailId.startsWith('PL') ? match.thumbnailId : '';
+        if (firstVid) {
+          videoUrl = `https://www.youtube.com/embed/${firstVid}?list=${currentVideoId}&autoplay=1`;
+        } else {
+          videoUrl = `https://www.youtube.com/embed/videoseries?list=${currentVideoId}&autoplay=1`;
+        }
       } else {
         videoUrl = `https://www.youtube.com/embed/${currentVideoId}?autoplay=1${startParam}${endParam}`;
       }
@@ -148,12 +153,19 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
               )}
             </div>
           ) : (
-            <iframe
-              src={videoUrl}
-              title="Video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <>
+              <iframe
+                src={videoUrl}
+                title="Video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              {currentVideoId.startsWith('PL') && (
+                <div style={{ padding: '10px', textAlign: 'center', background: '#111', color: '#ccc', fontSize: '0.9rem', borderTop: '1px solid #222' }}>
+                  If YouTube restricts playlist playback in embedded players, <a href={`https://www.youtube.com/playlist?list=${currentVideoId}`} target="_blank" rel="noreferrer" style={{ color: '#e50914', fontWeight: 'bold', marginLeft: '6px', textDecoration: 'underline' }}>Watch Playlist on YouTube ↗</a>
+                </div>
+              )}
+            </>
           )}
         </div>
         {isMultiPart && (
