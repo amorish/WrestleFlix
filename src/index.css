@@ -947,8 +947,11 @@ body.light-mode .back-btn:hover {
   background: rgba(0,0,0,0.1);
 }
 
+body.light-mode .match-card {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
 body.light-mode .match-card:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 body.light-mode .match-card-wrapper:hover {
   transform: translateY(-4px);
@@ -1010,7 +1013,7 @@ body.light-mode .detailed-match-card {
 
 body.light-mode .detailed-match-card:hover {
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.03);
   transform: translateY(-2px);
 }
 
@@ -1039,12 +1042,12 @@ body.light-mode .dock-item.active {
 }
 
 body.light-mode .dock-item img {
-  filter: brightness(0) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  filter: brightness(0) drop-shadow(0 2px 4px rgba(0,0,0,0.08));
 }
 
 body.light-mode .detailed-promo-logo,
 body.light-mode .logo-bw {
-  filter: brightness(0) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  filter: brightness(0) drop-shadow(0 2px 4px rgba(0,0,0,0.08));
 }
 
 body.light-mode .modal-content {
