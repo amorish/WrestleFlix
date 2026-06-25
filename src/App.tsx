@@ -228,7 +228,7 @@ function App() {
           </a>
         </div>
         
-        <div className="header-right-actions" ref={settingsRef} style={{ display: 'flex', alignItems: 'center', gap: '1rem', position: 'relative', flex: 1, justifyContent: 'flex-end', marginLeft: '2rem' }}>
+        <div className="header-right-actions" ref={settingsRef}>
           {currentPage === 'home' && (
             <div className="compact-search">
               <Search size={18} className="search-icon" />

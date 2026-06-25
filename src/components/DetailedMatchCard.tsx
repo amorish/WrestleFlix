@@ -65,28 +65,37 @@ export const DetailedMatchCard: React.FC<DetailedMatchCardProps> = ({ match, onP
           </div>
           
           <div className="detailed-info">
-            <div className="detailed-header">
-              <h3 className="detailed-title" onClick={() => onPlay(match)}>{match.match}</h3>
+            <div className="detailed-text-content">
+              <div className="detailed-header">
+                <h3 className="detailed-title" onClick={() => onPlay(match)}>{match.match}</h3>
+              </div>
+              
+              <div className="detailed-meta">
+                <span className="meta-item">
+                  {logoUrl ? (
+                    <img src={logoUrl as string} alt={match.promotion} className={`detailed-promo-logo ${isBWLogoPromotion(match.promotion) ? 'logo-bw' : ''}`} style={{ height: '24px' }} />
+                  ) : (
+                    match.promotion
+                  )}
+                </span>
+                <span className="meta-item"><Calendar size={16}/> {match.date}</span>
+              </div>
+              
+              <p className="detailed-event">
+                <span className="event-label">Event:</span> {match.event}
+              </p>
             </div>
-            
-            <div className="detailed-meta">
-              <span className="meta-item">
-                {logoUrl ? (
-                  <img src={logoUrl as string} alt={match.promotion} className={`detailed-promo-logo ${isBWLogoPromotion(match.promotion) ? 'logo-bw' : ''}`} style={{ height: '24px' }} />
-                ) : (
-                  match.promotion
-                )}
-              </span>
-              <span className="meta-item"><Calendar size={16}/> {match.date}</span>
-            </div>
-            
-            <p className="detailed-event">
-              <span className="event-label">Event:</span> {match.event}
-            </p>
             
             <div className="detailed-actions">
-              <button className="btn btn-accent" onClick={() => onPlay(match)}>
-                <Play fill="currentColor" size={16}/> Watch Full Match
+              <button className="btn btn-watch-full" onClick={() => onPlay(match)}>
+                <div className="play-icon-circle">
+                  <Play fill="currentColor" size={18}/>
+                </div>
+                <div className="btn-divider"></div>
+                <div className="btn-text">
+                  <span>Watch</span>
+                  <span>Full Match</span>
+                </div>
               </button>
             </div>
           </div>
