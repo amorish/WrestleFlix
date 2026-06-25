@@ -556,8 +556,8 @@ a:hover .video-btn-img { transform: scale(1.02); }
 @media (max-width: 768px) {
   /* Floating Topbar */
   .floating-topbar { flex-wrap: nowrap; padding-top: 15px; padding-bottom: 10px; align-items: center; gap: 0.5rem; }
-  .logo-container { margin-bottom: 0; width: 90px; flex-shrink: 0; }
-  .logo-image { height: 20px; transform: scale(3); margin-left: 15px; transform-origin: left center; }
+  .logo-container { margin-bottom: 0; width: 110px; flex-shrink: 0; }
+  .logo-image { height: 24px; transform: scale(4); margin-left: 20px; transform-origin: left center; }
   .header-right-actions { margin-left: auto; width: auto; flex: 1; justify-content: flex-end; gap: 0.5rem; }
   
   /* Explore Header Text Fix */
