@@ -154,7 +154,7 @@ img {
   background: #fff; color: #000; border-radius: 30px; padding: 0.6rem 1.5rem;
   font-weight: 700; font-size: 1rem;
 }
-.btn-spatial-primary:hover { background: #e0e0e0; transform: scale(1.05); }
+.btn-spatial-primary:hover { background: #e0e0e0; }
 .btn-spatial-secondary {
   background: rgba(50, 50, 55, 0.6); backdrop-filter: blur(10px); color: #fff;
   border-radius: 30px; padding: 0.6rem 1.5rem; font-weight: 600; font-size: 1rem;
