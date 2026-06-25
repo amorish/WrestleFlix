@@ -1011,6 +1011,16 @@ body.light-mode .pill.active {
   color: #fff;
 }
 
+body.light-mode .shimmer {
+  background: #e4e4e7;
+  background-image: linear-gradient(to right, #e4e4e7 0%, #f4f4f5 20%, #e4e4e7 40%, #e4e4e7 100%);
+}
+
+body.light-mode .match-card-placeholder,
+body.light-mode .detailed-match-placeholder {
+  background: #e4e4e7;
+}
+
 body.light-mode .detailed-match-card {
   background: rgba(255, 255, 255, 0.6);
   border-color: rgba(0, 0, 0, 0.05);
