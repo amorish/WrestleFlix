@@ -160,7 +160,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-              {currentVideoId.startsWith('PL') && (
+              {currentVideoId?.startsWith('PL') && (
                 <div style={{ padding: '10px', textAlign: 'center', background: '#111', color: '#ccc', fontSize: '0.9rem', borderTop: '1px solid #222' }}>
                   If YouTube restricts playlist playback in embedded players, <a href={`https://www.youtube.com/playlist?list=${currentVideoId}`} target="_blank" rel="noreferrer" style={{ color: '#e50914', fontWeight: 'bold', marginLeft: '6px', textDecoration: 'underline' }}>Watch Playlist on YouTube ↗</a>
                 </div>
