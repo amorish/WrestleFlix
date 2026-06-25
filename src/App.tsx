@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
 import { useUrlState } from './hooks/useUrlState';
 import { useDebounce } from './hooks/useDebounce';
 import matchesData from './data/matches.json';
