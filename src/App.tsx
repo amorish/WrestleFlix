@@ -22,7 +22,7 @@ const historyOfWrestling: Match[] = [
   { id: 'hist-1', match: 'AEW 2019-2025: A Crash Course in Rivalries, Violence & Lore', event: 'Documentary', promotion: 'AEW', date: '2025', rating: '0', videoId: 'F_fHUyoCmeM', videoSource: 'youtube', thumbnailId: 'F_fHUyoCmeM' },
   { id: 'hist-2', match: 'The COMPLETE History of WWE (4+ Hours)', event: 'Documentary', promotion: 'WWE', date: '2024', rating: '0', videoId: 'DxvetzhrFKQ', videoSource: 'youtube', thumbnailId: 'DxvetzhrFKQ' },
   { id: 'hist-3', match: 'The Complete History Of TNA Wrestling', event: 'Documentary', promotion: 'TNA', date: '2023', rating: '0', videoId: 'sIF-utqM9Y0', videoSource: 'youtube', thumbnailId: 'sIF-utqM9Y0' },
-  { id: 'hist-4', match: 'History of NJPW', event: 'Documentary', promotion: 'NJPW', date: '2023', rating: '0', videoId: 'PLgqDyJZN9OYlC7dbsNRrLqTuw_f7OE3fc', videoSource: 'youtube', thumbnailId: 'qT2g-B4sTko' },
+  { id: 'hist-4', match: 'History of NJPW', event: 'Documentary', promotion: 'NJPW', date: '2023', rating: '0', videoId: 'PLgqDyJZN9OYlC7dbsNRrLqTuw_f7OE3fc', videoSource: 'youtube', thumbnailId: '7YzFktVht00' },
   { id: 'hist-5', match: 'The Rise And Fall Of Ring Of Honor', event: 'Documentary', promotion: 'ROH', date: '2022', rating: '0', videoId: 'xUxrbJDWoCw', videoSource: 'youtube', thumbnailId: 'xUxrbJDWoCw' },
   { id: 'hist-6', match: 'The Entire History of Triple AAA | Documentary', event: 'Documentary', promotion: 'AAA', date: '2022', rating: '0', videoId: 'Olu2ZJlB4EY', videoSource: 'youtube', thumbnailId: 'Olu2ZJlB4EY' },
   { id: 'hist-7', match: 'The Rise And Fall Of All Japan Pro Wrestling', event: 'Documentary', promotion: 'AJPW', date: '2021', rating: '0', videoId: 'I68GwY8DO4I', videoSource: 'youtube', thumbnailId: 'I68GwY8DO4I' },
@@ -32,9 +32,9 @@ const historyOfWrestling: Match[] = [
 ];
 
 const fullEvents: Match[] = [
-  { id: 'fe-1', match: 'WWE TRIPLE AAA - Full Shows in Order', event: 'Full Event', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'PLlj3Hc_QGrSdOnoJnKeMOR7Rg2UK1HY0v', videoSource: 'youtube', thumbnailId: 'Q1fS8F_E3O4' },
-  { id: 'fe-2', match: 'Full-Length Events from the WWE Vault', event: 'Full Event', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'PLfalIYDZtGGDBmKl0slVTSSHEbbi1iTRu', videoSource: 'youtube', thumbnailId: 'b7O9-N2M70Y' },
-  { id: 'fe-3', match: 'NXT Full Events', event: 'Full Event', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'PLEpTCGDuJrIlSuw9dmXVmpqQX80CjN4aP', videoSource: 'youtube', thumbnailId: 'u7p1g1jXm4E' },
+  { id: 'fe-1', match: 'WWE TRIPLE AAA - Full Shows in Order', event: 'Full Event', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'PLlj3Hc_QGrSdOnoJnKeMOR7Rg2UK1HY0v', videoSource: 'youtube', thumbnailId: 'LwDFoIoHRT4' },
+  { id: 'fe-2', match: 'Full-Length Events from the WWE Vault', event: 'Full Event', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'PLfalIYDZtGGDBmKl0slVTSSHEbbi1iTRu', videoSource: 'youtube', thumbnailId: 'C-k753Y_uks' },
+  { id: 'fe-3', match: 'NXT Full Events', event: 'Full Event', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'PLEpTCGDuJrIlSuw9dmXVmpqQX80CjN4aP', videoSource: 'youtube', thumbnailId: 'jtt6REzP4dA' },
   { id: 'fe-4', match: 'TNA Full Events', event: 'Full Event', promotion: 'TNA', date: 'Various', rating: '0', videoId: 'PLcovtt7Bdo9NjP43R0_lJH1tq3pyJnPRw', videoSource: 'youtube', thumbnailId: 'nZc0N8PE_x0' },
 ];
 
