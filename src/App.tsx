@@ -82,7 +82,8 @@ function App() {
   
   const selectedMatch = useMemo(() => {
     if (!selectedMatchId) return null;
-    return matches.find(m => m.id === selectedMatchId) || null;
+    const allMatchesCombined = [...matches, ...historyOfWrestling, ...fullEvents, ...epicStories];
+    return allMatchesCombined.find(m => m.id === selectedMatchId) || null;
   }, [selectedMatchId, matches]);
 
   const handleSelectMatch = useCallback((match: Match | null) => {

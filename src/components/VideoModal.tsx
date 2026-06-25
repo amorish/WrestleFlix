@@ -139,7 +139,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
                   match.videoSource === 'reddit' ? `https://www.reddit.com/r/SquaredCircle/comments/${currentVideoId}` :
                   `https://vk.com/${currentVideoId}`
                 } 
-                target="_blank" rel="noreferrer" className="btn btn-accent vk-btn"
+                target="_blank" rel="noreferrer" className="btn vk-btn"
               >
                 <Play fill="currentColor" size={16}/> Watch on {match.videoSource === 'wwe' ? 'WWE.com' : match.videoSource === 'reddit' ? 'Reddit' : 'VK'}
               </a>
@@ -172,7 +172,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ match, onClose }) => {
                 borderRadius: '4px'
               }}
             >
-              Previous
+              Prev
             </button>
             <span style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 'bold' }}>
               {currentPart + 1} / {videoIds.length}
