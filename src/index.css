@@ -554,10 +554,10 @@ a:hover .video-btn-img { transform: scale(1.02); }
 
 @media (max-width: 768px) {
   /* Floating Topbar */
-  .floating-topbar { flex-wrap: wrap; padding-top: 15px; padding-bottom: 10px; }
-  .logo-container { margin-bottom: 0.5rem; }
-  .logo-image { height: 25px; transform: scale(3.5) translateY(0); margin-left: 5px; }
-  .header-right-actions { margin-left: 0; width: 100%; flex: none; justify-content: space-between; }
+  .floating-topbar { flex-wrap: nowrap; padding-top: 15px; padding-bottom: 10px; align-items: center; gap: 0.5rem; }
+  .logo-container { margin-bottom: 0; width: 90px; flex-shrink: 0; }
+  .logo-image { height: 20px; transform: scale(3); margin-left: 15px; transform-origin: left center; }
+  .header-right-actions { margin-left: auto; width: auto; flex: 1; justify-content: flex-end; gap: 0.5rem; }
   
   /* Explore Header Text Fix */
   .explore-header-text h2 { font-size: 1.4rem; }
@@ -1337,18 +1337,21 @@ body.light-mode .site-disclaimer a:hover {
     margin-left: 0;
   }
   .compact-search {
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 0.6rem;
     gap: 0.4rem;
+    flex: 1;
+    min-width: 0;
   }
   .compact-search input {
-    width: 80px;
+    width: 100%;
+    min-width: 0;
     font-size: 0.85rem;
   }
   .settings-toggle-btn {
-    position: absolute;
-    top: 15px;
-    right: 6%;
-    transform: scale(0.85);
+    position: static;
+    transform: scale(0.9);
+    padding: 0;
+    flex-shrink: 0;
   }
 }
 
