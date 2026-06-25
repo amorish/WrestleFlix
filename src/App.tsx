@@ -39,10 +39,10 @@ const fullEvents: Match[] = [
 ];
 
 const epicStories: Match[] = [
-  { id: 'story-1', match: 'The Complete Story of The Bloodline', event: 'Story', promotion: 'WWE', date: '2023', rating: '0', videoId: 'GEpdhKHK4EI', videoSource: 'youtube', thumbnailId: 'GEpdhKHK4EI' },
-  { id: 'story-2', match: 'History of BULLET CLUB', event: 'Story', promotion: 'NJPW', date: '2024', rating: '0', videoId: 'UFb8Dxypi00', videoSource: 'youtube', thumbnailId: 'UFb8Dxypi00' },
-  { id: 'story-3', match: 'The nWo: A definitive history', event: 'Story', promotion: 'WCW', date: 'Various', rating: '0', videoId: 'baU1J1uJdvk', videoSource: 'youtube', thumbnailId: 'baU1J1uJdvk' },
-  { id: 'story-4', match: 'Complete history of The Shield', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'FKfBo1G83ao', videoSource: 'youtube', thumbnailId: 'FKfBo1G83ao' },
+  { id: 'story-1', match: 'The Complete Story of The Bloodline', event: 'Story', promotion: 'WWE', date: '2023', rating: '0', videoId: 'PLJk7-93iN38v893p0N1615fUo_d464e8O', videoSource: 'youtube', thumbnailId: 'GEpdhKHK4EI' },
+  { id: 'story-2', match: 'History of BULLET CLUB', event: 'Story', promotion: 'NJPW', date: '2024', rating: '0', videoId: 'PL8Py566p9u8tY1n9Zf5G_wZ_eXQ1H8jT1', videoSource: 'youtube', thumbnailId: 'UFb8Dxypi00' },
+  { id: 'story-3', match: 'The nWo: A definitive history', event: 'Story', promotion: 'WCW', date: 'Various', rating: '0', videoId: 'PLJc929l-D3D0oH43Y3F6v1n_qG230-c3d', videoSource: 'youtube', thumbnailId: 'baU1J1uJdvk' },
+  { id: 'story-4', match: 'Complete history of The Shield', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'PL3t5AFw0Lw9t1W5nSg77b0jJ5D9J13f6-', videoSource: 'youtube', thumbnailId: 'FKfBo1G83ao' },
   { id: 'story-5', match: 'The Complete Story of Austin vs McMahon', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'ZWdF_NexO0g', videoSource: 'youtube', thumbnailId: 'ZWdF_NexO0g' },
   { id: 'story-6', match: 'The Montreal Screwjob: What Really Happened', event: 'Story', promotion: 'WWE', date: '1997', rating: '0', videoId: 'GdlSrYNr3HM', videoSource: 'youtube', thumbnailId: 'GdlSrYNr3HM' },
   { id: 'story-7', match: 'The Complete Story of CM Punk', event: 'Story', promotion: 'WWE', date: 'Various', rating: '0', videoId: 'WrevIta43xk', videoSource: 'youtube', thumbnailId: 'WrevIta43xk' },
