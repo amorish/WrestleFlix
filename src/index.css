@@ -1083,6 +1083,19 @@ body.light-mode .rating-number {
   color: var(--text-primary);
 }
 
+body.light-mode .rating-stars {
+  color: #c79100;
+}
+
+body.light-mode .star-filled path {
+  fill: #c79100;
+}
+
+body.light-mode svg.lucide-star[color="#f5c518"] {
+  color: #c79100 !important;
+  fill: #c79100 !important;
+}
+
 body.light-mode .slider-arrow-top {
   background: rgba(200, 200, 200, 0.6);
   color: var(--text-primary);
